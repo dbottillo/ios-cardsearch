@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D70034819BDC27C00AAC079 /* DBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */; };
+		6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
+		6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
+		6D70034B19BDC27C00AAC079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
+		6D70034D19BDC27C00AAC079 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
+		6D70034E19BDC27C00AAC079 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
+		6D70034F19BDC27C00AAC079 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
+		6D70035019BDC27C00AAC079 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
+		6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
+		6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
+		6D70035419BDC27C00AAC079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
+		6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */; };
+		6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
+		6D70036219BDC69F00AAC079 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
+		6D70036319BDC69F00AAC079 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
+		6D70036719BDC86700AAC079 /* GameSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036619BDC86700AAC079 /* GameSet.m */; };
+		6D70036819BDC86700AAC079 /* GameSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036619BDC86700AAC079 /* GameSet.m */; };
+		6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
+		6D70036C19BDC89E00AAC079 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -14,7 +33,7 @@
 		6DB12C8619BDAB0A00B2BCC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
 		6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
 		6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
-		6DB12C9019BDAB0A00B2BCC8 /* DBFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBFirstViewController.m */; };
+		6DB12C9019BDAB0A00B2BCC8 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
 		6DB12C9319BDAB0A00B2BCC8 /* DBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */; };
 		6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
 		6DB12C9C19BDAB0B00B2BCC8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C9B19BDAB0B00B2BCC8 /* XCTest.framework */; };
@@ -22,6 +41,7 @@
 		6DB12C9E19BDAB0B00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
 		6DB12CA619BDAB0B00B2BCC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12CA419BDAB0B00B2BCC8 /* InfoPlist.strings */; };
 		6DB12CA819BDAB0B00B2BCC8 /* MTGSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */; };
+		92434AB9211B463A8792252B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64A66CCF28064EB69C148C47 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6D70035919BDC27C00AAC079 /* HSSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D70035A19BDC27C00AAC079 /* HSSearch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = HSSearch.plist; path = /Users/danielebottillo/XCodeProjects/MTGSearch/HSSearch.plist; sourceTree = "<absolute>"; };
+		6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mtgsearch.sqlite3; sourceTree = "<group>"; };
+		6D70036019BDC69F00AAC079 /* CardsDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsDatabase.h; sourceTree = "<group>"; };
+		6D70036119BDC69F00AAC079 /* CardsDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsDatabase.m; sourceTree = "<group>"; };
+		6D70036519BDC86700AAC079 /* GameSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSet.h; sourceTree = "<group>"; };
+		6D70036619BDC86700AAC079 /* GameSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSet.m; sourceTree = "<group>"; };
+		6D70036919BDC89E00AAC079 /* MTGSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGSet.h; sourceTree = "<group>"; };
+		6D70036A19BDC89E00AAC079 /* MTGSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGSet.m; sourceTree = "<group>"; };
 		6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +77,8 @@
 		6DB12C8819BDAB0A00B2BCC8 /* DBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBAppDelegate.h; sourceTree = "<group>"; };
 		6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBAppDelegate.m; sourceTree = "<group>"; };
 		6DB12C8C19BDAB0A00B2BCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6DB12C8E19BDAB0A00B2BCC8 /* DBFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBFirstViewController.h; sourceTree = "<group>"; };
-		6DB12C8F19BDAB0A00B2BCC8 /* DBFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBFirstViewController.m; sourceTree = "<group>"; };
+		6DB12C8E19BDAB0A00B2BCC8 /* DBSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSetViewController.h; sourceTree = "<group>"; };
+		6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBSetViewController.m; sourceTree = "<group>"; };
 		6DB12C9119BDAB0A00B2BCC8 /* DBSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSecondViewController.h; sourceTree = "<group>"; };
 		6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBSecondViewController.m; sourceTree = "<group>"; };
 		6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -56,16 +87,30 @@
 		6DB12CA319BDAB0B00B2BCC8 /* MTGSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MTGSearchTests-Info.plist"; sourceTree = "<group>"; };
 		6DB12CA519BDAB0B00B2BCC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGSearchTests.m; sourceTree = "<group>"; };
+		8DAD1DACEA824BEFAF35E1A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6D70034C19BDC27C00AAC079 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D70034D19BDC27C00AAC079 /* CoreGraphics.framework in Frameworks */,
+				6D70034E19BDC27C00AAC079 /* UIKit.framework in Frameworks */,
+				6D70034F19BDC27C00AAC079 /* Foundation.framework in Frameworks */,
+				6D70035019BDC27C00AAC079 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DB12C7319BDAB0A00B2BCC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */,
 				6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */,
 				6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */,
 				6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */,
+				92434AB9211B463A8792252B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +127,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D70035D19BDC64100AAC079 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D70036419BDC84400AAC079 /* Data Provider */ = {
+			isa = PBXGroup;
+			children = (
+				6D70036019BDC69F00AAC079 /* CardsDatabase.h */,
+				6D70036119BDC69F00AAC079 /* CardsDatabase.m */,
+				6D70036519BDC86700AAC079 /* GameSet.h */,
+				6D70036619BDC86700AAC079 /* GameSet.m */,
+				6D70036919BDC89E00AAC079 /* MTGSet.h */,
+				6D70036A19BDC89E00AAC079 /* MTGSet.m */,
+			);
+			name = "Data Provider";
+			sourceTree = "<group>";
+		};
 		6DB12C6D19BDAB0A00B2BCC8 = {
 			isa = PBXGroup;
 			children = (
+				6D70035D19BDC64100AAC079 /* Resources */,
 				6DB12C7F19BDAB0A00B2BCC8 /* MTGSearch */,
 				6DB12CA119BDAB0B00B2BCC8 /* MTGSearchTests */,
 				6DB12C7819BDAB0A00B2BCC8 /* Frameworks */,
 				6DB12C7719BDAB0A00B2BCC8 /* Products */,
+				64A66CCF28064EB69C148C47 /* Pods.xcconfig */,
+				6D70035A19BDC27C00AAC079 /* HSSearch.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +166,7 @@
 			children = (
 				6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */,
 				6DB12C9A19BDAB0B00B2BCC8 /* MTGSearchTests.xctest */,
+				6D70035919BDC27C00AAC079 /* HSSearch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,10 +174,12 @@
 		6DB12C7819BDAB0A00B2BCC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */,
 				6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */,
 				6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */,
 				6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */,
 				6DB12C9B19BDAB0B00B2BCC8 /* XCTest.framework */,
+				8DAD1DACEA824BEFAF35E1A5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,11 +187,12 @@
 		6DB12C7F19BDAB0A00B2BCC8 /* MTGSearch */ = {
 			isa = PBXGroup;
 			children = (
+				6D70036419BDC84400AAC079 /* Data Provider */,
 				6DB12C8819BDAB0A00B2BCC8 /* DBAppDelegate.h */,
 				6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */,
 				6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */,
-				6DB12C8E19BDAB0A00B2BCC8 /* DBFirstViewController.h */,
-				6DB12C8F19BDAB0A00B2BCC8 /* DBFirstViewController.m */,
+				6DB12C8E19BDAB0A00B2BCC8 /* DBSetViewController.h */,
+				6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */,
 				6DB12C9119BDAB0A00B2BCC8 /* DBSecondViewController.h */,
 				6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */,
 				6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */,
@@ -160,13 +233,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6D70034519BDC27C00AAC079 /* HSSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D70035619BDC27C00AAC079 /* Build configuration list for PBXNativeTarget "HSSearch" */;
+			buildPhases = (
+				6D70034619BDC27C00AAC079 /* Check Pods Manifest.lock */,
+				6D70034719BDC27C00AAC079 /* Sources */,
+				6D70034C19BDC27C00AAC079 /* Frameworks */,
+				6D70035119BDC27C00AAC079 /* Resources */,
+				6D70035519BDC27C00AAC079 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSSearch;
+			productName = MTGSearch;
+			productReference = 6D70035919BDC27C00AAC079 /* HSSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
 		6DB12C7519BDAB0A00B2BCC8 /* MTGSearch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DB12CAB19BDAB0B00B2BCC8 /* Build configuration list for PBXNativeTarget "MTGSearch" */;
 			buildPhases = (
+				6ECF5B40EBD748BCB1F37853 /* Check Pods Manifest.lock */,
 				6DB12C7219BDAB0A00B2BCC8 /* Sources */,
 				6DB12C7319BDAB0A00B2BCC8 /* Frameworks */,
 				6DB12C7419BDAB0A00B2BCC8 /* Resources */,
+				5F4ED6E09B93452197D61509 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,17 +319,29 @@
 			targets = (
 				6DB12C7519BDAB0A00B2BCC8 /* MTGSearch */,
 				6DB12C9919BDAB0B00B2BCC8 /* MTGSearchTests */,
+				6D70034519BDC27C00AAC079 /* HSSearch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6D70035119BDC27C00AAC079 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */,
+				6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */,
+				6D70035419BDC27C00AAC079 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DB12C7419BDAB0A00B2BCC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
+				6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */,
 				6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,15 +356,95 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F4ED6E09B93452197D61509 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D70034619BDC27C00AAC079 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D70035519BDC27C00AAC079 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ECF5B40EBD748BCB1F37853 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6D70034719BDC27C00AAC079 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D70034819BDC27C00AAC079 /* DBSecondViewController.m in Sources */,
+				6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */,
+				6D70036C19BDC89E00AAC079 /* MTGSet.m in Sources */,
+				6D70036819BDC86700AAC079 /* GameSet.m in Sources */,
+				6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */,
+				6D70034B19BDC27C00AAC079 /* main.m in Sources */,
+				6D70036319BDC69F00AAC079 /* CardsDatabase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DB12C7219BDAB0A00B2BCC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6DB12C9319BDAB0A00B2BCC8 /* DBSecondViewController.m in Sources */,
 				6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */,
-				6DB12C9019BDAB0A00B2BCC8 /* DBFirstViewController.m in Sources */,
+				6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */,
+				6D70036719BDC86700AAC079 /* GameSet.m in Sources */,
+				6DB12C9019BDAB0A00B2BCC8 /* DBSetViewController.m in Sources */,
 				6DB12C8619BDAB0A00B2BCC8 /* main.m in Sources */,
+				6D70036219BDC69F00AAC079 /* CardsDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +494,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6D70035719BDC27C00AAC079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
+				INFOPLIST_FILE = HSSearch.plist;
+				PRODUCT_NAME = HSSearch;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6D70035819BDC27C00AAC079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
+				INFOPLIST_FILE = HSSearch.plist;
+				PRODUCT_NAME = HSSearch;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		6DB12CA919BDAB0B00B2BCC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -380,6 +594,7 @@
 		};
 		6DB12CAC19BDAB0B00B2BCC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -393,6 +608,7 @@
 		};
 		6DB12CAD19BDAB0B00B2BCC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -447,6 +663,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D70035619BDC27C00AAC079 /* Build configuration list for PBXNativeTarget "HSSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D70035719BDC27C00AAC079 /* Debug */,
+				6D70035819BDC27C00AAC079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6DB12C7119BDAB0A00B2BCC8 /* Build configuration list for PBXProject "MTGSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -463,6 +688,7 @@
 				6DB12CAD19BDAB0B00B2BCC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DB12CAE19BDAB0B00B2BCC8 /* Build configuration list for PBXNativeTarget "MTGSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +697,7 @@
 				6DB12CB019BDAB0B00B2BCC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
