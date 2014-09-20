@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D70034819BDC27C00AAC079 /* DBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */; };
 		6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
 		6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
 		6D70034B19BDC27C00AAC079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
@@ -47,6 +46,10 @@
 		6D7C30B419CC75DA00876B31 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
 		6D7C30B919CE390E00876B31 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
+		6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
+		6D7C30C019CE417400876B31 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
+		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
+		6D7C30C419CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -55,7 +58,6 @@
 		6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
 		6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
 		6DB12C9019BDAB0A00B2BCC8 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
-		6DB12C9319BDAB0A00B2BCC8 /* DBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */; };
 		6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
 		6DB12C9C19BDAB0B00B2BCC8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C9B19BDAB0B00B2BCC8 /* XCTest.framework */; };
 		6DB12C9D19BDAB0B00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
@@ -109,6 +111,10 @@
 		6D7C30B219CC75DA00876B31 /* MTGCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGCardView.m; sourceTree = "<group>"; };
 		6D7C30B619CE390E00876B31 /* DBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSettingsViewController.h; sourceTree = "<group>"; };
 		6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSettingsViewController.m; sourceTree = "<group>"; };
+		6D7C30BD19CE417400876B31 /* DBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSearchViewController.h; sourceTree = "<group>"; };
+		6D7C30BE19CE417400876B31 /* DBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSearchViewController.m; sourceTree = "<group>"; };
+		6D7C30C119CE48BD00876B31 /* UIViewController+FilterCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FilterCards.h"; sourceTree = "<group>"; };
+		6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FilterCards.m"; sourceTree = "<group>"; };
 		6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,8 +128,6 @@
 		6DB12C8C19BDAB0A00B2BCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB12C8E19BDAB0A00B2BCC8 /* DBSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSetViewController.h; sourceTree = "<group>"; };
 		6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBSetViewController.m; sourceTree = "<group>"; };
-		6DB12C9119BDAB0A00B2BCC8 /* DBSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBSecondViewController.h; sourceTree = "<group>"; };
-		6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBSecondViewController.m; sourceTree = "<group>"; };
 		6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DB12C9A19BDAB0B00B2BCC8 /* MTGSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTGSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C9B19BDAB0B00B2BCC8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -201,8 +205,12 @@
 		6D70037519BE2BEA00AAC079 /* Sets */ = {
 			isa = PBXGroup;
 			children = (
+				6DB12C8E19BDAB0A00B2BCC8 /* DBSetViewController.h */,
+				6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */,
 				6D70037619BE2C0C00AAC079 /* DBSetPickerViewController.h */,
 				6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */,
+				6D7C30C119CE48BD00876B31 /* UIViewController+FilterCards.h */,
+				6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */,
 			);
 			name = Sets;
 			sourceTree = "<group>";
@@ -234,6 +242,29 @@
 				6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		6D7C30BB19CE40E800876B31 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				6D70038319BF48BE00AAC079 /* DBCardsViewController.h */,
+				6D70038419BF48BE00AAC079 /* DBCardsViewController.m */,
+				6DC9540A19C0504F008640C7 /* DBFullCardCell.h */,
+				6DC9540B19C0504F008640C7 /* DBFullCardCell.m */,
+				6D7C30AE19CC73D800876B31 /* MTGCardView.xib */,
+				6D7C30B119CC75DA00876B31 /* MTGCardView.h */,
+				6D7C30B219CC75DA00876B31 /* MTGCardView.m */,
+			);
+			name = Cards;
+			sourceTree = "<group>";
+		};
+		6D7C30BC19CE410300876B31 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6D7C30BD19CE417400876B31 /* DBSearchViewController.h */,
+				6D7C30BE19CE417400876B31 /* DBSearchViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		6DB12C6D19BDAB0A00B2BCC8 = {
@@ -276,27 +307,18 @@
 		6DB12C7F19BDAB0A00B2BCC8 /* MTGSearch */ = {
 			isa = PBXGroup;
 			children = (
+				6D7C30BC19CE410300876B31 /* Search */,
 				6D7C30B519CE38FD00876B31 /* Settings */,
 				6D7C30A719CC6E4D00876B31 /* iCarousel */,
 				6D70037A19BE83FA00AAC079 /* Filter */,
 				6D70037519BE2BEA00AAC079 /* Sets */,
 				6D70036419BDC84400AAC079 /* Data Provider */,
+				6D7C30BB19CE40E800876B31 /* Cards */,
 				6DB12C8819BDAB0A00B2BCC8 /* DBAppDelegate.h */,
 				6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */,
 				6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */,
-				6DB12C8E19BDAB0A00B2BCC8 /* DBSetViewController.h */,
-				6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */,
-				6DB12C9119BDAB0A00B2BCC8 /* DBSecondViewController.h */,
-				6DB12C9219BDAB0A00B2BCC8 /* DBSecondViewController.m */,
 				6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */,
 				6DB12C8019BDAB0A00B2BCC8 /* Supporting Files */,
-				6D70038319BF48BE00AAC079 /* DBCardsViewController.h */,
-				6D70038419BF48BE00AAC079 /* DBCardsViewController.m */,
-				6DC9540A19C0504F008640C7 /* DBFullCardCell.h */,
-				6DC9540B19C0504F008640C7 /* DBFullCardCell.m */,
-				6D7C30AE19CC73D800876B31 /* MTGCardView.xib */,
-				6D7C30B119CC75DA00876B31 /* MTGCardView.h */,
-				6D7C30B219CC75DA00876B31 /* MTGCardView.m */,
 			);
 			path = MTGSearch;
 			sourceTree = "<group>";
@@ -527,7 +549,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D70037E19BE840800AAC079 /* DBFilterViewController.m in Sources */,
-				6D70034819BDC27C00AAC079 /* DBSecondViewController.m in Sources */,
 				6D70037919BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038219BF380A00AAC079 /* CardFilter.m in Sources */,
 				6D70037019BDCF6200AAC079 /* GameCard.m in Sources */,
@@ -535,8 +556,10 @@
 				6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */,
 				6D7C30AB19CC6E5B00876B31 /* iCarousel.m in Sources */,
 				6DC9540D19C0504F008640C7 /* DBFullCardCell.m in Sources */,
+				6D7C30C419CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
 				6D70036C19BDC89E00AAC079 /* MTGSet.m in Sources */,
 				6D70038619BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
+				6D7C30C019CE417400876B31 /* DBSearchViewController.m in Sources */,
 				6D70036819BDC86700AAC079 /* GameSet.m in Sources */,
 				6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */,
 				6D7C30B919CE390E00876B31 /* DBSettingsViewController.m in Sources */,
@@ -551,7 +574,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
-				6DB12C9319BDAB0A00B2BCC8 /* DBSecondViewController.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038119BF380A00AAC079 /* CardFilter.m in Sources */,
 				6D70036F19BDCF6200AAC079 /* GameCard.m in Sources */,
@@ -559,8 +581,10 @@
 				6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */,
 				6D7C30AA19CC6E5B00876B31 /* iCarousel.m in Sources */,
 				6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */,
+				6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
 				6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */,
 				6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
+				6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */,
 				6D70036719BDC86700AAC079 /* GameSet.m in Sources */,
 				6DB12C9019BDAB0A00B2BCC8 /* DBSetViewController.m in Sources */,
 				6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */,

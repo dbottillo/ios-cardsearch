@@ -96,20 +96,20 @@
     MTGCardView *cardView = (MTGCardView *)view;
     MTGCard *card = [cards objectAtIndex:index];
     
+    [cardView.cardImage setHidden:NO];
     if (showImage){
         cardView.cardImage.image = nil;
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        cardView.cardImage.image = responseObject;
+            cardView.cardImage.image = responseObject;
+            [cardView.cardImage setHidden:NO];
         
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [cardView.cardImage setHidden:YES];
+            //[cardView.cardImage setHidden:YES];
         }];
         [requestOperation start];
-    } else {
-        [cardView.cardImage setHidden:NO];
     }
     
     [cardView updateWithCard:card];

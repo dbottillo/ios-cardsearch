@@ -20,4 +20,6 @@
 
 - (NSArray *)cardsOfSet:(int)idSet;
 
+- (NSArray *)cardsOfSearch:(NSString *)text;
+
 @end

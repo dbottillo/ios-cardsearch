@@ -1,0 +1,143 @@
+//
+//  DBSearchViewController.m
+//  MTGSearch
+//
+//  Created by Daniele Bottillo on 21/09/2014.
+//  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
+//
+
+#import "DBSearchViewController.h"
+#import "MTGCard.h"
+#import <MBProgressHUD.h>
+#import "CardsDatabase.h"
+#import "UIViewController+FilterCards.h"
+#import "DBCardsViewController.h"
+
+@interface DBSearchViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *searchTable;
+@property (weak, nonatomic) IBOutlet UISearchBar *cardSearchBar;
+
+@end
+
+@implementation DBSearchViewController
+
+@synthesize searchTable, cardSearchBar, cards, filteredCards;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.navigationItem.title = NSLocalizedString(@"Search", @"search");
+    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navSingleTap)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+    // create a view which covers most of the tap bar to
+    // manage the gestures - if we use the navigation bar
+    // it interferes with the nav buttons
+    CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
+    UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
+    [self.navigationController.navigationBar addSubview:navBarTapView];
+    navBarTapView.backgroundColor = [UIColor clearColor];
+    [navBarTapView setUserInteractionEnabled:YES];
+    [navBarTapView addGestureRecognizer:gestureRecognizer];
+    
+    
+    [searchTable setDataSource:self];
+    [searchTable setDelegate:self];
+    
+    [cardSearchBar setDelegate:self];
+}
+
+
+- (void) viewWillAppear:(BOOL)animated{
+    [self filterCards];
+}
+
+-(void)navSingleTap{
+    [cardSearchBar resignFirstResponder];
+    NSLog(@"tap");
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return filteredCards.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Card"];
+ 
+    MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
+    cell.textLabel.text = card.name;
+ 
+    return cell;
+
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DBCardsViewController *cardsViewController = (DBCardsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Cards"];
+    [cardsViewController setCards:filteredCards];
+    [cardsViewController setCurrentPosition:indexPath.row];
+    [cardsViewController setNameSet:cardSearchBar.text];
+    cardsViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cardsViewController animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    if (searchBar.text.length < 3){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Search error", @"search error")
+                                                        message:NSLocalizedString(@"Search need at least three letters", "@need at leat three letters")
+                                                       delegate:self
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"ok")
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    [searchBar resignFirstResponder];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        cards = [[[CardsDatabase database] cardsOfSearch:searchBar.text] sortedArrayUsingSelector:@selector(compare:)];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self filterCards];
+        });
+    });
+}
+
+- (void)filterCards{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        filteredCards = [self realFilterCards:cards];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [searchTable reloadData];
+        });
+    });
+}
+
+
+@end
