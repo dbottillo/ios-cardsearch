@@ -33,6 +33,10 @@
     carousel.type = iCarouselTypeLinear;
     carousel.pagingEnabled = YES;
     
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"share", @"share") style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+
+    
     self.navigationItem.title = nameSet;
 }
 
@@ -58,6 +62,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)share:(UIBarButtonItem *)barButtonItem{
+    MTGCard *card = [cards objectAtIndex:carousel.currentItemIndex];
+    NSString *text = card.name;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)setCurrentPosition:(int)pos{
