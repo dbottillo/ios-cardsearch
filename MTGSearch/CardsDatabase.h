@@ -18,4 +18,6 @@
 
 - (NSArray *)gameSets;
 
+- (NSArray *)cardsOfSet:(int)idSet;
+
 @end

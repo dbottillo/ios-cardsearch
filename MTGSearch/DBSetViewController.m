@@ -8,15 +8,21 @@
 
 #import "DBSetViewController.h"
 #import <sqlite3.h>
+#import <MBProgressHUD.h>
+#import "MTGCard.h"
+#import "DBAppDelegate.h"
 #import "CardsDatabase.h"
+#import "DBSetPickerViewController.h"
+#import "DBCardsViewController.h"
+#import "DBFilterViewController.h"
 
 @interface DBSetViewController ()
-
-@property (nonatomic) sqlite3 *contactDB;
 
 @end
 
 @implementation DBSetViewController
+
+@synthesize cards, set, filteredCards;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -24,8 +30,44 @@
     
     self.navigationItem.title = @"Cards";
     
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Change" style:UIBarButtonItemStylePlain target:self action:@selector(pickSet:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    setLoaded = false;
+    
     [self loadSets];
+}
 
+- (void) viewWillAppear:(BOOL)animated{
+    if (setLoaded){
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        int indexSet = [userDefaults integerForKey:kSetId];
+        if (currentIndexSet != indexSet){
+            currentIndexSet = indexSet;
+            [self loadSet];
+        } else {
+            if ([app_delegate filterHasChanged]){
+                [self filterCards];
+                [app_delegate setFilterChanged:NO];
+            }
+        }
+    }
+}
+
+- (void)pickSet:(UIBarButtonItem *)barButtonItem{
+    DBSetPickerViewController *setPicker = (DBSetPickerViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"SetPicker"];
+    
+    [self.navigationController pushViewController:setPicker animated:YES];
+}
+
+- (void)openFilter:(UIBarButtonItem *)barButtonItem{
+    DBFilterViewController *filter = (DBFilterViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Filter"];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:filter];
+
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -38,21 +80,107 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 100;
+    return filteredCards.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CardCell"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"title %d", indexPath.row];
+    MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
+    cell.textLabel.text = card.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"subtitle %d", indexPath.row];
     
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    DBCardsViewController *cardsViewController = (DBCardsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Cards"];
+    [cardsViewController setCards:filteredCards];
+    [cardsViewController setCurrentPosition:indexPath.row];
+    [cardsViewController setNameSet:set.name];
+    cardsViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cardsViewController animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (void)loadSets{
-    NSArray *sets = [CardsDatabase database].gameSets;
-    NSLog(@"number of set loaded: %d", [sets count]);
+    app_delegate.sets = [CardsDatabase database].gameSets;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    currentIndexSet = [userDefaults integerForKey:kSetId];
+    //    NSLog(@"number of set loaded: %d", [sets count]);
+    
+    setLoaded = true;
+    
+    [self loadSet];
+}
+
+- (void) loadSet{
+    set = [app_delegate.sets objectAtIndex: currentIndexSet];
+    
+    self.navigationItem.title = set.name;
+    [self loadCardsOfSet];
+}
+
+- (void)loadCardsOfSet{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self filterCards];
+        });
+    });
+}
+
+- (void)filterCards{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        [self realFilterCards];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [self.tableView reloadData];
+        });
+    });
+}
+
+- (void)realFilterCards{
+    filteredCards = [[NSMutableArray alloc] init];
+    
+    for (MTGCard *card in cards){
+        BOOL toAdd = NO;
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+        if (card.colors.count > 0){
+            NSNumber *number = [card.colors objectAtIndex:0];
+            //NSLog(@"card colors %@", number);
+        }
+        if ([card.colors containsObject:[NSNumber numberWithInt:kColorWhite]] && [userDefaults boolForKey:kFilterWhite]) toAdd = YES;
+        if ([card.colors containsObject:[NSNumber numberWithInt:kColorBlue]] && [userDefaults boolForKey:kFilterBlue]) toAdd = YES;
+        if ([card.colors containsObject:[NSNumber numberWithInt:kColorBlack]] && [userDefaults boolForKey:kFilterBlack]) toAdd = YES;
+        if ([card.colors containsObject:[NSNumber numberWithInt:kColorRed]] && [userDefaults boolForKey:kFilterRed]) toAdd = YES;
+        if ([card.colors containsObject:[NSNumber numberWithInt:kColorGreen]] && [userDefaults boolForKey:kFilterGreen]) toAdd = YES;
+        
+        if (card.isALand && [userDefaults boolForKey:kFilterLand]) toAdd = YES;
+        if (card.isAnArtifact && [userDefaults boolForKey:kFilterArtifact]) toAdd = YES;
+        
+        if (toAdd && [card.rarity isEqualToString:@"Common"] && ![userDefaults boolForKey:kFilterCommon]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:@"Uncommon"] && ![userDefaults boolForKey:kFilterUncommon]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:@"Rare"] && ![userDefaults boolForKey:kFilterRare]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:@"Mythic Rare"] && ![userDefaults boolForKey:kFilterMyhtic]) toAdd = NO;
+        
+        if (!toAdd && card.isAnEldrazi) toAdd = YES;
+        
+        if (toAdd){
+            //NSLog(@"adding");
+            [filteredCards addObject:card];
+        }
+    }
+//    NSLog(@"filtering cards");
 }
 
 @end

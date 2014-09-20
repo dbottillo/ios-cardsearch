@@ -1,5 +1,5 @@
 //
-//  GameSet.h
+//  GameCard.h
 //  MTGSearch
 //
 //  Created by Daniele Bottillo on 08/09/2014.
@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GameSet : NSObject{
+@interface GameCard : NSObject{
     int setId;
 }
 
 @property (nonatomic, strong) NSString *name;
-
 
 - (void)setId:(int)newId;
 - (int)getId;

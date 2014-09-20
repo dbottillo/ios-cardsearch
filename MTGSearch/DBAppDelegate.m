@@ -7,12 +7,36 @@
 //
 
 #import "DBAppDelegate.h"
+#import "DBFilterViewController.h"
+#import "DBSettingsViewController.h"
 
 @implementation DBAppDelegate
+
+@synthesize sets;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userDefaultsDictionary = [userDefaults dictionaryRepresentation];
+    //NSLog(@"userDefaultsDictionary %@", userDefaultsDictionary);
+    if (![userDefaultsDictionary.allKeys containsObject:kFilterWhite]){
+        [userDefaults setBool:YES forKey:kFilterWhite];
+        [userDefaults setBool:YES forKey:kFilterBlue];
+        [userDefaults setBool:YES forKey:kFilterBlack];
+        [userDefaults setBool:YES forKey:kFilterRed];
+        [userDefaults setBool:YES forKey:kFilterGreen];
+        [userDefaults setBool:YES forKey:kFilterArtifact];
+        [userDefaults setBool:YES forKey:kFilterLand];
+        [userDefaults setBool:YES forKey:kFilterCommon];
+        [userDefaults setBool:YES forKey:kFilterUncommon];
+        [userDefaults setBool:YES forKey:kFilterRare];
+        [userDefaults setBool:YES forKey:kFilterMyhtic];
+        [userDefaults setBool:YES forKey:kUserImage];
+        [userDefaults synchronize];
+    }
+    
     return YES;
 }
 							
@@ -41,6 +65,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setFilterChanged:(BOOL)change{
+    filterChanged = change;
+}
+
+- (BOOL) filterHasChanged{
+    return filterChanged;
 }
 
 @end

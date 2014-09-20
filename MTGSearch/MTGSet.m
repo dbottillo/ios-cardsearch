@@ -10,6 +10,7 @@
 
 @implementation MTGSet
 
-@synthesize name, code;
+@synthesize code;
+
 
 @end

@@ -1,17 +1,16 @@
 //
-//  GameSet.m
+//  GameCard.m
 //  MTGSearch
 //
 //  Created by Daniele Bottillo on 08/09/2014.
 //  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
 //
 
-#import "GameSet.h"
+#import "GameCard.h"
 
-@implementation GameSet
+@implementation GameCard
 
 @synthesize name;
-
 
 - (void)setId:(int)newId{
     setId = newId;

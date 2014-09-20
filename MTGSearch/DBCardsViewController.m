@@ -1,0 +1,107 @@
+//
+//  DBCardsViewController.m
+//  MTGSearch
+//
+//  Created by Daniele Bottillo on 09/09/2014.
+//  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
+//
+
+#import "DBCardsViewController.h"
+#import "MTGCard.h"
+#import "DBFullCardCell.h"
+#import <UIImageView+AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestOperation.h>
+#import "MTGCardView.h"
+#import "DBSettingsViewController.h"
+
+@interface DBCardsViewController ()
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@end
+
+@implementation DBCardsViewController
+
+@synthesize cards,carousel, nameSet;
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    carousel.type = iCarouselTypeLinear;
+    carousel.pagingEnabled = YES;
+    
+    self.navigationItem.title = nameSet;
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [carousel scrollToItemAtIndex:currentPosition animated:NO];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    showImage = [userDefaults boolForKey:kUserImage];
+    [carousel reloadData];
+}
+
+- (void) viewWillDisappear:(BOOL)animated{
+    [carousel setHidden:YES];
+}
+
+- (void)viewDidUnload{
+    [super viewDidUnload];
+    
+    //free up memory by releasing subviews
+    self.carousel = nil;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)setCurrentPosition:(int)pos{
+    currentPosition = pos;
+}
+
+
+#pragma mark -
+#pragma mark iCarousel methods
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
+    //return the total number of items in the carousel
+    return [cards count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+    //create new view if no view is available for recycling
+    if (view == nil) {
+        view = [[[NSBundle mainBundle] loadNibNamed:@"MTGCardView" owner:self options:nil] lastObject];
+    }
+    
+    MTGCardView *cardView = (MTGCardView *)view;
+    MTGCard *card = [cards objectAtIndex:index];
+    
+    if (showImage){
+        cardView.cardImage.image = nil;
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]]];
+        AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+        requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+        [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        cardView.cardImage.image = responseObject;
+        
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [cardView.cardImage setHidden:YES];
+        }];
+        [requestOperation start];
+    } else {
+        [cardView.cardImage setHidden:NO];
+    }
+    
+    [cardView updateWithCard:card];
+    
+    
+    return view;
+}
+
+@end

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameSet.h"
 
-@interface DBSetViewController : UITableViewController
+@interface DBSetViewController : UITableViewController {
+    int currentIndexSet;
+    BOOL setLoaded;
+}
+
+@property (strong, nonatomic) NSArray *cards;
+@property (strong, nonatomic) NSMutableArray *filteredCards;
+
+@property (strong, nonatomic) GameSet *set;
 
 @end

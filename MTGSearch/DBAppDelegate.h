@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DBAppDelegate : UIResponder <UIApplicationDelegate>
+#define kSetId  @"setId"
+#define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
+
+@interface DBAppDelegate : UIResponder <UIApplicationDelegate>{
+    BOOL filterChanged;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) NSArray *sets;
+
+- (void)setFilterChanged:(BOOL)change;
+- (BOOL)filterHasChanged;
 
 @end

@@ -10,7 +10,6 @@
 
 @interface MTGSet : GameSet
 
-@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *code;
 
 @end
