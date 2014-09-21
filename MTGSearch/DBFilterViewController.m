@@ -62,6 +62,7 @@
 
 - (void)apply:(UIBarButtonItem *)barButtonItem{
     [app_delegate setFilterChanged:YES];
+    [app_delegate setFilterChangedSearch:YES];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     for (CardFilter *filter in filters){
         [userDefaults setBool:filter.isActive forKey:filter.filterKey];

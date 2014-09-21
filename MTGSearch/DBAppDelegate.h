@@ -13,6 +13,7 @@
 
 @interface DBAppDelegate : UIResponder <UIApplicationDelegate>{
     BOOL filterChanged;
+    BOOL filterChangedSearch;
 }
 
 @property (strong, nonatomic) UIWindow *window;
@@ -21,5 +22,8 @@
 
 - (void)setFilterChanged:(BOOL)change;
 - (BOOL)filterHasChanged;
+
+- (void)setFilterChangedSearch:(BOOL)change;
+- (BOOL)filterHasChangedForSearch;
 
 @end

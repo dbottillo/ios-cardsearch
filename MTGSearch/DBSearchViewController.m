@@ -12,6 +12,7 @@
 #import "CardsDatabase.h"
 #import "UIViewController+FilterCards.h"
 #import "DBCardsViewController.h"
+#import "DBAppDelegate.h"
 
 @interface DBSearchViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *searchTable;
@@ -58,12 +59,14 @@
 
 
 - (void) viewWillAppear:(BOOL)animated{
-    [self filterCards];
+    if ([app_delegate filterHasChangedForSearch]){
+        [self filterCards];
+        [app_delegate setFilterChangedSearch:NO];
+    }
 }
 
 -(void)navSingleTap{
     [cardSearchBar resignFirstResponder];
-    NSLog(@"tap");
 }
 
 - (void)didReceiveMemoryWarning {

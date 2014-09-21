@@ -75,4 +75,12 @@
     return filterChanged;
 }
 
+- (void)setFilterChangedSearch:(BOOL)change{
+    filterChangedSearch = change;
+}
+
+- (BOOL)filterHasChangedForSearch{
+    return filterChangedSearch;
+}
+
 @end
