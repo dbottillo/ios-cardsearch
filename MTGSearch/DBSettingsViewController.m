@@ -60,7 +60,11 @@
     [switchImage setHidden:YES];
     
     if (indexPath.section == 0){
-        cell.textLabel.text = @"ciao";
+        if (indexPath.row == 0){
+            cell.textLabel.text = NSLocalizedString(@"About", @"about");
+        }else{
+            cell.textLabel.text = NSLocalizedString(@"Feedback", @"feedback");
+        }
     } else {
         cell.textLabel.text = NSLocalizedString(@"Show image", @"show image");
         [switchImage setHidden:NO];
@@ -80,48 +84,44 @@
     showImage = [sender isOn];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0){
+        if (indexPath.row == 0){
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle: NSLocalizedString(@"About", @"about")
+                                        message: NSLocalizedString(@"The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This application is not produced, endorsed, supported, or affiliated with Wizards of the Coast.", @"about message")
+                                     delegate: nil
+                            cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
+                            otherButtonTitles:nil];
+            [alert show];
+        } else {
+            NSBundle *bundle = [NSBundle mainBundle];
+            NSDictionary *info = [bundle infoDictionary];
+            NSString *prodName = [info objectForKey:@"CFBundleDisplayName"];
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            picker.mailComposeDelegate = self;
+            [picker setSubject:[NSString stringWithFormat:@"%@ - %@", NSLocalizedString(@"Feedback", @"send feedback"), prodName]];
+            NSArray *toRecipients = [NSArray arrayWithObjects:@"mtg@danielebottillo.com",
+                                     nil];
+            [picker setToRecipients:toRecipients];
+            [self presentViewController:picker animated:YES completion:nil];
+        }
+    } else {
+        showImage = !showImage;
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:showImage forKey:kUserImage];
+        [userDefaults synchronize];
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

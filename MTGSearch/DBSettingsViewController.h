@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 #define kUserImage  @"userImage"
 
-@interface DBSettingsViewController : UITableViewController{
+@interface DBSettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate>{
     BOOL showImage;
 }
 
