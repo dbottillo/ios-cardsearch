@@ -22,8 +22,9 @@
 #define kFilterRare     @"FilterRare"
 #define kFilterMyhtic   @"FilterMyhtic"
 
-@interface DBFilterViewController : UITableViewController
+@interface DBFilterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *filterTable;
 @property (strong, nonatomic) NSArray *filters;
 
 @end

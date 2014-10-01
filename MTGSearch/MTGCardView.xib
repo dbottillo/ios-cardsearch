@@ -131,7 +131,6 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="sCW-mm-AJs" secondAttribute="bottom" id="Ao5-dw-6Uz"/>
                 <constraint firstItem="jbY-gZ-ugK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RiN-h4-iqg"/>

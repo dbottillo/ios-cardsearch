@@ -9,19 +9,28 @@
 #import "DBFilterViewController.h"
 #import "DBAppDelegate.h"
 #import "CardFilter.h"
+#import <GADBannerView.h>
 
 @interface DBFilterViewController ()
+
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end
 
 @implementation DBFilterViewController
 
-@synthesize filters;
-
+@synthesize filters, filterTable, bannerView;
 
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    bannerView.adUnitID = @"ca-app-pub-8119815713373556/7301149617";
+    bannerView.rootViewController = self;
+    [app_delegate generateADMobRequestForView:bannerView];
+    
+    [filterTable setDataSource:self];
+    [filterTable setDelegate:self];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -111,7 +120,7 @@
     } else {
         [filter setActive];
     }
-    [self.tableView reloadData];
+    [tableView reloadData];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

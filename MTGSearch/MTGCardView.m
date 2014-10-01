@@ -31,10 +31,7 @@
     
     bannerView.adUnitID = @"ca-app-pub-8119815713373556/8777882818";
     bannerView.rootViewController = rootViewController;
-    GADRequest *request = [GADRequest request];
-//    request.testDevices = @[ GAD_SIMULATOR_ID, @"3ae40d43568707514b60893ecb5b0938" ];
-    request.testDevices = @[ @"3ae40d43568707514b60893ecb5b0938" ];
-    [bannerView loadRequest:request];
+    [app_delegate generateADMobRequestForView:bannerView];
 }
 
 

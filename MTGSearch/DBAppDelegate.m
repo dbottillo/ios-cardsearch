@@ -108,4 +108,11 @@
 
 }
 
+- (void)generateADMobRequestForView:(GADBannerView *)bannerView{
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ GAD_SIMULATOR_ID, @"3ae40d43568707514b60893ecb5b0938" ];
+    [bannerView loadRequest:request];
+
+}
+
 @end

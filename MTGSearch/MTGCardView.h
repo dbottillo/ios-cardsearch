@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MTGCard.h"
 #import <GADBannerView.h>
-#import <GADRequest.h>
+#import "DBAppDelegate.h"
 
 @interface MTGCardView : UIView
 
