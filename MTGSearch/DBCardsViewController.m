@@ -33,7 +33,7 @@
     carousel.type = iCarouselTypeLinear;
     carousel.pagingEnabled = YES;
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"share", @"share") style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_share"]  style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     self.navigationItem.title = nameSet;
