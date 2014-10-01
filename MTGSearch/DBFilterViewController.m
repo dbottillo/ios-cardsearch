@@ -10,6 +10,7 @@
 #import "DBAppDelegate.h"
 #import "CardFilter.h"
 #import <GADBannerView.h>
+#import "UIViewController+NavBar.h"
 
 @interface DBFilterViewController ()
 
@@ -32,6 +33,8 @@
     [filterTable setDataSource:self];
     [filterTable setDelegate:self];
     
+    [self styleNavBar];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     CardFilter *whiteFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show white cards", "white filter") andKey:kFilterWhite andState:[userDefaults boolForKey:kFilterWhite] andGALabel:@"white"];
@@ -53,10 +56,10 @@
     
     self.navigationItem.title = NSLocalizedString(@"Filter", @"filter");
 
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"cancel", @"cancel") style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", @"close") style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
     self.navigationItem.leftBarButtonItem = leftButton;
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"apply", @"apply") style:UIBarButtonItemStylePlain target:self action:@selector(apply:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Apply", @"apply") style:UIBarButtonItemStylePlain target:self action:@selector(apply:)];
     self.navigationItem.rightBarButtonItem = rightButton;
 }
 
@@ -107,7 +110,12 @@
     
     cell.accessoryType = UITableViewCellAccessoryNone;
     if (filter.isActive){
+        [cell.textLabel setTextColor:[DBAppDelegate blueColor]];
+        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        [cell.textLabel setTextColor:[UIColor grayColor]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
     }
     return cell;
 }

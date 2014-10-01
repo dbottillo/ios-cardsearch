@@ -13,6 +13,7 @@
 #import "UIViewController+FilterCards.h"
 #import "DBCardsViewController.h"
 #import "DBAppDelegate.h"
+#import "UIViewController+NavBar.h"
 
 @interface DBSearchViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *searchTable;
@@ -35,7 +36,7 @@
     
     self.navigationItem.title = NSLocalizedString(@"Search", @"search");
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
     self.navigationItem.leftBarButtonItem = leftButton;
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navSingleTap)];
@@ -50,6 +51,8 @@
     [navBarTapView setUserInteractionEnabled:YES];
     [navBarTapView addGestureRecognizer:gestureRecognizer];
     
+    
+    [self styleNavBar];
     
     [searchTable setDataSource:self];
     [searchTable setDelegate:self];

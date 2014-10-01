@@ -16,6 +16,7 @@
 #import "DBCardsViewController.h"
 #import "DBFilterViewController.h"
 #import "UIViewController+FilterCards.h"
+#import "UIViewController+NavBar.h"
 
 @interface DBSetViewController ()
 
@@ -31,16 +32,18 @@
     
     self.navigationItem.title = @"Cards";
     
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
     self.navigationItem.leftBarButtonItem = leftButton;
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Change" style:UIBarButtonItemStylePlain target:self action:@selector(pickSet:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_switch"]  style:UIBarButtonItemStylePlain target:self action:@selector(pickSet:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     setLoaded = false;
     
     //self.navigationController.tabBarController.tabBar.barTintColor = [UIColor blackColor];
     self.navigationController.tabBarController.tabBar.tintColor = [DBAppDelegate blueColor];
+    
+    [self styleNavBar];
     
     UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
     UITabBarItem *targetTabBarItem = [[tabBar items] objectAtIndex:0];

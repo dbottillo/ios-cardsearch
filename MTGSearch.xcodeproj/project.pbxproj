@@ -64,6 +64,8 @@
 		6DB12C9E19BDAB0B00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
 		6DB12CA619BDAB0B00B2BCC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12CA419BDAB0B00B2BCC8 /* InfoPlist.strings */; };
 		6DB12CA819BDAB0B00B2BCC8 /* MTGSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */; };
+		6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
+		6DBEE8F319DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
 		6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6DC9540D19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
@@ -140,6 +142,8 @@
 		6DB12CA319BDAB0B00B2BCC8 /* MTGSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MTGSearchTests-Info.plist"; sourceTree = "<group>"; };
 		6DB12CA519BDAB0B00B2BCC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGSearchTests.m; sourceTree = "<group>"; };
+		6DBEE8F019DC9D75009FC9BD /* UIViewController+NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavBar.h"; sourceTree = "<group>"; };
+		6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavBar.m"; sourceTree = "<group>"; };
 		6DC9540A19C0504F008640C7 /* DBFullCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFullCardCell.h; sourceTree = "<group>"; };
 		6DC9540B19C0504F008640C7 /* DBFullCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFullCardCell.m; sourceTree = "<group>"; };
 		6DDC9CC619DC5214002BBB4F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */,
 				6DB12C8019BDAB0A00B2BCC8 /* Supporting Files */,
 				6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */,
+				6DBEE8F019DC9D75009FC9BD /* UIViewController+NavBar.h */,
+				6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */,
 			);
 			path = MTGSearch;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBEE8F319DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
 				6D70037E19BE840800AAC079 /* DBFilterViewController.m in Sources */,
 				6D70037919BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038219BF380A00AAC079 /* CardFilter.m in Sources */,
@@ -631,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038119BF380A00AAC079 /* CardFilter.m in Sources */,

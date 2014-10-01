@@ -23,6 +23,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.navigationController.navigationBar.barTintColor = [DBAppDelegate blueColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     self.navigationItem.title = NSLocalizedString(@"Settings", @"settings");
 }
 
@@ -75,6 +80,9 @@
         [switchImage addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
         
     }
+    
+    [cell.textLabel setTextColor:[DBAppDelegate blueColor]];
+    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
     
     return cell;
 }
