@@ -116,7 +116,7 @@
         [requestOperation start];
     }
     
-    [cardView updateWithCard:card];
+    [cardView updateWithCard:card andRootViewController:self];
     
     [app_delegate trackPage:[NSString stringWithFormat:@"/card/%d",[card getMultiverseId]]];
     

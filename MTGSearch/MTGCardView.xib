@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -10,11 +11,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCW-mm-AJs">
-                    <rect key="frame" x="0.0" y="455" width="320" height="49"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCW-mm-AJs" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="49" id="Vte-XZ-uTD"/>
+                        <constraint firstAttribute="height" constant="50" id="Vte-XZ-uTD"/>
                         <constraint firstAttribute="width" constant="320" id="lxT-v1-lwa"/>
                     </constraints>
                 </view>
@@ -130,7 +131,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="sCW-mm-AJs" secondAttribute="bottom" id="Ao5-dw-6Uz"/>
                 <constraint firstItem="jbY-gZ-ugK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RiN-h4-iqg"/>
@@ -141,6 +142,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bannerView" destination="sCW-mm-AJs" id="ZVV-wX-V3U"/>
                 <outlet property="cardCost" destination="ufh-W4-Mbq" id="JrS-PN-Jjc"/>
                 <outlet property="cardImage" destination="jbY-gZ-ugK" id="KIZ-gv-7UO"/>
                 <outlet property="cardName" destination="ROf-Eg-u11" id="BGE-wh-kki"/>
