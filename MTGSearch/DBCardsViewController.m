@@ -45,6 +45,8 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     showImage = [userDefaults boolForKey:kUserImage];
     [carousel reloadData];
+    
+    [app_delegate trackPage:@"/cards"];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -72,6 +74,8 @@
     UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"share"];
 }
 
 - (void)setCurrentPosition:(int)pos{
@@ -113,6 +117,8 @@
     }
     
     [cardView updateWithCard:card];
+    
+    [app_delegate trackPage:[NSString stringWithFormat:@"/card/%d",[card getMultiverseId]]];
     
     
     return view;

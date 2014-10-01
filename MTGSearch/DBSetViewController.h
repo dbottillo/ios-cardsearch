@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GameSet.h"
+#import "MTGSet.h"
 
 @interface DBSetViewController : UITableViewController {
     int currentIndexSet;
@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSArray *cards;
 @property (strong, nonatomic) NSMutableArray *filteredCards;
 
-@property (strong, nonatomic) GameSet *set;
+@property (strong, nonatomic) MTGSet *set;
 
 @end

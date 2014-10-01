@@ -9,10 +9,12 @@
 #import "DBAppDelegate.h"
 #import "DBFilterViewController.h"
 #import "DBSettingsViewController.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 @implementation DBAppDelegate
 
-@synthesize sets;
+@synthesize sets, tracker;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -36,6 +38,16 @@
         [userDefaults setBool:YES forKey:kUserImage];
         [userDefaults synchronize];
     }
+    
+    NSString *GACode;
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    if (DEBUG){
+        //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+        GACode = [infoDict objectForKey:@"GA_CODE_DEBUG"];
+    } else {
+        GACode = [infoDict objectForKey:@"GA_CODE"];
+    }
+    tracker = [[GAI sharedInstance] trackerWithTrackingId:GACode];
     
     return YES;
 }
@@ -81,6 +93,19 @@
 
 - (BOOL)filterHasChangedForSearch{
     return filterChangedSearch;
+}
+
+- (void)trackPage:(NSString *)page{
+    [tracker send:[[[GAIDictionaryBuilder createAppView] set:page
+                                                      forKey:kGAIScreenName] build]];
+}
+
+- (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label{
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
+                                                          action:action
+                                                           label:label
+                                                           value:nil] build]];
+
 }
 
 @end

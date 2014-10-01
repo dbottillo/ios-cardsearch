@@ -31,10 +31,10 @@
     NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:currentSetId inSection:0];
     [[self tableView] scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 
+    [app_delegate trackPage:@"/sets"];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -66,6 +66,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    MTGSet *set = [app_delegate.sets objectAtIndex:indexPath.row];
+    
     if (indexPath.row != currentSetId){
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setInteger:indexPath.row forKey:kSetId];
@@ -75,6 +77,8 @@
     [self.navigationController popViewControllerAnimated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"set_selected" andLabel:set.code];
 }
 
 /*

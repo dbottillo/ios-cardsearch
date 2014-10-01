@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import "DBAppDelegate.h"
 
 @interface DBCardsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>{
     int currentPosition;

@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAI.h"
 
 #define kSetId  @"setId"
 #define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define kUACategoryUI           @"ui"
+#define kUACategorySearch       @"search"
+#define kUACategoryFavourite    @"favourite"
+#define kUAActionClick          @"click"
+#define kUAActionToggle         @"toggle"
+#define kUAActionOpen           @"open"
+#define kUAActionSaved          @"saved"
+#define kUAActionUnsaved        @"unsaved"
+#define kUAActionLifeCounter    @"lifeCounter"
 
 @interface DBAppDelegate : UIResponder <UIApplicationDelegate>{
     BOOL filterChanged;
@@ -17,6 +28,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) id<GAITracker> tracker;
 
 @property (strong, nonatomic) NSArray *sets;
 
@@ -25,5 +37,8 @@
 
 - (void)setFilterChangedSearch:(BOOL)change;
 - (BOOL)filterHasChangedForSearch;
+
+- (void)trackPage:(NSString *)page;
+- (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label;
 
 @end

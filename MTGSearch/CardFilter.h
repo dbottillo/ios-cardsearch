@@ -14,8 +14,9 @@
 
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *filterKey;
+@property (strong, nonatomic) NSString *gaLabel;
 
-- (id)initWithName:(NSString *)name andKey:(NSString *)key andState:(BOOL)state;
+- (id)initWithName:(NSString *)name andKey:(NSString *)key andState:(BOOL)state andGALabel:(NSString *)gaLabel;
 
 - (void)setActive;
 - (void)setInactive;

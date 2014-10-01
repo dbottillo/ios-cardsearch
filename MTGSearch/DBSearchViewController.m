@@ -63,6 +63,7 @@
         [self filterCards];
         [app_delegate setFilterChangedSearch:NO];
     }
+    [app_delegate trackPage:@"/search"];
 }
 
 -(void)navSingleTap{
@@ -106,6 +107,8 @@
     [self.navigationController pushViewController:cardsViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:[NSString stringWithFormat:@"card_at_pos:%d", indexPath.row]];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -129,6 +132,8 @@
             [self filterCards];
         });
     });
+    
+    [app_delegate trackEventWithCategory:kUACategorySearch andAction:@"done" andLabel:searchBar.text];
 }
 
 - (void)filterCards{

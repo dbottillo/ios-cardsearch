@@ -25,19 +25,19 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    CardFilter *whiteFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show white cards", "white filter") andKey:kFilterWhite andState:[userDefaults boolForKey:kFilterWhite]];
-    CardFilter *blueFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show blue cards cards", "blue filter") andKey:kFilterBlue andState:[userDefaults boolForKey:kFilterBlue]];
-    CardFilter *blackFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show black cards", "black filter") andKey:kFilterBlack andState:[userDefaults boolForKey:kFilterBlack]];
-    CardFilter *redFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show red cards", "red filter") andKey:kFilterRed andState:[userDefaults boolForKey:kFilterRed]];
-    CardFilter *greenFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show green cards", "green filter") andKey:kFilterGreen andState:[userDefaults boolForKey:kFilterGreen]];
+    CardFilter *whiteFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show white cards", "white filter") andKey:kFilterWhite andState:[userDefaults boolForKey:kFilterWhite] andGALabel:@"white"];
+    CardFilter *blueFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show blue cards cards", "blue filter") andKey:kFilterBlue andState:[userDefaults boolForKey:kFilterBlue] andGALabel:@"blue"];
+    CardFilter *blackFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show black cards", "black filter") andKey:kFilterBlack andState:[userDefaults boolForKey:kFilterBlack] andGALabel:@"black"];
+    CardFilter *redFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show red cards", "red filter") andKey:kFilterRed andState:[userDefaults boolForKey:kFilterRed] andGALabel:@"red"];
+    CardFilter *greenFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show green cards", "green filter") andKey:kFilterGreen andState:[userDefaults boolForKey:kFilterGreen] andGALabel:@"green"];
     
-    CardFilter *artifactFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show artifact cards", "artifact filter") andKey:kFilterArtifact andState:[userDefaults boolForKey:kFilterArtifact]];
-    CardFilter *landFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show land cards", "land filter") andKey:kFilterLand andState:[userDefaults boolForKey:kFilterLand]];
+    CardFilter *artifactFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show artifact cards", "artifact filter") andKey:kFilterArtifact andState:[userDefaults boolForKey:kFilterArtifact] andGALabel:@"artifact"];
+    CardFilter *landFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show land cards", "land filter") andKey:kFilterLand andState:[userDefaults boolForKey:kFilterLand] andGALabel:@"land"];
     
-    CardFilter *commonFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show common cards", "common filter") andKey:kFilterCommon andState:[userDefaults boolForKey:kFilterCommon]];
-    CardFilter *uncommonFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show uncommon cards", "uncommon filter") andKey:kFilterUncommon andState:[userDefaults boolForKey:kFilterUncommon]];
-    CardFilter *rareFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show rare cards", "rare filter") andKey:kFilterRare andState:[userDefaults boolForKey:kFilterRare]];
-    CardFilter *mythicFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show rare mythic cards", "rare mythic filter") andKey:kFilterMyhtic andState:[userDefaults boolForKey:kFilterMyhtic]];
+    CardFilter *commonFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show common cards", "common filter") andKey:kFilterCommon andState:[userDefaults boolForKey:kFilterCommon] andGALabel:@"common"];
+    CardFilter *uncommonFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show uncommon cards", "uncommon filter") andKey:kFilterUncommon andState:[userDefaults boolForKey:kFilterUncommon] andGALabel:@"uncommon"];
+    CardFilter *rareFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show rare cards", "rare filter") andKey:kFilterRare andState:[userDefaults boolForKey:kFilterRare] andGALabel:@"rare"];
+    CardFilter *mythicFilter = [[CardFilter alloc] initWithName:NSLocalizedString(@"Show rare mythic cards", "rare mythic filter") andKey:kFilterMyhtic andState:[userDefaults boolForKey:kFilterMyhtic] andGALabel:@"mythic"];
     
     filters = [[NSArray alloc] initWithObjects:whiteFilter, blueFilter, blackFilter, redFilter, greenFilter,
                artifactFilter, landFilter, commonFilter, uncommonFilter, rareFilter, mythicFilter, nil];
@@ -56,11 +56,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [app_delegate trackPage:@"/filter"];
+}
+
 - (void)cancel:(UIBarButtonItem *)barButtonItem{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)apply:(UIBarButtonItem *)barButtonItem{
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"update_filter" andLabel:@""];
     [app_delegate setFilterChanged:YES];
     [app_delegate setFilterChangedSearch:YES];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -98,7 +104,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     CardFilter *filter = [filters objectAtIndex:indexPath.row];
     
     if (filter.isActive){
@@ -109,6 +114,8 @@
     [self.tableView reloadData];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionToggle andLabel:filter.gaLabel];
 }
 
 @end

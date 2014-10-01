@@ -56,6 +56,7 @@
             }
         }
     }
+    [app_delegate trackPage:@"/main"];
 }
 
 - (void)pickSet:(UIBarButtonItem *)barButtonItem{
@@ -98,6 +99,8 @@
     [self.navigationController pushViewController:cardsViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:[NSString stringWithFormat:@"card_at_pos:%d", indexPath.row]];
 }
 
 - (void)loadSets{
@@ -114,7 +117,7 @@
 
 - (void) loadSet{
     set = [app_delegate.sets objectAtIndex: currentIndexSet];
-    
+    [app_delegate trackPage:[NSString stringWithFormat:@"/set/%@", set.code]];
     self.navigationItem.title = set.name;
     [self loadCardsOfSet];
 }

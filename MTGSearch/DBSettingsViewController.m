@@ -30,6 +30,8 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     showImage = [userDefaults boolForKey:kUserImage];
     [self.tableView reloadData];
+    
+    [app_delegate trackPage:@"/settings"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +84,7 @@
     [userDefaults setBool:[sender isOn] forKey:kUserImage];
     [userDefaults synchronize];
     showImage = [sender isOn];
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"image_on_off"];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -95,6 +98,7 @@
                             cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
                             otherButtonTitles:nil];
             [alert show];
+            [app_delegate trackPage:@"/about"];
         } else {
             NSBundle *bundle = [NSBundle mainBundle];
             NSDictionary *info = [bundle infoDictionary];
@@ -106,6 +110,7 @@
                                      nil];
             [picker setToRecipients:toRecipients];
             [self presentViewController:picker animated:YES completion:nil];
+            [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"feedback"];
         }
     } else {
         showImage = !showImage;
@@ -113,6 +118,7 @@
         [userDefaults setBool:showImage forKey:kUserImage];
         [userDefaults synchronize];
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"image_on_off"];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
