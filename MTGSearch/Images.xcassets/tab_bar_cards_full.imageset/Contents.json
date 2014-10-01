@@ -2,13 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "second.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "second@2x.png"
+      "filename" : "tab_bar_cards_full@2x.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "tab_bar_cards_full@3x.png"
     }
   ],
   "info" : {

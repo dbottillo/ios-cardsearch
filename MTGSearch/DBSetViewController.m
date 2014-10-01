@@ -39,6 +39,16 @@
     
     setLoaded = false;
     
+    //self.navigationController.tabBarController.tabBar.barTintColor = [UIColor blackColor];
+    self.navigationController.tabBarController.tabBar.tintColor = [DBAppDelegate blueColor];
+    
+    UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
+    UITabBarItem *targetTabBarItem = [[tabBar items] objectAtIndex:0];
+    [targetTabBarItem setTitle:NSLocalizedString(@"Cards", "@cards")];
+    UIImage *selectedIcon = [UIImage imageNamed:@"tab_bar_cards_full"];
+    [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+
+    
     [self loadSets];
 }
 

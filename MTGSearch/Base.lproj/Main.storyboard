@@ -283,6 +283,7 @@
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.22352941176470587" green="0.38431372549019605" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="sMU-2J-CX6" kind="relationship" relationship="viewControllers" id="sLY-Fh-Vwt"/>
@@ -294,11 +295,11 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Cards-->
+        <!--Navigation Controller-->
         <scene sceneID="KrU-Tm-gIa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sMU-2J-CX6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cards" id="ab0-SK-gP7"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_cards" id="ab0-SK-gP7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zqd-kj-LbK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -313,11 +314,11 @@
             </objects>
             <point key="canvasLocation" x="649" y="-520"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="5AX-sr-f6Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kPs-JX-ozu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="jAQ-BC-8bF"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="jAQ-BC-8bF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="59Q-h4-1yj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -332,11 +333,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="897"/>
         </scene>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="30Z-Zk-Ou7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4a-oa-Bz4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NcA-h2-gMq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -351,44 +352,10 @@
             </objects>
             <point key="canvasLocation" x="653" y="180"/>
         </scene>
-        <!--Filter View Controller-->
-        <scene sceneID="6aB-T4-aUo">
-            <objects>
-                <tableViewController id="SIA-yc-UdR" customClass="DBFilterViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TI3-0g-5Yp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="uqB-Ys-GqZ" style="IBUITableViewCellStyleDefault" id="hmV-pR-xN3">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hmV-pR-xN3" id="9Dj-e0-8ny">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uqB-Ys-GqZ">
-                                            <rect key="frame" x="15" y="0.0" width="266" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="SIA-yc-UdR" id="1xe-0H-8TZ"/>
-                            <outlet property="delegate" destination="SIA-yc-UdR" id="yOU-Nt-enj"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oy2-6W-PPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-134" y="1573"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="tab_bar_cards" width="33" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

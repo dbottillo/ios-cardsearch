@@ -35,7 +35,6 @@
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"share", @"share") style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = rightButton;
-
     
     self.navigationItem.title = nameSet;
 }

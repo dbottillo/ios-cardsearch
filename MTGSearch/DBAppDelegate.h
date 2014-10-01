@@ -45,4 +45,7 @@
 
 - (void)generateADMobRequestForView:(GADBannerView *)bannerView;
 
++ (UIColor *)blueColor;
++ (UIColor*)colorWithHexString:(NSString*)hex;
+
 @end

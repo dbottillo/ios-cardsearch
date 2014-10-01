@@ -70,6 +70,8 @@
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
 		6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
+		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
+		6DDC9CDC19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		92434AB9211B463A8792252B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +156,7 @@
 		6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6DDC9CD519DC524C002BBB4F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DAD1DACEA824BEFAF35E1A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -345,6 +348,7 @@
 				6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */,
 				6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */,
 				6DB12C8019BDAB0A00B2BCC8 /* Supporting Files */,
+				6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */,
 			);
 			path = MTGSearch;
 			sourceTree = "<group>";
@@ -506,6 +510,7 @@
 				6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */,
 				6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */,
 				6D7C30B019CC73D800876B31 /* MTGCardView.xib in Resources */,
+				6DDC9CDC19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
 				6D70035419BDC27C00AAC079 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +522,7 @@
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
 				6D7C30AF19CC73D800876B31 /* MTGCardView.xib in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
+				6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
 				6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */,
 				6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */,
 			);
@@ -752,7 +758,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -784,7 +790,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -795,7 +801,6 @@
 			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch/MTGSearch-Info.plist";
@@ -804,6 +809,7 @@
 					"$(PROJECT_DIR)/MTGSearch",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -813,7 +819,6 @@
 			baseConfigurationReference = 64A66CCF28064EB69C148C47 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch/MTGSearch-Info.plist";
@@ -822,6 +827,7 @@
 					"$(PROJECT_DIR)/MTGSearch",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
