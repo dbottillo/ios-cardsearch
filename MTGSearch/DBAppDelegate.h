@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GAI.h"
-#import <GADBannerView.h>
-#import <GADRequest.h>
-
 #define kSetId  @"setId"
 #define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -42,8 +39,6 @@
 
 - (void)trackPage:(NSString *)page;
 - (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label;
-
-- (void)generateADMobRequestForView:(GADBannerView *)bannerView;
 
 + (UIColor *)blueColor;
 + (UIColor*)colorWithHexString:(NSString*)hex;

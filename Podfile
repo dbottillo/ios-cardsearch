@@ -1,4 +1,4 @@
 platform :ios, '7.0'
+source 'https://github.com/CocoaPods/Specs.git'
 pod 'AFNetworking', '~> 2.2'
 pod 'MBProgressHUD', '~> 0.8'
-pod 'Google-Mobile-Ads-SDK', '~> 6.10'

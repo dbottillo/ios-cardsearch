@@ -11,7 +11,7 @@
 @implementation MTGCardView
 
 @synthesize cardImage, cardName, cardType;
-@synthesize cardCost, cardPowerToughness, cardText, bannerView;
+@synthesize cardCost, cardPowerToughness, cardText;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -21,17 +21,13 @@
 }
 */
 
-- (void) updateWithCard:(MTGCard *)card andRootViewController:(UIViewController *)rootViewController{
+- (void) updateWithCard:(MTGCard *)card{
     [cardName setText:card.name];
     [cardType setText:card.type];
     [cardCost setText:card.manaCost];
     [cardPowerToughness setText:[NSString stringWithFormat:@"%@/%@",card.power,card.toughness]];
     [cardText setText:card.text];
     [cardText sizeToFit];
-    
-    bannerView.adUnitID = @"ca-app-pub-8119815713373556/8777882818";
-    bannerView.rootViewController = rootViewController;
-    [app_delegate generateADMobRequestForView:bannerView];
 }
 
 
