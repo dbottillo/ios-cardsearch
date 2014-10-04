@@ -70,7 +70,7 @@
         <scene sceneID="BAB-eA-WcY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bZ3-ru-uBO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="more" id="QNj-g5-48f"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_settings" id="QNj-g5-48f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XAN-n4-LbP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -101,6 +101,7 @@
     </scenes>
     <resources>
         <image name="tab_bar_cards" width="33" height="32"/>
+        <image name="tab_bar_settings" width="25" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

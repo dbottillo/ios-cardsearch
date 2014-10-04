@@ -52,7 +52,6 @@
     [navBarTapView setUserInteractionEnabled:YES];
     [navBarTapView addGestureRecognizer:gestureRecognizer];
     
-    
     [self styleNavBar];
     
     [searchTable setDataSource:self];

@@ -48,7 +48,9 @@
     
     UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
     UITabBarItem *targetTabBarItem = [[tabBar items] objectAtIndex:0];
-    [targetTabBarItem setTitle:NSLocalizedString(@"Cards", "@cards")];
+    [[[tabBar items] objectAtIndex:1] setTitle:NSLocalizedString(@"Search", @"search")];
+    [[[tabBar items] objectAtIndex:2] setTitle:NSLocalizedString(@"Settings", @"settings")];
+    [targetTabBarItem setTitle:NSLocalizedString(@"Cards", @"cards")];
     UIImage *selectedIcon = [UIImage imageNamed:@"tab_bar_cards_full"];
     [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
