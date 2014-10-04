@@ -13,6 +13,7 @@
 #import <AFNetworking/AFHTTPRequestOperation.h>
 #import "MTGCardView.h"
 #import "DBSettingsViewController.h"
+#import <AFNetworking.h>
 
 @interface DBCardsViewController ()
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
@@ -94,6 +95,7 @@
     //create new view if no view is available for recycling
     if (view == nil) {
         view = [[[NSBundle mainBundle] loadNibNamed:@"MTGCardView" owner:self options:nil] lastObject];
+        [view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg_pattern"]]];
     }
     
     MTGCardView *cardView = (MTGCardView *)view;
@@ -114,8 +116,17 @@
         }];
         [requestOperation start];
     }
+    [cardView updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
+    NSString *url = [NSString stringWithFormat:@"http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [cardView updatePriceWith:[responseObject objectAtIndex:0]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [cardView updatePriceWith:NSLocalizedString(@"Error", @"error price")];
+    }];
     
     [cardView updateWithCard:card];
+    [cardView updateLabelIndicator:index AndTotal:cards.count];
     
     [app_delegate trackPage:[NSString stringWithFormat:@"/card/%d",[card getMultiverseId]]];
     

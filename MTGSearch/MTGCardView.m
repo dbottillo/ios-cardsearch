@@ -10,8 +10,8 @@
 
 @implementation MTGCardView
 
-@synthesize cardImage, cardName, cardType;
-@synthesize cardCost, cardPowerToughness, cardText;
+@synthesize cardImage, cardName, cardType, labelIndicator;
+@synthesize cardCost, cardPowerToughness, cardText, cardPrice;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -30,5 +30,12 @@
     [cardText sizeToFit];
 }
 
+- (void) updatePriceWith:(NSString *) string{
+    [cardPrice setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Price", "@price"), string]];
+}
+
+- (void) updateLabelIndicator:(int) current AndTotal:(int)total{
+    [labelIndicator setText:[NSString stringWithFormat:@"%d / %d", current, total]];
+}
 
 @end
