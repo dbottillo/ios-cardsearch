@@ -41,6 +41,18 @@
 - (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label;
 
 + (UIColor *)blueColor;
++ (UIColor *)greyWhite;
++ (UIColor *)greyBlue;
++ (UIColor *)greyBlack;
++ (UIColor *)greyRed;
++ (UIColor *)greyGreen;
++ (UIColor *)greyMulticolor;
++ (UIColor *)greyArtifact;
++ (UIColor *)common;
++ (UIColor *)unCommon;
++ (UIColor *)rare;
++ (UIColor *)Mythic;
++ (UIColor *)grey;
 + (UIColor*)colorWithHexString:(NSString*)hex;
 
 @end

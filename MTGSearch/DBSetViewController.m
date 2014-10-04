@@ -17,6 +17,7 @@
 #import "DBFilterViewController.h"
 #import "UIViewController+FilterCards.h"
 #import "UIViewController+NavBar.h"
+#import "DBCardCell.h"
 
 @interface DBSetViewController ()
 
@@ -84,6 +85,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.0;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -93,12 +98,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CardCell"];
+    DBCardCell *cell = (DBCardCell *)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
     
     MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
-    cell.textLabel.text = card.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"subtitle %d", indexPath.row];
-    
+    [cell updateWithCard:card];
     return cell;
 }
 
@@ -153,6 +156,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self.tableView reloadData];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
 }

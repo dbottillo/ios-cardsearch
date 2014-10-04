@@ -13,6 +13,7 @@
 #import "UIViewController+FilterCards.h"
 #import "DBCardsViewController.h"
 #import "DBAppDelegate.h"
+#import "DBCardCell.h"
 #import "UIViewController+NavBar.h"
 
 @interface DBSearchViewController ()
@@ -85,21 +86,22 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.0;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return filteredCards.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Card"];
- 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    DBCardCell *cell = (DBCardCell *)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
+    
     MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
-    cell.textLabel.text = card.name;
- 
+    [cell updateWithCard:card];
     return cell;
-
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DBCardsViewController *cardsViewController = (DBCardsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Cards"];
@@ -146,6 +148,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [searchTable reloadData];
+            [searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
 }

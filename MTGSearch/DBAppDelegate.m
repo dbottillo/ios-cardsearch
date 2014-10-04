@@ -112,6 +112,55 @@
     return [DBAppDelegate colorWithHexString:@"39627E"];
 }
 
++ (UIColor *)greyWhite{
+    return [DBAppDelegate colorWithHexString:@"FDF1A2"];
+}
+
++ (UIColor *)greyBlue{
+    return [DBAppDelegate colorWithHexString:@"7FC3F8"];
+}
+
++ (UIColor *)greyBlack{
+    return [DBAppDelegate colorWithHexString:@"AAA8A8"];
+}
+
++ (UIColor *)greyRed{
+    return [DBAppDelegate colorWithHexString:@"FCBCA0"];
+}
+
++ (UIColor *)greyGreen{
+    return [DBAppDelegate colorWithHexString:@"B1FCA3"];
+}
+
++ (UIColor *)greyMulticolor{
+    return [DBAppDelegate colorWithHexString:@"a571b0"];
+}
+
++ (UIColor *)greyArtifact{
+    return [DBAppDelegate colorWithHexString:@"b5b5b5"];
+}
+
++ (UIColor *)common{
+    return [DBAppDelegate colorWithHexString:@"666666"];
+}
+
++ (UIColor *)unCommon{
+    return [DBAppDelegate colorWithHexString:@"a8a8a8"];
+}
+
++ (UIColor *)rare{
+    return [DBAppDelegate colorWithHexString:@"BD9723"];
+}
+
++ (UIColor *)Mythic{
+    return [DBAppDelegate colorWithHexString:@"D46805"];
+}
+
++ (UIColor *)grey{
+    return [DBAppDelegate colorWithHexString:@"F2F2F2"];
+}
+
+
 + (UIColor*)colorWithHexString:(NSString*)hex{
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     

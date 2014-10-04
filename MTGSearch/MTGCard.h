@@ -14,6 +14,11 @@
 #define kColorRed       3
 #define kColorGreen     4
 
+#define kRarityCommon       @"Common"
+#define kRarityUncommon     @"Uncommon"
+#define kRarityRare         @"Rare"
+#define kRarityMythic       @"Mythic Rare"
+
 @interface MTGCard : GameCard{
     int cmc;
     BOOL isMultiColor;
