@@ -95,7 +95,7 @@
     //create new view if no view is available for recycling
     if (view == nil) {
         view = [[[NSBundle mainBundle] loadNibNamed:@"MTGCardView" owner:self options:nil] lastObject];
-        [view setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg_pattern"]]];
+        [((MTGCardView *)view) setup];
     }
     
     MTGCardView *cardView = (MTGCardView *)view;

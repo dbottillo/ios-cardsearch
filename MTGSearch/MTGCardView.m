@@ -12,6 +12,7 @@
 
 @synthesize cardImage, cardName, cardType, labelIndicator;
 @synthesize cardCost, cardPowerToughness, cardText, cardPrice;
+@synthesize ptTitle, manacostTitle, typeTitle;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -20,6 +21,13 @@
     // Drawing code
 }
 */
+
+- (void)setup{
+    [self setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bg_pattern"]]];
+    [ptTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"P/T", @"power toughness")]];
+    [manacostTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Mana Cost", @"manacost")]];
+    [typeTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Type", @"type")]];
+}
 
 - (void) updateWithCard:(MTGCard *)card{
     [cardName setText:card.name];

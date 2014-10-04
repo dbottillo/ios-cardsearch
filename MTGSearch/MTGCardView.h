@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cardImage;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *labelIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *typeTitle;
+@property (weak, nonatomic) IBOutlet UILabel *ptTitle;
+@property (weak, nonatomic) IBOutlet UILabel *manacostTitle;
 
 @property (weak, nonatomic) IBOutlet UILabel *cardName;
 @property (weak, nonatomic) IBOutlet UILabel *cardType;
@@ -23,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardPowerToughness;
 @property (weak, nonatomic) IBOutlet UILabel *cardPrice;
 
+- (void)setup;
 - (void) updateWithCard:(MTGCard *)card;
 - (void) updatePriceWith:(NSString *) string;
 - (void) updateLabelIndicator:(int) current AndTotal:(int)total;

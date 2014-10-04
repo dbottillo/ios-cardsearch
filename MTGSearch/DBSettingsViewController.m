@@ -105,7 +105,7 @@
         if (indexPath.row == 0){
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle: NSLocalizedString(@"About", @"about")
-                                        message: NSLocalizedString(@"The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast. This application is not produced, endorsed, supported, or affiliated with Wizards of the Coast.", @"about message")
+                                        message: NSLocalizedString(@"about message", @"about message")
                                      delegate: nil
                             cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
                             otherButtonTitles:nil];

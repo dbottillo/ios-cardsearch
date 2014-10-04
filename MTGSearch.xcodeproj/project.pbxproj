@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
 		6D25A10819DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
+		6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
+		6D57A4B319E03BE00099C96B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
 		6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
 		6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
 		6D70034B19BDC27C00AAC079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
@@ -93,6 +95,12 @@
 		4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6D25A10519DDD53600ACB73A /* DBCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardCell.h; sourceTree = "<group>"; };
 		6D25A10619DDD53600ACB73A /* DBCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardCell.m; sourceTree = "<group>"; };
+		6D57A4A619E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		6D57A4A719E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D57A4A819E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D57A4B419E03BE00099C96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D57A4B619E03BE30099C96B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D57A4B719E03BE30099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D70035919BDC27C00AAC079 /* HSSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D70035A19BDC27C00AAC079 /* HSSearch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = HSSearch.plist; path = /Users/danielebottillo/XCodeProjects/MTGSearch/HSSearch.plist; sourceTree = "<absolute>"; };
 		6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -361,6 +369,7 @@
 				6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */,
 				6DBEE8F019DC9D75009FC9BD /* UIViewController+NavBar.h */,
 				6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */,
+				6D57A4B519E03BE00099C96B /* Localizable.strings */,
 			);
 			path = MTGSearch;
 			sourceTree = "<group>";
@@ -511,6 +520,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 6DB12C6D19BDAB0A00B2BCC8;
 			productRefGroup = 6DB12C7719BDAB0A00B2BCC8 /* Products */;
@@ -530,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */,
+				6D57A4B319E03BE00099C96B /* Localizable.strings in Resources */,
 				6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */,
 				6D7C30B019CC73D800876B31 /* MTGCardView.xib in Resources */,
 				6DDC9CDC19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
@@ -544,6 +555,7 @@
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
 				6D7C30AF19CC73D800876B31 /* MTGCardView.xib in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
+				6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */,
 				6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
 				6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */,
 				6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */,
@@ -697,10 +709,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6D57A4B519E03BE00099C96B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D57A4B419E03BE00099C96B /* Base */,
+				6D57A4B619E03BE30099C96B /* en */,
+				6D57A4B719E03BE30099C96B /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6DB12C8319BDAB0A00B2BCC8 /* en */,
+				6D57A4A719E023A20099C96B /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -709,6 +732,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6DB12C8C19BDAB0A00B2BCC8 /* Base */,
+				6D57A4A619E023A20099C96B /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -717,6 +741,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6DB12CA519BDAB0B00B2BCC8 /* en */,
+				6D57A4A819E023A20099C96B /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

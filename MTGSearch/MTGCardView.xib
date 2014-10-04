@@ -76,8 +76,8 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-4l-eKr">
-                            <rect key="frame" x="15" y="202" width="290" height="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-4l-eKr">
+                            <rect key="frame" x="15" y="202" width="290" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -173,6 +173,9 @@
                 <outlet property="cardText" destination="CSy-4l-eKr" id="kEk-mg-LZI"/>
                 <outlet property="cardType" destination="twL-1c-pyd" id="whY-Ha-ASG"/>
                 <outlet property="labelIndicator" destination="brY-wR-tmS" id="1xt-oN-6yV"/>
+                <outlet property="manacostTitle" destination="Ure-of-BId" id="u26-GJ-qU5"/>
+                <outlet property="ptTitle" destination="0kF-Rn-dCN" id="7hG-Yo-2cd"/>
+                <outlet property="typeTitle" destination="32O-Bu-pdt" id="72G-dj-thE"/>
             </connections>
             <point key="canvasLocation" x="277" y="76"/>
         </view>

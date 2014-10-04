@@ -1,0 +1,88 @@
+/* about */
+"About" = "About"; /* NEW */
+
+/* apply */
+"Apply" = "Applica"; /* NEW */
+
+/* cards */
+"Cards" = "Carte"; /* NEW */
+
+/* close */
+"Close" = "Chiudi"; /* NEW */
+
+/* error price */
+"Error" = "Error"; /* NEW */
+
+/* feedback
+ send feedback */
+"Feedback" = "Feedback"; /* NEW */
+
+/* filter */
+"Filter" = "Filtri"; /* NEW */
+
+/* loading */
+"Loading..." = "Caricamento..."; /* NEW */
+
+/* ok */
+"Ok" = "Ok"; /* NEW */
+
+/* ok */
+"OK" = "OK"; /* NEW */
+
+/* pick set */
+"Pick a set" = "Scegli un set"; /* NEW */
+
+/* @price */
+"Price" = "Prezzo"; /* NEW */
+
+/* search */
+"Search" = "Cerca"; /* NEW */
+
+/* search error */
+"Search error" = "Error nella ricerca"; /* NEW */
+
+/* @need at leat three letters */
+"Search need at least three letters" = "Devi inserire almeno tre lettere per effetuare una ricerca"; /* NEW */
+
+/* settings */
+"Settings" = "Imposazioni"; /* NEW */
+
+/* artifact filter */
+"Show artifact cards" = "Includi carte artefatto"; /* NEW */
+
+/* black filter */
+"Show black cards" = "Includi carte nere"; /* NEW */
+
+/* blue filter */
+"Show blue cards cards" = "Includi carte blue"; /* NEW */
+
+/* common filter */
+"Show common cards" = "Includi comuni"; /* NEW */
+
+/* green filter */
+"Show green cards" = "Includi carte verdi"; /* NEW */
+
+/* show image */
+"Show image" = "Mostra immagini"; /* NEW */
+
+/* land filter */
+"Show land cards" = "Includi terre"; /* NEW */
+
+/* rare filter */
+"Show rare cards" = "Includi rare"; /* NEW */
+
+/* rare mythic filter */
+"Show rare mythic cards" = "Includi rare mitiche"; /* NEW */
+
+/* red filter */
+"Show red cards" = "Includi carte rossi"; /* NEW */
+
+/* uncommon filter */
+"Show uncommon cards" = "Includi non comuni"; /* NEW */
+
+/* white filter */
+"Show white cards" = "Includi carte bianche"; /* NEW */
+
+/* about message */
+"about message" = "Le informazioni presenti su questo sito riguardo Magic: The Gathering, sia testuali che grafiche, appartengono alla Wizards of the Coast. Questa applicazione non e\' prodotta, sponsorizzata, supportata o affiliata alla Wizards of the Coast."; /* NEW */
+
