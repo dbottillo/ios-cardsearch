@@ -51,7 +51,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 0) return @"MTG Cards Info";
+    if (section == 0) {
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSDictionary *info = [bundle infoDictionary];
+        return [info objectForKey:@"CFBundleDisplayName"];
+    }
     return NSLocalizedString(@"Cards", @"cards");
 }
 

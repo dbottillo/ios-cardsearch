@@ -12,12 +12,12 @@
 
 @synthesize filterKey, displayName, gaLabel;
 
-- (id)initWithName:(NSString *)name andKey:(NSString *)key andState:(BOOL)state andGALabel:(NSString *)gaLabel{
+- (id)initWithName:(NSString *)name andKey:(NSString *)key andState:(BOOL)state andGALabel:(NSString *)label{
     self = [super init];
     if (self != nil){
         self.displayName = name;
         self.filterKey = key;
-        self.gaLabel = gaLabel;
+        self.gaLabel = label;
         active = state;
     }
     return self;

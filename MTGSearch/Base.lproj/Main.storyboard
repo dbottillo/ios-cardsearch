@@ -383,7 +383,7 @@
         <scene sceneID="30Z-Zk-Ou7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4a-oa-Bz4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" image="tab_bar_search" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NcA-h2-gMq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -401,6 +401,7 @@
     </scenes>
     <resources>
         <image name="tab_bar_cards" width="33" height="32"/>
+        <image name="tab_bar_search" width="25" height="25"/>
         <image name="tab_bar_settings" width="25" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

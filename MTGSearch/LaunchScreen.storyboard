@@ -86,7 +86,7 @@
         <scene sceneID="iOE-Dv-l2e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1x-OD-QfH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="Dk6-2H-9Wb"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_search" id="Dk6-2H-9Wb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIH-ua-Lac">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -101,6 +101,7 @@
     </scenes>
     <resources>
         <image name="tab_bar_cards" width="33" height="32"/>
+        <image name="tab_bar_search" width="25" height="25"/>
         <image name="tab_bar_settings" width="25" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

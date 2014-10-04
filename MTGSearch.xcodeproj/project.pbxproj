@@ -349,7 +349,6 @@
 				6DDC9CC519DC51E4002BBB4F /* vendor */,
 				6D7C30BC19CE410300876B31 /* Search */,
 				6D7C30B519CE38FD00876B31 /* Settings */,
-				6D7C30A719CC6E4D00876B31 /* iCarousel */,
 				6D70037A19BE83FA00AAC079 /* Filter */,
 				6D70037519BE2BEA00AAC079 /* Sets */,
 				6D70036419BDC84400AAC079 /* Data Provider */,
@@ -398,6 +397,7 @@
 		6DDC9CC519DC51E4002BBB4F /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				6D7C30A719CC6E4D00876B31 /* iCarousel */,
 				6DDC9CD019DC521B002BBB4F /* Google Analytics */,
 			);
 			name = vendor;

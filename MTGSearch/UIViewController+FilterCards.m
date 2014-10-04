@@ -27,10 +27,10 @@
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
-        if (card.colors.count > 0){
+        /*if (card.colors.count > 0){
             NSNumber *number = [card.colors objectAtIndex:0];
-            //NSLog(@"card colors %@", number);
-        }
+            NSLog(@"card colors %@", number);
+        }*/
         if ([card.colors containsObject:[NSNumber numberWithInt:kColorWhite]] && [userDefaults boolForKey:kFilterWhite]) toAdd = YES;
         if ([card.colors containsObject:[NSNumber numberWithInt:kColorBlue]] && [userDefaults boolForKey:kFilterBlue]) toAdd = YES;
         if ([card.colors containsObject:[NSNumber numberWithInt:kColorBlack]] && [userDefaults boolForKey:kFilterBlack]) toAdd = YES;
@@ -40,10 +40,10 @@
         if (card.isALand && [userDefaults boolForKey:kFilterLand]) toAdd = YES;
         if (card.isAnArtifact && [userDefaults boolForKey:kFilterArtifact]) toAdd = YES;
         
-        if (toAdd && [card.rarity isEqualToString:@"Common"] && ![userDefaults boolForKey:kFilterCommon]) toAdd = NO;
-        if (toAdd && [card.rarity isEqualToString:@"Uncommon"] && ![userDefaults boolForKey:kFilterUncommon]) toAdd = NO;
-        if (toAdd && [card.rarity isEqualToString:@"Rare"] && ![userDefaults boolForKey:kFilterRare]) toAdd = NO;
-        if (toAdd && [card.rarity isEqualToString:@"Mythic Rare"] && ![userDefaults boolForKey:kFilterMyhtic]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:kRarityCommon] && ![userDefaults boolForKey:kFilterCommon]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:kRarityUncommon] && ![userDefaults boolForKey:kFilterUncommon]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:kRarityRare] && ![userDefaults boolForKey:kFilterRare]) toAdd = NO;
+        if (toAdd && [card.rarity isEqualToString:kRarityMythic] && ![userDefaults boolForKey:kFilterMyhtic]) toAdd = NO;
         
         if (!toAdd && card.isAnEldrazi) toAdd = YES;
         
