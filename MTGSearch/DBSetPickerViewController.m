@@ -28,7 +28,11 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     currentSetId = [userDefaults integerForKey:@"setId"];
     
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:currentSetId inSection:0];
+    int target = currentSetId;
+    if (currentSetId > 1){
+        target = currentSetId - 1;
+    }
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:target inSection:0];
     [[self tableView] scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 
     [app_delegate trackPage:@"/sets"];
@@ -57,8 +61,13 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     if (indexPath.row == currentSetId){
+        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:16]];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [cell.textLabel setFont:[UIFont systemFontOfSize:16]];
     }
+    
+    [cell.textLabel setTextColor:[DBAppDelegate blueColor]];
     
     return cell;
 }
