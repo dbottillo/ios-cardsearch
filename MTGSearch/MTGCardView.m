@@ -13,6 +13,7 @@
 @synthesize cardImage, cardName, cardType, labelIndicator;
 @synthesize cardCost, cardPowerToughness, cardText, cardPrice;
 @synthesize ptTitle, manacostTitle, typeTitle;
+@synthesize heightImage, widthImage;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -27,6 +28,14 @@
     [ptTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"P/T", @"power toughness")]];
     [manacostTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Mana Cost", @"manacost")]];
     [typeTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Type", @"type")]];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    if (screenHeight < 500){
+        // iphone 4S, the only one with a small screen
+        [widthImage setConstant:300];
+        [heightImage setConstant:420];
+    }
 }
 
 - (void) updateWithCard:(MTGCard *)card{

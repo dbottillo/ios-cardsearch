@@ -172,10 +172,12 @@
                 <outlet property="cardPrice" destination="bM1-3P-PoL" id="GlE-Pq-Koj"/>
                 <outlet property="cardText" destination="CSy-4l-eKr" id="kEk-mg-LZI"/>
                 <outlet property="cardType" destination="twL-1c-pyd" id="whY-Ha-ASG"/>
+                <outlet property="heightImage" destination="N10-jn-a75" id="RqV-Lt-1cn"/>
                 <outlet property="labelIndicator" destination="brY-wR-tmS" id="1xt-oN-6yV"/>
                 <outlet property="manacostTitle" destination="Ure-of-BId" id="u26-GJ-qU5"/>
                 <outlet property="ptTitle" destination="0kF-Rn-dCN" id="7hG-Yo-2cd"/>
                 <outlet property="typeTitle" destination="32O-Bu-pdt" id="72G-dj-thE"/>
+                <outlet property="widthImage" destination="at1-Je-13N" id="Cze-ZJ-ab8"/>
             </connections>
             <point key="canvasLocation" x="277" y="76"/>
         </view>

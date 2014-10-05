@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeTitle;
 @property (weak, nonatomic) IBOutlet UILabel *ptTitle;
 @property (weak, nonatomic) IBOutlet UILabel *manacostTitle;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *cardName;
 @property (weak, nonatomic) IBOutlet UILabel *cardType;
