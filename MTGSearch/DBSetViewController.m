@@ -59,7 +59,7 @@
 - (void) viewWillAppear:(BOOL)animated{
     if (setLoaded){
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        int indexSet = [userDefaults integerForKey:kSetId];
+        NSInteger indexSet = [userDefaults integerForKey:kSetId];
         if (currentIndexSet != indexSet){
             currentIndexSet = indexSet;
             [self loadSet];
@@ -116,7 +116,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:[NSString stringWithFormat:@"card_at_pos:%d", indexPath.row]];
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:[NSString stringWithFormat:@"card_at_pos:%ld", (long)indexPath.row]];
 }
 
 - (void)loadSets{

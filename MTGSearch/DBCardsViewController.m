@@ -78,7 +78,7 @@
     [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"share"];
 }
 
-- (void)setCurrentPosition:(int)pos{
+- (void)setCurrentPosition:(NSInteger)pos{
     currentPosition = pos;
 }
 

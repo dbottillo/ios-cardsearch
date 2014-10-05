@@ -29,5 +29,5 @@
 - (void)setup;
 - (void) updateWithCard:(MTGCard *)card;
 - (void) updatePriceWith:(NSString *) string;
-- (void) updateLabelIndicator:(int) current AndTotal:(int)total;
+- (void) updateLabelIndicator:(NSInteger) current AndTotal:(NSInteger)total;
 @end

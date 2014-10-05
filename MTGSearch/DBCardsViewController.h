@@ -11,13 +11,13 @@
 #import "DBAppDelegate.h"
 
 @interface DBCardsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>{
-    int currentPosition;
+    NSInteger currentPosition;
     BOOL showImage;
 }
 
 @property (strong, nonatomic) NSArray *cards;
 @property (strong, nonatomic) NSString *nameSet;
 
-- (void)setCurrentPosition:(int)pos;
+- (void)setCurrentPosition:(NSInteger)pos;
 
 @end

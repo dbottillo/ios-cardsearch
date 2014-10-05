@@ -26,7 +26,7 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    currentSetId = [userDefaults integerForKey:@"setId"];
+    currentSetId = (int)[userDefaults integerForKey:@"setId"];
     
     int target = currentSetId;
     if (currentSetId > 1){

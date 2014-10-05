@@ -10,7 +10,7 @@
 #import "MTGSet.h"
 
 @interface DBSetViewController : UITableViewController {
-    int currentIndexSet;
+    NSInteger currentIndexSet;
     BOOL setLoaded;
 }
 

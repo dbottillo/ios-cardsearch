@@ -42,8 +42,8 @@
     [cardPrice setText:[NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Price", "@price"), string]];
 }
 
-- (void) updateLabelIndicator:(int) current AndTotal:(int)total{
-    [labelIndicator setText:[NSString stringWithFormat:@"%d / %d", current, total]];
+- (void) updateLabelIndicator:(NSInteger) current AndTotal:(NSInteger)total{
+    [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", (long)current, (long)total]];
 }
 
 @end
