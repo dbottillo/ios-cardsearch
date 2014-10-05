@@ -42,7 +42,7 @@
     setLoaded = false;
     
     //self.navigationController.tabBarController.tabBar.barTintColor = [UIColor blackColor];
-    self.navigationController.tabBarController.tabBar.tintColor = [DBAppDelegate blueColor];
+    self.navigationController.tabBarController.tabBar.tintColor = [DBAppDelegate mainColor];
     
     [self styleNavBar];
     
@@ -51,7 +51,11 @@
     [[[tabBar items] objectAtIndex:1] setTitle:NSLocalizedString(@"Search", @"search")];
     [[[tabBar items] objectAtIndex:2] setTitle:NSLocalizedString(@"Settings", @"settings")];
     [targetTabBarItem setTitle:NSLocalizedString(@"Cards", @"cards")];
-    UIImage *selectedIcon = [UIImage imageNamed:@"tab_bar_cards_full"];
+    NSString *tabBarImage = @"tab_bar_cards_full";
+    if (![DBAppDelegate isMagic]){
+        tabBarImage = @"tab_bar_cards_full_hs";
+    }
+    UIImage *selectedIcon = [UIImage imageNamed:tabBarImage];
     [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
     

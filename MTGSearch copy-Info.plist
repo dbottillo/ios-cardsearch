@@ -31,7 +31,7 @@
 	<key>MAGIC</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>HSLaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

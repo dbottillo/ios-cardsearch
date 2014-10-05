@@ -108,7 +108,10 @@
 
 }
 
-+ (UIColor *)blueColor{
++ (UIColor *)mainColor{
+    if (![DBAppDelegate isMagic]){
+        return [DBAppDelegate colorWithHexString:@"b3802e"];
+    }
     return [DBAppDelegate colorWithHexString:@"39627E"];
 }
 

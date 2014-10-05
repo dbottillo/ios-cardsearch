@@ -40,7 +40,7 @@
 - (void)trackPage:(NSString *)page;
 - (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label;
 
-+ (UIColor *)blueColor;
++ (UIColor *)mainColor;
 + (UIColor *)greyWhite;
 + (UIColor *)greyBlue;
 + (UIColor *)greyBlack;

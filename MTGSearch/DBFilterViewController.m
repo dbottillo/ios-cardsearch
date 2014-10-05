@@ -102,7 +102,7 @@
     
     cell.accessoryType = UITableViewCellAccessoryNone;
     if (filter.isActive){
-        [cell.textLabel setTextColor:[DBAppDelegate blueColor]];
+        [cell.textLabel setTextColor:[DBAppDelegate mainColor]];
         [cell.textLabel setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }else{

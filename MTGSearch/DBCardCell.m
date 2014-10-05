@@ -80,6 +80,8 @@
         [cardCost setTextColor:colorRarity];
         
         [cardRarity setText:[NSString stringWithFormat:@"%d", hsCard.getCost]];
+        
+        [viewIndicator setBackgroundColor:[DBAppDelegate colorWithHexString:@"eeb847"]];
 
     }
     

@@ -67,7 +67,7 @@
         [cell.textLabel setFont:[UIFont systemFontOfSize:16]];
     }
     
-    [cell.textLabel setTextColor:[DBAppDelegate blueColor]];
+    [cell.textLabel setTextColor:[DBAppDelegate mainColor]];
     
     return cell;
 }

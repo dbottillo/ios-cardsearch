@@ -11,7 +11,7 @@
 @implementation UIViewController (NavBar)
 
 - (void)styleNavBar{
-    self.navigationController.navigationBar.barTintColor = [DBAppDelegate blueColor];
+    self.navigationController.navigationBar.barTintColor = [DBAppDelegate mainColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
