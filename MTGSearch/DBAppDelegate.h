@@ -51,8 +51,12 @@
 + (UIColor *)common;
 + (UIColor *)unCommon;
 + (UIColor *)rare;
++ (UIColor *)epic;
++ (UIColor *)legendary;
 + (UIColor *)Mythic;
 + (UIColor *)grey;
 + (UIColor*)colorWithHexString:(NSString*)hex;
+
++ (BOOL) isMagic;
 
 @end

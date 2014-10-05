@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MTGCard.h"
+#import "HSCard.h"
 #import "DBAppDelegate.h"
 
 @interface MTGCardView : UIView
@@ -29,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardPrice;
 
 - (void)setup;
-- (void) updateWithCard:(MTGCard *)card;
+- (void) updateWithCard:(GameCard *)card;
 - (void) updatePriceWith:(NSString *) string;
 - (void) updateLabelIndicator:(NSInteger) current AndTotal:(NSInteger)total;
 @end

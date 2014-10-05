@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>MTG Cards</string>
+	<string>HS Cards</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.danielebottillo.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.danielebottillo.HSSearch</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,13 +23,13 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>GA_CODE</key>
-	<string>UA-48823803-2</string>
+	<string>UA-54121561-1</string>
 	<key>GA_CODE_DEBUG</key>
-	<string>UA-48823803-3</string>
+	<string>UA-54121561-2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MAGIC</key>
-	<true/>
+	<false/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

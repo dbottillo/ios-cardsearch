@@ -7,53 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0128BE19E180E00047C117 /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
+		6D0128BF19E180E00047C117 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
+		6D0128C019E180E00047C117 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
+		6D0128C119E180E00047C117 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
+		6D0128C219E180E00047C117 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
+		6D0128C319E180E00047C117 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
+		6D0128C419E180E00047C117 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
+		6D0128C519E180E00047C117 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
+		6D0128C619E180E00047C117 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
+		6D0128C719E180E00047C117 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
+		6D0128C819E180E00047C117 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
+		6D0128C919E180E00047C117 /* DBCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038419BF48BE00AAC079 /* DBCardsViewController.m */; };
+		6D0128CA19E180E00047C117 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
+		6D0128CB19E180E00047C117 /* GameSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036619BDC86700AAC079 /* GameSet.m */; };
+		6D0128CC19E180E00047C117 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
+		6D0128CD19E180E00047C117 /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
+		6D0128CE19E180E00047C117 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
+		6D0128CF19E180E00047C117 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
+		6D0128D019E180E00047C117 /* MTGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037219BDCF8F00AAC079 /* MTGCard.m */; };
+		6D0128D119E180E00047C117 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
+		6D0128D319E180E00047C117 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
+		6D0128D419E180E00047C117 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
+		6D0128D519E180E00047C117 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
+		6D0128D619E180E00047C117 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
+		6D0128D719E180E00047C117 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */; };
+		6D0128D819E180E00047C117 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
+		6D0128D919E180E00047C117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
+		6D0128DA19E180E00047C117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
+		6D0128DB19E180E00047C117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
+		6D0128DD19E180E00047C117 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
+		6D0128DE19E180E00047C117 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
+		6D0128DF19E180E00047C117 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
+		6D0128E019E180E00047C117 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
+		6D0128E119E180E00047C117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
+		6D0128E219E180E00047C117 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
+		6D0128E319E180E00047C117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
+		6D0128EB19E181F20047C117 /* hssearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128EA19E181F20047C117 /* hssearch.sqlite3 */; };
+		6D0128EE19E18A280047C117 /* HSCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128ED19E18A280047C117 /* HSCard.m */; };
+		6D0128EF19E18A280047C117 /* HSCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128ED19E18A280047C117 /* HSCard.m */; };
 		6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
-		6D25A10819DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
 		6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
-		6D57A4B319E03BE00099C96B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
-		6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
-		6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8F19BDAB0A00B2BCC8 /* DBSetViewController.m */; };
-		6D70034B19BDC27C00AAC079 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8519BDAB0A00B2BCC8 /* main.m */; };
-		6D70034D19BDC27C00AAC079 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
-		6D70034E19BDC27C00AAC079 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
-		6D70034F19BDC27C00AAC079 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
-		6D70035019BDC27C00AAC079 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
-		6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
-		6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
-		6D70035419BDC27C00AAC079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
 		6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */; };
 		6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
 		6D70036219BDC69F00AAC079 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
-		6D70036319BDC69F00AAC079 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
 		6D70036719BDC86700AAC079 /* GameSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036619BDC86700AAC079 /* GameSet.m */; };
-		6D70036819BDC86700AAC079 /* GameSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036619BDC86700AAC079 /* GameSet.m */; };
 		6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
-		6D70036C19BDC89E00AAC079 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
 		6D70036F19BDCF6200AAC079 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
-		6D70037019BDCF6200AAC079 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
 		6D70037319BDCF8F00AAC079 /* MTGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037219BDCF8F00AAC079 /* MTGCard.m */; };
-		6D70037419BDCF8F00AAC079 /* MTGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037219BDCF8F00AAC079 /* MTGCard.m */; };
 		6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
-		6D70037919BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
 		6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
-		6D70037E19BE840800AAC079 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
 		6D70038119BF380A00AAC079 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
-		6D70038219BF380A00AAC079 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
 		6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038419BF48BE00AAC079 /* DBCardsViewController.m */; };
-		6D70038619BF48BE00AAC079 /* DBCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038419BF48BE00AAC079 /* DBCardsViewController.m */; };
 		6D7C30AA19CC6E5B00876B31 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
-		6D7C30AB19CC6E5B00876B31 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
-		6D7C30AD19CC6E6C00876B31 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C30AC19CC6E6C00876B31 /* QuartzCore.framework */; };
 		6D7C30AF19CC73D800876B31 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
-		6D7C30B019CC73D800876B31 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
 		6D7C30B319CC75DA00876B31 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
-		6D7C30B419CC75DA00876B31 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
-		6D7C30B919CE390E00876B31 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
 		6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
-		6D7C30C019CE417400876B31 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
-		6D7C30C419CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -69,15 +80,12 @@
 		6DB12CA619BDAB0B00B2BCC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12CA419BDAB0B00B2BCC8 /* InfoPlist.strings */; };
 		6DB12CA819BDAB0B00B2BCC8 /* MTGSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */; };
 		6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
-		6DBEE8F319DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
 		6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
-		6DC9540D19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
 		6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
 		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
-		6DDC9CDC19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		92434AB9211B463A8792252B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +101,13 @@
 
 /* Begin PBXFileReference section */
 		4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6D0128B719E180A30047C117 /* libPods-MBProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MBProgressHUD.a"; path = "Pods/build/Debug-iphoneos/libPods-MBProgressHUD.a"; sourceTree = "<group>"; };
+		6D0128B919E180A70047C117 /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "Pods/build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
+		6D0128E819E180E00047C117 /* MTGSearch copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTGSearch copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0128E919E180E00047C117 /* MTGSearch copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTGSearch copy-Info.plist"; path = "/Users/danielebottillo/XCodeProjects/MTGSearch/MTGSearch copy-Info.plist"; sourceTree = "<absolute>"; };
+		6D0128EA19E181F20047C117 /* hssearch.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hssearch.sqlite3; sourceTree = "<group>"; };
+		6D0128EC19E18A280047C117 /* HSCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCard.h; sourceTree = "<group>"; };
+		6D0128ED19E18A280047C117 /* HSCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCard.m; sourceTree = "<group>"; };
 		6D25A10519DDD53600ACB73A /* DBCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardCell.h; sourceTree = "<group>"; };
 		6D25A10619DDD53600ACB73A /* DBCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardCell.m; sourceTree = "<group>"; };
 		6D57A4A619E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
@@ -101,7 +116,6 @@
 		6D57A4B419E03BE00099C96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D57A4B619E03BE30099C96B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D57A4B719E03BE30099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6D70035919BDC27C00AAC079 /* HSSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D70035A19BDC27C00AAC079 /* HSSearch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = HSSearch.plist; path = /Users/danielebottillo/XCodeProjects/MTGSearch/HSSearch.plist; sourceTree = "<absolute>"; };
 		6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mtgsearch.sqlite3; sourceTree = "<group>"; };
@@ -178,15 +192,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6D70034C19BDC27C00AAC079 /* Frameworks */ = {
+		6D0128D219E180E00047C117 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D7C30AD19CC6E6C00876B31 /* QuartzCore.framework in Frameworks */,
-				6D70034D19BDC27C00AAC079 /* CoreGraphics.framework in Frameworks */,
-				6D70034E19BDC27C00AAC079 /* UIKit.framework in Frameworks */,
-				6D70034F19BDC27C00AAC079 /* Foundation.framework in Frameworks */,
-				6D70035019BDC27C00AAC079 /* libPods.a in Frameworks */,
+				6D0128D319E180E00047C117 /* libz.dylib in Frameworks */,
+				6D0128D419E180E00047C117 /* SystemConfiguration.framework in Frameworks */,
+				6D0128D519E180E00047C117 /* libGoogleAnalyticsServices.a in Frameworks */,
+				6D0128D619E180E00047C117 /* CoreData.framework in Frameworks */,
+				6D0128D719E180E00047C117 /* libsqlite3.dylib in Frameworks */,
+				6D0128D819E180E00047C117 /* CoreGraphics.framework in Frameworks */,
+				6D0128D919E180E00047C117 /* UIKit.framework in Frameworks */,
+				6D0128DA19E180E00047C117 /* Foundation.framework in Frameworks */,
+				6D0128DB19E180E00047C117 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +240,7 @@
 		6D70035D19BDC64100AAC079 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D0128EA19E181F20047C117 /* hssearch.sqlite3 */,
 				6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */,
 			);
 			name = Resources;
@@ -240,6 +259,8 @@
 				6D70036E19BDCF6200AAC079 /* GameCard.m */,
 				6D70037119BDCF8F00AAC079 /* MTGCard.h */,
 				6D70037219BDCF8F00AAC079 /* MTGCard.m */,
+				6D0128EC19E18A280047C117 /* HSCard.h */,
+				6D0128ED19E18A280047C117 /* HSCard.m */,
 			);
 			name = "Data Provider";
 			sourceTree = "<group>";
@@ -321,6 +342,7 @@
 				6DB12C7719BDAB0A00B2BCC8 /* Products */,
 				6D70035A19BDC27C00AAC079 /* HSSearch.plist */,
 				74427FEC1EA5D2E742AC8C17 /* Pods */,
+				6D0128E919E180E00047C117 /* MTGSearch copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,7 +351,7 @@
 			children = (
 				6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */,
 				6DB12C9A19BDAB0B00B2BCC8 /* MTGSearchTests.xctest */,
-				6D70035919BDC27C00AAC079 /* HSSearch.app */,
+				6D0128E819E180E00047C117 /* MTGSearch copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -337,6 +359,8 @@
 		6DB12C7819BDAB0A00B2BCC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D0128B919E180A70047C117 /* libPods-AFNetworking.a */,
+				6D0128B719E180A30047C117 /* libPods-MBProgressHUD.a */,
 				6DDC9CD519DC524C002BBB4F /* libz.dylib */,
 				6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */,
 				6DDC9CD119DC523F002BBB4F /* CoreData.framework */,
@@ -442,15 +466,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D70034519BDC27C00AAC079 /* HSSearch */ = {
+		6D0128BB19E180E00047C117 /* HSSearch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D70035619BDC27C00AAC079 /* Build configuration list for PBXNativeTarget "HSSearch" */;
+			buildConfigurationList = 6D0128E519E180E00047C117 /* Build configuration list for PBXNativeTarget "HSSearch" */;
 			buildPhases = (
-				6D70034619BDC27C00AAC079 /* Check Pods Manifest.lock */,
-				6D70034719BDC27C00AAC079 /* Sources */,
-				6D70034C19BDC27C00AAC079 /* Frameworks */,
-				6D70035119BDC27C00AAC079 /* Resources */,
-				6D70035519BDC27C00AAC079 /* Copy Pods Resources */,
+				6D0128BC19E180E00047C117 /* Check Pods Manifest.lock */,
+				6D0128BD19E180E00047C117 /* Sources */,
+				6D0128D219E180E00047C117 /* Frameworks */,
+				6D0128DC19E180E00047C117 /* Resources */,
+				6D0128E419E180E00047C117 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,7 +482,7 @@
 			);
 			name = HSSearch;
 			productName = MTGSearch;
-			productReference = 6D70035919BDC27C00AAC079 /* HSSearch.app */;
+			productReference = 6D0128E819E180E00047C117 /* MTGSearch copy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6DB12C7519BDAB0A00B2BCC8 /* MTGSearch */ = {
@@ -532,22 +556,24 @@
 			targets = (
 				6DB12C7519BDAB0A00B2BCC8 /* MTGSearch */,
 				6DB12C9919BDAB0B00B2BCC8 /* MTGSearchTests */,
-				6D70034519BDC27C00AAC079 /* HSSearch */,
+				6D0128BB19E180E00047C117 /* HSSearch */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D70035119BDC27C00AAC079 /* Resources */ = {
+		6D0128DC19E180E00047C117 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D70035219BDC27C00AAC079 /* Images.xcassets in Resources */,
-				6D57A4B319E03BE00099C96B /* Localizable.strings in Resources */,
-				6D70035319BDC27C00AAC079 /* InfoPlist.strings in Resources */,
-				6D7C30B019CC73D800876B31 /* MTGCardView.xib in Resources */,
-				6DDC9CDC19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
-				6D70035419BDC27C00AAC079 /* Main.storyboard in Resources */,
+				6D0128EB19E181F20047C117 /* hssearch.sqlite3 in Resources */,
+				6D0128DD19E180E00047C117 /* Images.xcassets in Resources */,
+				6D0128DE19E180E00047C117 /* MTGCardView.xib in Resources */,
+				6D0128DF19E180E00047C117 /* InfoPlist.strings in Resources */,
+				6D0128E019E180E00047C117 /* Localizable.strings in Resources */,
+				6D0128E119E180E00047C117 /* LaunchScreen.storyboard in Resources */,
+				6D0128E219E180E00047C117 /* mtgsearch.sqlite3 in Resources */,
+				6D0128E319E180E00047C117 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +617,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D70034619BDC27C00AAC079 /* Check Pods Manifest.lock */ = {
+		6D0128BC19E180E00047C117 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -606,7 +632,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6D70035519BDC27C00AAC079 /* Copy Pods Resources */ = {
+		6D0128E419E180E00047C117 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,7 +644,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6ECF5B40EBD748BCB1F37853 /* Check Pods Manifest.lock */ = {
@@ -639,30 +665,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D70034719BDC27C00AAC079 /* Sources */ = {
+		6D0128BD19E180E00047C117 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DBEE8F319DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
-				6D70037E19BE840800AAC079 /* DBFilterViewController.m in Sources */,
-				6D70037919BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
-				6D70038219BF380A00AAC079 /* CardFilter.m in Sources */,
-				6D70037019BDCF6200AAC079 /* GameCard.m in Sources */,
-				6D7C30B419CC75DA00876B31 /* MTGCardView.m in Sources */,
-				6D70034919BDC27C00AAC079 /* DBAppDelegate.m in Sources */,
-				6D7C30AB19CC6E5B00876B31 /* iCarousel.m in Sources */,
-				6DC9540D19C0504F008640C7 /* DBFullCardCell.m in Sources */,
-				6D7C30C419CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
-				6D70036C19BDC89E00AAC079 /* MTGSet.m in Sources */,
-				6D70038619BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
-				6D7C30C019CE417400876B31 /* DBSearchViewController.m in Sources */,
-				6D70036819BDC86700AAC079 /* GameSet.m in Sources */,
-				6D70034A19BDC27C00AAC079 /* DBSetViewController.m in Sources */,
-				6D25A10819DDD53600ACB73A /* DBCardCell.m in Sources */,
-				6D7C30B919CE390E00876B31 /* DBSettingsViewController.m in Sources */,
-				6D70034B19BDC27C00AAC079 /* main.m in Sources */,
-				6D70037419BDCF8F00AAC079 /* MTGCard.m in Sources */,
-				6D70036319BDC69F00AAC079 /* CardsDatabase.m in Sources */,
+				6D0128BE19E180E00047C117 /* UIViewController+NavBar.m in Sources */,
+				6D0128BF19E180E00047C117 /* DBFilterViewController.m in Sources */,
+				6D0128C019E180E00047C117 /* DBSetPickerViewController.m in Sources */,
+				6D0128C119E180E00047C117 /* CardFilter.m in Sources */,
+				6D0128C219E180E00047C117 /* GameCard.m in Sources */,
+				6D0128C319E180E00047C117 /* MTGCardView.m in Sources */,
+				6D0128C419E180E00047C117 /* DBAppDelegate.m in Sources */,
+				6D0128C519E180E00047C117 /* iCarousel.m in Sources */,
+				6D0128C619E180E00047C117 /* DBFullCardCell.m in Sources */,
+				6D0128C719E180E00047C117 /* UIViewController+FilterCards.m in Sources */,
+				6D0128EF19E18A280047C117 /* HSCard.m in Sources */,
+				6D0128C819E180E00047C117 /* MTGSet.m in Sources */,
+				6D0128C919E180E00047C117 /* DBCardsViewController.m in Sources */,
+				6D0128CA19E180E00047C117 /* DBSearchViewController.m in Sources */,
+				6D0128CB19E180E00047C117 /* GameSet.m in Sources */,
+				6D0128CC19E180E00047C117 /* DBSetViewController.m in Sources */,
+				6D0128CD19E180E00047C117 /* DBCardCell.m in Sources */,
+				6D0128CE19E180E00047C117 /* DBSettingsViewController.m in Sources */,
+				6D0128CF19E180E00047C117 /* main.m in Sources */,
+				6D0128D019E180E00047C117 /* MTGCard.m in Sources */,
+				6D0128D119E180E00047C117 /* CardsDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +707,7 @@
 				6D7C30AA19CC6E5B00876B31 /* iCarousel.m in Sources */,
 				6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */,
 				6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
+				6D0128EE19E18A280047C117 /* HSCard.m in Sources */,
 				6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */,
 				6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
 				6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */,
@@ -752,28 +780,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6D70035719BDC27C00AAC079 /* Debug */ = {
+		6D0128E619E180E00047C117 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905B74DA559DF9384B07BA7E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
-				INFOPLIST_FILE = HSSearch.plist;
-				PRODUCT_NAME = HSSearch;
+				INFOPLIST_FILE = "MTGSearch copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MTGSearch",
+				);
+				PRODUCT_NAME = "MTGSearch copy";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		6D70035819BDC27C00AAC079 /* Release */ = {
+		6D0128E719E180E00047C117 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
-				INFOPLIST_FILE = HSSearch.plist;
-				PRODUCT_NAME = HSSearch;
+				INFOPLIST_FILE = "MTGSearch copy-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MTGSearch",
+				);
+				PRODUCT_NAME = "MTGSearch copy";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -933,11 +977,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D70035619BDC27C00AAC079 /* Build configuration list for PBXNativeTarget "HSSearch" */ = {
+		6D0128E519E180E00047C117 /* Build configuration list for PBXNativeTarget "HSSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D70035719BDC27C00AAC079 /* Debug */,
-				6D70035819BDC27C00AAC079 /* Release */,
+				6D0128E619E180E00047C117 /* Debug */,
+				6D0128E719E180E00047C117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

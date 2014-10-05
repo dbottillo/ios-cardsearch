@@ -8,6 +8,7 @@
 
 #import "DBCardsViewController.h"
 #import "MTGCard.h"
+#import "HSCard.h"
 #import "DBFullCardCell.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
@@ -24,8 +25,7 @@
 @synthesize cards,carousel, nameSet;
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -99,12 +99,18 @@
     }
     
     MTGCardView *cardView = (MTGCardView *)view;
-    MTGCard *card = [cards objectAtIndex:index];
+    GameCard *card = [cards objectAtIndex:index];
     
     [cardView.cardImage setHidden:NO];
     if (showImage){
         cardView.cardImage.image = nil;
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]]];
+        NSString *url;
+        if ([DBAppDelegate isMagic]){
+            url = [NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", ((MTGCard *)card).getMultiverseId];
+        } else {
+            url = [NSString stringWithFormat:@"http://wow.zamimg.com/images/hearthstone/cards/enus/original/%@.png", ((HSCard *)card).hearthstoneId];
+        }
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -116,19 +122,29 @@
         }];
         [requestOperation start];
     }
-    [cardView updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
-    NSString *url = [NSString stringWithFormat:@"http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [cardView updatePriceWith:[responseObject objectAtIndex:0]];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [cardView updatePriceWith:NSLocalizedString(@"Error", @"error price")];
-    }];
+    if ([DBAppDelegate isMagic]){
+        [cardView updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
+        NSString *url = [NSString stringWithFormat:@"http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [cardView updatePriceWith:[responseObject objectAtIndex:0]];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [cardView updatePriceWith:NSLocalizedString(@"Error", @"error price")];
+        }];
+    } else {
+        [cardView.cardPrice setHidden:YES];
+    }
     
     [cardView updateWithCard:card];
     [cardView updateLabelIndicator:index AndTotal:cards.count];
     
-    [app_delegate trackPage:[NSString stringWithFormat:@"/card/%d",[card getMultiverseId]]];
+    NSString *track;
+    if ([DBAppDelegate isMagic]){
+        track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
+    } else {
+        track = [NSString stringWithFormat:@"/card/%@",[((HSCard *)card) hearthstoneId]];
+    }
+    [app_delegate trackPage:track];
     
     
     return view;
