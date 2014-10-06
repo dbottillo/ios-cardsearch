@@ -130,7 +130,7 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     currentIndexSet = [userDefaults integerForKey:kSetId];
-    if (DEBUG){
+    if (kDebug){
         NSLog(@"number of set loaded: %d", [app_delegate.sets count]);
     }
     

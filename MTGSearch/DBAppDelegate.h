@@ -11,6 +11,13 @@
 #define kSetId  @"setId"
 #define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
 
+
+#ifdef DEBUG
+    #define kDebug          YES
+#else
+    #define kDebug          NO
+#endif
+
 #define kUACategoryUI           @"ui"
 #define kUACategorySearch       @"search"
 #define kUACategoryFavourite    @"favourite"

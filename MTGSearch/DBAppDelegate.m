@@ -41,7 +41,7 @@
     
     NSString *GACode;
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    if (DEBUG){
+    if (kDebug){
         //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
         GACode = [infoDict objectForKey:@"GA_CODE_DEBUG"];
     } else {
