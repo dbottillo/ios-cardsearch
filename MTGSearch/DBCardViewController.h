@@ -1,17 +1,23 @@
 //
-//  MTGCardView.h
+//  DBCardViewController.h
 //  MTGSearch
 //
-//  Created by Daniele Bottillo on 19/09/2014.
+//  Created by Daniele Bottillo on 08/10/2014.
 //  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "MTGCard.h"
-#import "HSCard.h"
 #import "DBAppDelegate.h"
+#import "GameCard.h"
 
-@interface MTGCardView : UIView
+@interface DBCardViewController : UIViewController {
+    BOOL showImage;
+}
+
+@property NSUInteger pageIndex;
+@property NSUInteger totalItems;
+
+@property (strong, nonatomic) GameCard *card;
 
 @property (weak, nonatomic) IBOutlet UIImageView *cardImage;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
@@ -19,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeTitle;
 @property (weak, nonatomic) IBOutlet UILabel *ptTitle;
 @property (weak, nonatomic) IBOutlet UILabel *manacostTitle;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthImage;
 
@@ -29,8 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardPowerToughness;
 @property (weak, nonatomic) IBOutlet UILabel *cardPrice;
 
-- (void)setup;
-- (void) updateWithCard:(GameCard *)card;
 - (void) updatePriceWith:(NSString *) string;
-- (void) updateLabelIndicator:(NSInteger) current AndTotal:(NSInteger)total;
+- (void)setShowImage:(BOOL)_show;
+
 @end

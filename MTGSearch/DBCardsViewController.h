@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "iCarousel.h"
 #import "DBAppDelegate.h"
 
-@interface DBCardsViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>{
+@interface DBCardsViewController : UIViewController <UIPageViewControllerDataSource> {
     NSInteger currentPosition;
     BOOL showImage;
 }
 
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *cards;
 @property (strong, nonatomic) NSString *nameSet;
 

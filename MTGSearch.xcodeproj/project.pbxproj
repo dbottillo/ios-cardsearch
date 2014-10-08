@@ -12,9 +12,7 @@
 		6D0128C019E180E00047C117 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
 		6D0128C119E180E00047C117 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
 		6D0128C219E180E00047C117 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
-		6D0128C319E180E00047C117 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D0128C419E180E00047C117 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
-		6D0128C519E180E00047C117 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
 		6D0128C619E180E00047C117 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6D0128C719E180E00047C117 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D0128C819E180E00047C117 /* MTGSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036A19BDC89E00AAC079 /* MTGSet.m */; };
@@ -37,7 +35,6 @@
 		6D0128DA19E180E00047C117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6D0128DB19E180E00047C117 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 		6D0128DD19E180E00047C117 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
-		6D0128DE19E180E00047C117 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
 		6D0128DF19E180E00047C117 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
 		6D0128E019E180E00047C117 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
 		6D0128E119E180E00047C117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
@@ -52,9 +49,7 @@
 		6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
 		6D12DE5219E2E59C001C11D6 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
 		6D12DE5319E2E59C001C11D6 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
-		6D12DE5419E2E59C001C11D6 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D12DE5519E2E59C001C11D6 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
-		6D12DE5619E2E59C001C11D6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
 		6D12DE5719E2E59C001C11D6 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6D12DE5819E2E59C001C11D6 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D12DE5919E2E59C001C11D6 /* HSCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128ED19E18A280047C117 /* HSCard.m */; };
@@ -78,7 +73,6 @@
 		6D12DE6C19E2E59C001C11D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6D12DE6D19E2E59C001C11D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 		6D12DE6F19E2E59C001C11D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
-		6D12DE7019E2E59C001C11D6 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
 		6D12DE7119E2E59C001C11D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
 		6D12DE7219E2E59C001C11D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
 		6D12DE7319E2E59C001C11D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
@@ -89,9 +83,7 @@
 		6D12DE8119E33E09001C11D6 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
 		6D12DE8219E33E09001C11D6 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
 		6D12DE8319E33E09001C11D6 /* GameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036E19BDCF6200AAC079 /* GameCard.m */; };
-		6D12DE8419E33E09001C11D6 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D12DE8519E33E09001C11D6 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12C8919BDAB0A00B2BCC8 /* DBAppDelegate.m */; };
-		6D12DE8619E33E09001C11D6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
 		6D12DE8719E33E09001C11D6 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6D12DE8819E33E09001C11D6 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D12DE8919E33E09001C11D6 /* HSCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0128ED19E18A280047C117 /* HSCard.m */; };
@@ -116,7 +108,6 @@
 		6D12DE9D19E33E09001C11D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 		6D12DE9F19E33E09001C11D6 /* hssearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D0128EA19E181F20047C117 /* hssearch.sqlite3 */; };
 		6D12DEA019E33E09001C11D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
-		6D12DEA119E33E09001C11D6 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
 		6D12DEA219E33E09001C11D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
 		6D12DEA319E33E09001C11D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
 		6D12DEA419E33E09001C11D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
@@ -136,12 +127,13 @@
 		6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
 		6D70038119BF380A00AAC079 /* CardFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038019BF380A00AAC079 /* CardFilter.m */; };
 		6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70038419BF48BE00AAC079 /* DBCardsViewController.m */; };
-		6D7C30AA19CC6E5B00876B31 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30A919CC6E5B00876B31 /* iCarousel.m */; };
-		6D7C30AF19CC73D800876B31 /* MTGCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7C30AE19CC73D800876B31 /* MTGCardView.xib */; };
-		6D7C30B319CC75DA00876B31 /* MTGCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B219CC75DA00876B31 /* MTGCardView.m */; };
 		6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */; };
 		6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30BE19CE417400876B31 /* DBSearchViewController.m */; };
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
+		6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
+		6D835D4F19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
+		6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
+		6D835D5119E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -219,18 +211,15 @@
 		6D70038019BF380A00AAC079 /* CardFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardFilter.m; sourceTree = "<group>"; };
 		6D70038319BF48BE00AAC079 /* DBCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardsViewController.h; sourceTree = "<group>"; };
 		6D70038419BF48BE00AAC079 /* DBCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardsViewController.m; sourceTree = "<group>"; };
-		6D7C30A819CC6E5B00876B31 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		6D7C30A919CC6E5B00876B31 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		6D7C30AC19CC6E6C00876B31 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		6D7C30AE19CC73D800876B31 /* MTGCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTGCardView.xib; sourceTree = "<group>"; };
-		6D7C30B119CC75DA00876B31 /* MTGCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGCardView.h; sourceTree = "<group>"; };
-		6D7C30B219CC75DA00876B31 /* MTGCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGCardView.m; sourceTree = "<group>"; };
 		6D7C30B619CE390E00876B31 /* DBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSettingsViewController.h; sourceTree = "<group>"; };
 		6D7C30B719CE390E00876B31 /* DBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSettingsViewController.m; sourceTree = "<group>"; };
 		6D7C30BD19CE417400876B31 /* DBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSearchViewController.h; sourceTree = "<group>"; };
 		6D7C30BE19CE417400876B31 /* DBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSearchViewController.m; sourceTree = "<group>"; };
 		6D7C30C119CE48BD00876B31 /* UIViewController+FilterCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FilterCards.h"; sourceTree = "<group>"; };
 		6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FilterCards.m"; sourceTree = "<group>"; };
+		6D835D4C19E58BED00F188DA /* DBCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardViewController.h; sourceTree = "<group>"; };
+		6D835D4D19E58BED00F188DA /* DBCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardViewController.m; sourceTree = "<group>"; };
 		6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -405,15 +394,6 @@
 			name = Filter;
 			sourceTree = "<group>";
 		};
-		6D7C30A719CC6E4D00876B31 /* iCarousel */ = {
-			isa = PBXGroup;
-			children = (
-				6D7C30A819CC6E5B00876B31 /* iCarousel.h */,
-				6D7C30A919CC6E5B00876B31 /* iCarousel.m */,
-			);
-			name = iCarousel;
-			sourceTree = "<group>";
-		};
 		6D7C30B519CE38FD00876B31 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,9 +410,8 @@
 				6D70038419BF48BE00AAC079 /* DBCardsViewController.m */,
 				6DC9540A19C0504F008640C7 /* DBFullCardCell.h */,
 				6DC9540B19C0504F008640C7 /* DBFullCardCell.m */,
-				6D7C30AE19CC73D800876B31 /* MTGCardView.xib */,
-				6D7C30B119CC75DA00876B31 /* MTGCardView.h */,
-				6D7C30B219CC75DA00876B31 /* MTGCardView.m */,
+				6D835D4C19E58BED00F188DA /* DBCardViewController.h */,
+				6D835D4D19E58BED00F188DA /* DBCardViewController.m */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -549,7 +528,6 @@
 		6DDC9CC519DC51E4002BBB4F /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				6D7C30A719CC6E4D00876B31 /* iCarousel */,
 				6DDC9CD019DC521B002BBB4F /* Google Analytics */,
 			);
 			name = vendor;
@@ -736,7 +714,6 @@
 			files = (
 				6D0128EB19E181F20047C117 /* hssearch.sqlite3 in Resources */,
 				6D0128DD19E180E00047C117 /* Images.xcassets in Resources */,
-				6D0128DE19E180E00047C117 /* MTGCardView.xib in Resources */,
 				6D0128DF19E180E00047C117 /* InfoPlist.strings in Resources */,
 				6D0128E019E180E00047C117 /* Localizable.strings in Resources */,
 				6D0128E119E180E00047C117 /* LaunchScreen.storyboard in Resources */,
@@ -751,7 +728,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D12DE6F19E2E59C001C11D6 /* Images.xcassets in Resources */,
-				6D12DE7019E2E59C001C11D6 /* MTGCardView.xib in Resources */,
 				6D12DE7119E2E59C001C11D6 /* InfoPlist.strings in Resources */,
 				6D12DE7219E2E59C001C11D6 /* Localizable.strings in Resources */,
 				6D12DE7319E2E59C001C11D6 /* LaunchScreen.storyboard in Resources */,
@@ -766,7 +742,6 @@
 			files = (
 				6D12DE9F19E33E09001C11D6 /* hssearch.sqlite3 in Resources */,
 				6D12DEA019E33E09001C11D6 /* Images.xcassets in Resources */,
-				6D12DEA119E33E09001C11D6 /* MTGCardView.xib in Resources */,
 				6D12DEA219E33E09001C11D6 /* InfoPlist.strings in Resources */,
 				6D12DEA319E33E09001C11D6 /* Localizable.strings in Resources */,
 				6D12DEA419E33E09001C11D6 /* LaunchScreen.storyboard in Resources */,
@@ -781,7 +756,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
-				6D7C30AF19CC73D800876B31 /* MTGCardView.xib in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
 				6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */,
 				6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
@@ -932,10 +906,9 @@
 				6D0128BF19E180E00047C117 /* DBFilterViewController.m in Sources */,
 				6D0128C019E180E00047C117 /* DBSetPickerViewController.m in Sources */,
 				6D0128C119E180E00047C117 /* CardFilter.m in Sources */,
+				6D835D4F19E58BED00F188DA /* DBCardViewController.m in Sources */,
 				6D0128C219E180E00047C117 /* GameCard.m in Sources */,
-				6D0128C319E180E00047C117 /* MTGCardView.m in Sources */,
 				6D0128C419E180E00047C117 /* DBAppDelegate.m in Sources */,
-				6D0128C519E180E00047C117 /* iCarousel.m in Sources */,
 				6D0128C619E180E00047C117 /* DBFullCardCell.m in Sources */,
 				6D0128C719E180E00047C117 /* UIViewController+FilterCards.m in Sources */,
 				6D0128EF19E18A280047C117 /* HSCard.m in Sources */,
@@ -960,10 +933,9 @@
 				6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */,
 				6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */,
 				6D12DE5219E2E59C001C11D6 /* CardFilter.m in Sources */,
+				6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */,
 				6D12DE5319E2E59C001C11D6 /* GameCard.m in Sources */,
-				6D12DE5419E2E59C001C11D6 /* MTGCardView.m in Sources */,
 				6D12DE5519E2E59C001C11D6 /* DBAppDelegate.m in Sources */,
-				6D12DE5619E2E59C001C11D6 /* iCarousel.m in Sources */,
 				6D12DE5719E2E59C001C11D6 /* DBFullCardCell.m in Sources */,
 				6D12DE5819E2E59C001C11D6 /* UIViewController+FilterCards.m in Sources */,
 				6D12DE5919E2E59C001C11D6 /* HSCard.m in Sources */,
@@ -988,10 +960,9 @@
 				6D12DE8019E33E09001C11D6 /* DBFilterViewController.m in Sources */,
 				6D12DE8119E33E09001C11D6 /* DBSetPickerViewController.m in Sources */,
 				6D12DE8219E33E09001C11D6 /* CardFilter.m in Sources */,
+				6D835D5119E58BED00F188DA /* DBCardViewController.m in Sources */,
 				6D12DE8319E33E09001C11D6 /* GameCard.m in Sources */,
-				6D12DE8419E33E09001C11D6 /* MTGCardView.m in Sources */,
 				6D12DE8519E33E09001C11D6 /* DBAppDelegate.m in Sources */,
-				6D12DE8619E33E09001C11D6 /* iCarousel.m in Sources */,
 				6D12DE8719E33E09001C11D6 /* DBFullCardCell.m in Sources */,
 				6D12DE8819E33E09001C11D6 /* UIViewController+FilterCards.m in Sources */,
 				6D12DE8919E33E09001C11D6 /* HSCard.m in Sources */,
@@ -1016,10 +987,9 @@
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038119BF380A00AAC079 /* CardFilter.m in Sources */,
+				6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */,
 				6D70036F19BDCF6200AAC079 /* GameCard.m in Sources */,
-				6D7C30B319CC75DA00876B31 /* MTGCardView.m in Sources */,
 				6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */,
-				6D7C30AA19CC6E5B00876B31 /* iCarousel.m in Sources */,
 				6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */,
 				6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
 				6D0128EE19E18A280047C117 /* HSCard.m in Sources */,

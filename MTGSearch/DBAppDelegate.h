@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GAI.h"
+
 #define kSetId  @"setId"
 #define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
 

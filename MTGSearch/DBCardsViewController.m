@@ -12,53 +12,48 @@
 #import "DBFullCardCell.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
-#import "MTGCardView.h"
 #import "DBSettingsViewController.h"
 #import <AFNetworking.h>
+#import "DBCardViewController.h"
 
 @interface DBCardsViewController ()
-@property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @end
 
 @implementation DBCardsViewController
 
-@synthesize cards,carousel, nameSet;
+@synthesize cards, nameSet, pageViewController;
 
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    carousel.type = iCarouselTypeLinear;
-    carousel.pagingEnabled = YES;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    showImage = [userDefaults boolForKey:kUserImage];
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_share"]  style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
-    self.navigationItem.title = nameSet;
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    
+    DBCardViewController *startingViewController = [self viewControllerAtIndex:currentPosition];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    
+    // Change the size of page view controller
+    self.pageViewController.view.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
+    
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    [carousel scrollToItemAtIndex:currentPosition animated:NO];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    showImage = [userDefaults boolForKey:kUserImage];
-    [carousel reloadData];
-    
     [app_delegate trackPage:@"/cards"];
 }
 
-- (void) viewWillDisappear:(BOOL)animated{
-    [carousel setHidden:YES];
-}
-
-- (void)viewDidUnload{
-    [super viewDidUnload];
-    
-    //free up memory by releasing subviews
-    self.carousel = nil;
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -67,7 +62,7 @@
 }
 
 - (void)share:(UIBarButtonItem *)barButtonItem{
-    MTGCard *card = [cards objectAtIndex:carousel.currentItemIndex];
+    MTGCard *card = [cards objectAtIndex:currentPosition];
     NSString *text = card.name;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]];
     
@@ -83,71 +78,54 @@
 }
 
 
-#pragma mark -
-#pragma mark iCarousel methods
-
-- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
-    //return the total number of items in the carousel
-    return [cards count];
-}
-
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
-    //create new view if no view is available for recycling
-    if (view == nil) {
-        view = [[[NSBundle mainBundle] loadNibNamed:@"MTGCardView" owner:self options:nil] lastObject];
-        [((MTGCardView *)view) setup];
+#pragma mark - Page View Controller Data Source
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
+    NSUInteger index = ((DBCardViewController*) viewController).pageIndex;
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
     }
     
-    MTGCardView *cardView = (MTGCardView *)view;
+    index--;
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
+    NSUInteger index = ((DBCardViewController*) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    
+    index++;
+    if (index == [self.cards count]) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+}
+
+- (DBCardViewController *)viewControllerAtIndex:(NSUInteger)index{
+    if (([self.cards count] == 0) || (index >= [self.cards count])) {
+        return nil;
+    }
+    
+    // Create a new view controller and pass suitable data.
+    DBCardViewController *cardViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CardViewController"];
+    cardViewController.pageIndex = index;
+    cardViewController.totalItems = cards.count;
+    
     GameCard *card = [cards objectAtIndex:index];
-    
-    [cardView.cardImage setHidden:NO];
-    if (showImage){
-        cardView.cardImage.image = nil;
-        NSString *url;
-        if ([DBAppDelegate isMagic]){
-            url = [NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", ((MTGCard *)card).getMultiverseId];
-        } else {
-            url = [NSString stringWithFormat:@"http://wow.zamimg.com/images/hearthstone/cards/enus/original/%@.png", ((HSCard *)card).hearthstoneId];
-        }
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-        AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
-        [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            cardView.cardImage.image = responseObject;
-            [cardView.cardImage setHidden:NO];
-        
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            //[cardView.cardImage setHidden:YES];
-        }];
-        [requestOperation start];
-    }
-    if ([DBAppDelegate isMagic]){
-        [cardView updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
-        NSString *url = [NSString stringWithFormat:@"http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [cardView updatePriceWith:[responseObject objectAtIndex:0]];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [cardView updatePriceWith:NSLocalizedString(@"Error", @"error price")];
-        }];
-    } else {
-        [cardView.cardPrice setHidden:YES];
-    }
-    
-    [cardView updateWithCard:card];
-    [cardView updateLabelIndicator:index AndTotal:cards.count];
-    
-    NSString *track;
-    if ([DBAppDelegate isMagic]){
-        track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
-    } else {
-        track = [NSString stringWithFormat:@"/card/%@",[((HSCard *)card) hearthstoneId]];
-    }
-    [app_delegate trackPage:track];
-    
-    
-    return view;
+    [cardViewController setCard:card];
+    [cardViewController setShowImage:showImage];
+
+    return cardViewController;
 }
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
+    
+    DBCardViewController *currentView = [self.pageViewController.viewControllers objectAtIndex:0];
+    currentPosition = currentView.pageIndex;
+}
+
 
 @end
