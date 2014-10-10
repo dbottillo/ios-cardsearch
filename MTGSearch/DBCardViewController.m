@@ -58,7 +58,7 @@
             [cardImage setHidden:NO];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            //[cardView.cardImage setHidden:YES];
+            [cardImage setHidden:YES];
         }];
         [requestOperation start];
     }
@@ -114,7 +114,7 @@
     }
     [cardText sizeToFit];
     
-    [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", (long)pageIndex, (long)totalItems]];
+    [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", ((long)pageIndex + 1), (long)totalItems]];
 }
 
 - (void) updatePriceWith:(NSString *) string{
