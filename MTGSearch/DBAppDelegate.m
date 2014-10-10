@@ -11,6 +11,7 @@
 #import "DBSettingsViewController.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation DBAppDelegate
 
@@ -19,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Crashlytics startWithAPIKey:@"f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userDefaultsDictionary = [userDefaults dictionaryRepresentation];
