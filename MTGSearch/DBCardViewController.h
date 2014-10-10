@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic) GameCard *card;
 
+@property (weak, nonatomic) IBOutlet UIView *cardDetailContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *cardImage;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *labelIndicator;
@@ -28,6 +29,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightImage;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *cardName;
 @property (weak, nonatomic) IBOutlet UILabel *cardType;

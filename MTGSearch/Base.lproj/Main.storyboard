@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -589,6 +588,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cardCost" destination="3ak-P8-g5b" id="pPL-WP-eWk"/>
+                        <outlet property="cardDetailContainer" destination="J64-ep-kAm" id="mvf-Fu-hRu"/>
                         <outlet property="cardImage" destination="ANB-bc-im9" id="NMS-RB-yCG"/>
                         <outlet property="cardName" destination="4mw-DX-GJ6" id="7Ye-gd-13r"/>
                         <outlet property="cardPowerToughness" destination="K7X-VF-HpL" id="uT1-ex-iwr"/>
@@ -597,8 +597,10 @@
                         <outlet property="cardType" destination="hTe-BB-oeQ" id="OGu-7I-Ku2"/>
                         <outlet property="heightImage" destination="8wM-Pr-IF9" id="m3E-fP-Prz"/>
                         <outlet property="labelIndicator" destination="K05-fe-bfu" id="7cs-kB-Sj9"/>
+                        <outlet property="leftImage" destination="fZP-1Y-dG9" id="jNF-Gn-Z96"/>
                         <outlet property="manacostTitle" destination="5wJ-ih-bp6" id="pZD-bP-l3f"/>
                         <outlet property="ptTitle" destination="fzB-hW-zNR" id="kld-jM-4KN"/>
+                        <outlet property="topImage" destination="q1c-CB-UbN" id="Bgx-t9-ZKr"/>
                         <outlet property="typeTitle" destination="2RD-vr-ZsI" id="bly-vR-4hb"/>
                         <outlet property="widthImage" destination="V8R-8n-KEZ" id="0jA-oi-LjB"/>
                     </connections>

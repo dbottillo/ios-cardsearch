@@ -20,8 +20,8 @@
 @synthesize pageIndex, totalItems;
 @synthesize cardImage, cardName, cardType, labelIndicator;
 @synthesize cardCost, cardPowerToughness, cardText, cardPrice;
-@synthesize ptTitle, manacostTitle, typeTitle;
-@synthesize card, heightImage, widthImage;
+@synthesize ptTitle, manacostTitle, typeTitle, cardDetailContainer;
+@synthesize card, heightImage, widthImage, leftImage, topImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,10 +38,18 @@
     
     [self update];
     
-    [widthImage setConstant:[[UIScreen mainScreen] bounds].size.width];
-    [heightImage setConstant:[[UIScreen mainScreen] bounds].size.width*1.4];
+    int w = [[UIScreen mainScreen] bounds].size.width;
+    if ([UIScreen mainScreen].bounds.size.height < 500){
+        w = [[UIScreen mainScreen] bounds].size.width - 66;
+        [leftImage setConstant:33];
+        [topImage setConstant:8];
+    }
+    [widthImage setConstant:w];
+    [heightImage setConstant:w*1.4];
+    
     
     [cardImage setHidden:YES];
+    [cardDetailContainer setHidden:NO];
     if (showImage){
         cardImage.image = nil;
         NSString *url;
@@ -56,9 +64,11 @@
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             cardImage.image = responseObject;
             [cardImage setHidden:NO];
+            [cardDetailContainer setHidden:YES];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [cardImage setHidden:YES];
+            [cardDetailContainer setHidden:NO];
         }];
         [requestOperation start];
     }
