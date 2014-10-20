@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *cards;
-@property (strong, nonatomic) NSString *nameSet;
+@property (strong, nonatomic) NSString *title;
 
 - (void)setCurrentPosition:(NSInteger)pos;
 

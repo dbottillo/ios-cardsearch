@@ -21,7 +21,7 @@
 
 @implementation DBCardsViewController
 
-@synthesize cards, nameSet, pageViewController;
+@synthesize cards, title, pageViewController;
 
 
 - (void)viewDidLoad{
@@ -48,6 +48,8 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    self.navigationItem.title = title;
 }
 
 - (void) viewWillAppear:(BOOL)animated{

@@ -36,7 +36,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.navigationItem.title = NSLocalizedString(@"Search", @"search");
-    
+
     if ([DBAppDelegate isMagic]){
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
         self.navigationItem.leftBarButtonItem = leftButton;
@@ -69,6 +69,10 @@
         [app_delegate setFilterChangedSearch:NO];
     }
     [app_delegate trackPage:@"/search"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
 }
 
 -(void)navSingleTap{
@@ -108,7 +112,7 @@
     DBCardsViewController *cardsViewController = (DBCardsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Cards"];
     [cardsViewController setCards:filteredCards];
     [cardsViewController setCurrentPosition:indexPath.row];
-    [cardsViewController setNameSet:cardSearchBar.text];
+    [cardsViewController setTitle:[NSString stringWithFormat:@"'%@'",cardSearchBar.text]];
     cardsViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cardsViewController animated:YES];
     

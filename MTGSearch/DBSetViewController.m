@@ -76,6 +76,9 @@
             }
         }
     }
+    if (set != nil){
+        self.title = set.name;
+    }
     [app_delegate trackPage:@"/main"];
 }
 
@@ -116,8 +119,9 @@
     DBCardsViewController *cardsViewController = (DBCardsViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"Cards"];
     [cardsViewController setCards:filteredCards];
     [cardsViewController setCurrentPosition:indexPath.row];
-    [cardsViewController setNameSet:set.name];
+    [cardsViewController setTitle:set.name];
     cardsViewController.hidesBottomBarWhenPushed = YES;
+    self.title = @"Back";
     [self.navigationController pushViewController:cardsViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
