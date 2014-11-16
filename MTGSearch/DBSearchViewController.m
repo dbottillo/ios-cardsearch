@@ -37,10 +37,8 @@
     
     self.navigationItem.title = NSLocalizedString(@"Search", @"search");
 
-    if ([DBAppDelegate isMagic]){
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
-        self.navigationItem.leftBarButtonItem = leftButton;
-    }
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navSingleTap)];
     gestureRecognizer.numberOfTapsRequired = 1;
@@ -103,7 +101,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DBCardCell *cell = (DBCardCell *)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
     
-    GameCard *card = [filteredCards objectAtIndex:indexPath.row];
+    MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
     [cell updateWithCard:card];
     return cell;
 }
@@ -149,11 +147,7 @@
 - (void)filterCards{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        if ([DBAppDelegate isMagic]){
-            filteredCards = [self realFilterCards:cards];
-        } else {
-            filteredCards = [[NSMutableArray alloc] initWithArray:cards];
-        }
+        filteredCards = [self realFilterCards:cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [searchTable reloadData];

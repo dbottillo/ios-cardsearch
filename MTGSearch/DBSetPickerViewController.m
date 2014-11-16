@@ -75,7 +75,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    GameSet *set = [app_delegate.sets objectAtIndex:indexPath.row];
+    MTGSet *set = [app_delegate.sets objectAtIndex:indexPath.row];
     
     if (indexPath.row != currentSetId){
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -87,11 +87,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *label = set.name;
-    if ([DBAppDelegate isMagic]){
-        label = ((MTGSet *)set).code;
-    }
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"set_selected" andLabel:label];
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"set_selected" andLabel:set.code];
 }
 
 /*

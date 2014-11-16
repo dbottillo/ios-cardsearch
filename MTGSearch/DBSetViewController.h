@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSArray *cards;
 @property (strong, nonatomic) NSMutableArray *filteredCards;
 
-@property (strong, nonatomic) GameSet *set;
+@property (strong, nonatomic) MTGSet *set;
 
 @end

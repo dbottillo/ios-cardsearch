@@ -8,7 +8,6 @@
 
 #import "DBCardsViewController.h"
 #import "MTGCard.h"
-#import "HSCard.h"
 #import "DBFullCardCell.h"
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFHTTPRequestOperation.h>
@@ -116,7 +115,7 @@
     cardViewController.pageIndex = index;
     cardViewController.totalItems = cards.count;
     
-    GameCard *card = [cards objectAtIndex:index];
+    MTGCard *card = [cards objectAtIndex:index];
     [cardViewController setCard:card];
     [cardViewController setShowImage:showImage];
 

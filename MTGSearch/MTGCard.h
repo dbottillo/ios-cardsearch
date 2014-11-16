@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
 //
 
-#import "GameCard.h"
+#import "NSFNanoObject.h"
 
 #define kColorWhite     0
 #define kColorBlue      1
@@ -19,7 +19,8 @@
 #define kRarityRare         @"Rare"
 #define kRarityMythic       @"Mythic Rare"
 
-@interface MTGCard : GameCard{
+@interface MTGCard : NSFNanoObject{
+    int setId;
     int cmc;
     BOOL isMultiColor;
     BOOL isALand;
@@ -28,6 +29,7 @@
     int multiverseId;
 }
 
+@property (nonatomic, strong) NSString *name;
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSArray *types;
 @property (strong, nonatomic) NSArray *subTypes;
@@ -40,6 +42,9 @@
 @property (strong, nonatomic) NSString *setName;
 
 - (id)initWithName:(NSString *)name;
+
+- (void)setId:(int)newId;
+- (int)getId;
 - (void)convertColors:(NSArray *)newColors;
 - (void)setManaCostConverted:(int)manaCostConverted;
 - (int) getCmc;

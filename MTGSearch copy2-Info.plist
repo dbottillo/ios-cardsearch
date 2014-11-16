@@ -28,8 +28,6 @@
 	<string>UA-48823803-3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MAGIC</key>
-	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

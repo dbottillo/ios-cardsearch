@@ -31,11 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    if ([DBAppDelegate isMagic]){
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
-        self.navigationItem.leftBarButtonItem = leftButton;
-    }
-    
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_switch"]  style:UIBarButtonItemStylePlain target:self action:@selector(pickSet:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
@@ -52,9 +50,7 @@
     [[[tabBar items] objectAtIndex:2] setTitle:NSLocalizedString(@"Settings", @"settings")];
     [targetTabBarItem setTitle:NSLocalizedString(@"Cards", @"cards")];
     NSString *tabBarImage = @"tab_bar_cards_full";
-    if (![DBAppDelegate isMagic]){
-        tabBarImage = @"tab_bar_cards_full_hs";
-    }
+
     UIImage *selectedIcon = [UIImage imageNamed:tabBarImage];
     [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
@@ -109,7 +105,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DBCardCell *cell = (DBCardCell *)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
     
-    GameCard *card = [filteredCards objectAtIndex:indexPath.row];
+    MTGCard *card = [filteredCards objectAtIndex:indexPath.row];
     [cell updateWithCard:card];
     return cell;
 }
@@ -145,7 +141,7 @@
 
 - (void) loadSet{
     set = [app_delegate.sets objectAtIndex: currentIndexSet];
-    [app_delegate trackPage:[NSString stringWithFormat:@"/set/%@", [DBAppDelegate isMagic] ? ((MTGSet *)set).code : set.name]];
+    [app_delegate trackPage:[NSString stringWithFormat:@"/set/%@", set.code]];
     self.navigationItem.title = set.name;
     [self loadCardsOfSet];
 }
@@ -164,11 +160,7 @@
 - (void)filterCards{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        if ([DBAppDelegate isMagic]){
-            filteredCards = [self realFilterCards:cards];
-        } else {
-            filteredCards = [[NSMutableArray alloc] initWithArray:cards];
-        }
+        filteredCards = [self realFilterCards:cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [self.tableView reloadData];

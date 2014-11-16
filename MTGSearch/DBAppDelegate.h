@@ -65,6 +65,4 @@
 + (UIColor *)grey;
 + (UIColor*)colorWithHexString:(NSString*)hex;
 
-+ (BOOL) isMagic;
-
 @end

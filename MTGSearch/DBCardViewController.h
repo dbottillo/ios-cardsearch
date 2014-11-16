@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DBAppDelegate.h"
-#import "GameCard.h"
+#import "MTGCard.h"
 
 @interface DBCardViewController : UIViewController {
     BOOL showImage;
@@ -17,7 +17,7 @@
 @property NSUInteger pageIndex;
 @property NSUInteger totalItems;
 
-@property (strong, nonatomic) GameCard *card;
+@property (strong, nonatomic) MTGCard *card;
 
 @property (weak, nonatomic) IBOutlet UIView *cardDetailContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *cardImage;

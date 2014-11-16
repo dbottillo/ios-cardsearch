@@ -6,10 +6,15 @@
 //  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
 //
 
-#import "GameSet.h"
+@interface MTGSet : NSObject {
+    int setId;
+}
 
-@interface MTGSet : GameSet
-
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *code;
+
+- (void)setId:(int)newId;
+- (int)getId;
+
 
 @end

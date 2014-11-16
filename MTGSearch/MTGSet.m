@@ -11,6 +11,14 @@
 @implementation MTGSet
 
 @synthesize code;
+@synthesize name;
 
+- (void)setId:(int)newId{
+    setId = newId;
+}
+
+- (int)getId{
+    return setId;
+}
 
 @end

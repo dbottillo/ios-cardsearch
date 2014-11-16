@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DBAppDelegate.h"
 #import "MTGCard.h"
-#import "HSCard.h"
-#import "GameCard.h"
 #import "DBFilterViewController.h"
 
 @interface DBCardCell : UITableViewCell
@@ -20,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *lightBg;
 @property (weak, nonatomic) IBOutlet UILabel *cardRarity;
 
-- (void)updateWithCard:(GameCard *)card;
+- (void)updateWithCard:(MTGCard *)card;
 
 @end

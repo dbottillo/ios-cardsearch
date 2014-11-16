@@ -112,9 +112,6 @@
 }
 
 + (UIColor *)mainColor{
-    if (![DBAppDelegate isMagic]){
-        return [DBAppDelegate colorWithHexString:@"b3802e"];
-    }
     return [DBAppDelegate colorWithHexString:@"39627E"];
 }
 
@@ -155,9 +152,6 @@
 }
 
 + (UIColor *)rare{
-    if (![DBAppDelegate isMagic]){
-        return [DBAppDelegate colorWithHexString:@"3582c6"];
-    }
     return [DBAppDelegate colorWithHexString:@"BD9723"];
 }
 
@@ -211,11 +205,6 @@
                            green:((float) g / 255.0f)
                             blue:((float) b / 255.0f)
                            alpha:1.0f];
-}
-
-+ (BOOL)isMagic{
-    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    return [[infoDict objectForKey:@"MAGIC"] boolValue];
 }
 
 @end

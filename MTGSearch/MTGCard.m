@@ -10,6 +10,8 @@
 
 @implementation MTGCard
 
+@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name;
+
 - (id)initWithName:(NSString *)name{
     self = [super init];
     if (self != nil){
@@ -23,7 +25,13 @@
     return self;
 }
 
-@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName;
+- (void)setId:(int)newId{
+    setId = newId;
+}
+
+- (int)getId{
+    return setId;
+}
 
 - (void)setManaCostConverted:(int)manaCostConverted{
     self->cmc = manaCostConverted;
