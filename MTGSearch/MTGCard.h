@@ -19,6 +19,10 @@
 #define kRarityRare         @"Rare"
 #define kRarityMythic       @"Mythic Rare"
 
+#define     kNanoKeyMultiverseId    @"multiverseId"
+#define     kNanoKeyName    @"name"
+#define     kNanoKeyType    @"type"
+
 @interface MTGCard : NSFNanoObject{
     int setId;
     int cmc;
@@ -41,7 +45,7 @@
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *setName;
 
-- (id)initWithName:(NSString *)name;
+- (id)initWithName:(NSString *)_name;
 
 - (void)setId:(int)newId;
 - (int)getId;

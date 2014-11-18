@@ -56,6 +56,8 @@
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
 		6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
+		6D8C46D81A1BF68F00C7C535 /* MTGTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */; };
+		6D8C46D91A1BF68F00C7C535 /* MTGTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -81,6 +83,8 @@
 		6DEA9B501A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B401A18F4B800AF7D57 /* fopenCompatibilityFix.c */; };
 		6DEA9B511A18F4B800AF7D57 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */; };
 		6DEA9B521A18F4B800AF7D57 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */; };
+		6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
+		6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		92434AB9211B463A8792252B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +142,8 @@
 		6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FilterCards.m"; sourceTree = "<group>"; };
 		6D835D4C19E58BED00F188DA /* DBCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardViewController.h; sourceTree = "<group>"; };
 		6D835D4D19E58BED00F188DA /* DBCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardViewController.m; sourceTree = "<group>"; };
+		6D8C46D61A1BF68F00C7C535 /* MTGTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGTestObject.h; sourceTree = "<group>"; };
+		6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGTestObject.m; sourceTree = "<group>"; };
 		6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +196,8 @@
 		6DEA9B4B1A18F4B800AF7D57 /* NSFNanoSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoSortDescriptor.h; sourceTree = "<group>"; };
 		6DEA9B4C1A18F4B800AF7D57 /* NSFNanoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoStore.h; sourceTree = "<group>"; };
 		6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanostore2.a; sourceTree = "<group>"; };
+		6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataProvider.h; sourceTree = "<group>"; };
+		6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataProvider.m; sourceTree = "<group>"; };
 		8DAD1DACEA824BEFAF35E1A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		905B74DA559DF9384B07BA7E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +269,10 @@
 				6D70036A19BDC89E00AAC079 /* MTGSet.m */,
 				6D70037119BDCF8F00AAC079 /* MTGCard.h */,
 				6D70037219BDCF8F00AAC079 /* MTGCard.m */,
+				6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */,
+				6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */,
+				6D8C46D61A1BF68F00C7C535 /* MTGTestObject.h */,
+				6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */,
 			);
 			name = "Data Provider";
 			sourceTree = "<group>";
@@ -514,9 +526,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D12DE4C19E2E59C001C11D6 /* MTGSearch TF */ = {
+		6D12DE4C19E2E59C001C11D6 /* MTGSearch Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D12DE7719E2E59C001C11D6 /* Build configuration list for PBXNativeTarget "MTGSearch TF" */;
+			buildConfigurationList = 6D12DE7719E2E59C001C11D6 /* Build configuration list for PBXNativeTarget "MTGSearch Dev" */;
 			buildPhases = (
 				6D12DE4D19E2E59C001C11D6 /* Check Pods Manifest.lock */,
 				6D12DE4E19E2E59C001C11D6 /* Sources */,
@@ -528,7 +540,7 @@
 			);
 			dependencies = (
 			);
-			name = "MTGSearch TF";
+			name = "MTGSearch Dev";
 			productName = MTGSearch;
 			productReference = 6D12DE7A19E2E59C001C11D6 /* MTGSearch copy.app */;
 			productType = "com.apple.product-type.application";
@@ -608,7 +620,7 @@
 			targets = (
 				6DB12C7519BDAB0A00B2BCC8 /* MTGSearch */,
 				6DB12C9919BDAB0B00B2BCC8 /* MTGSearchTests */,
-				6D12DE4C19E2E59C001C11D6 /* MTGSearch TF */,
+				6D12DE4C19E2E59C001C11D6 /* MTGSearch Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -733,6 +745,7 @@
 			files = (
 				6D12DE4F19E2E59C001C11D6 /* UIViewController+NavBar.m in Sources */,
 				6DEA9B501A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */,
+				6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */,
 				6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */,
 				6D12DE5219E2E59C001C11D6 /* CardFilter.m in Sources */,
@@ -747,6 +760,7 @@
 				6D12DE5F19E2E59C001C11D6 /* DBCardCell.m in Sources */,
 				6D12DE6019E2E59C001C11D6 /* DBSettingsViewController.m in Sources */,
 				6D12DE6119E2E59C001C11D6 /* main.m in Sources */,
+				6D8C46D91A1BF68F00C7C535 /* MTGTestObject.m in Sources */,
 				6D12DE6219E2E59C001C11D6 /* MTGCard.m in Sources */,
 				6D12DE6319E2E59C001C11D6 /* CardsDatabase.m in Sources */,
 			);
@@ -758,6 +772,7 @@
 			files = (
 				6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
 				6DEA9B4F1A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */,
+				6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038119BF380A00AAC079 /* CardFilter.m in Sources */,
@@ -772,6 +787,7 @@
 				6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */,
 				6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */,
 				6DB12C8619BDAB0A00B2BCC8 /* main.m in Sources */,
+				6D8C46D81A1BF68F00C7C535 /* MTGTestObject.m in Sources */,
 				6D70037319BDCF8F00AAC079 /* MTGCard.m in Sources */,
 				6D70036219BDC69F00AAC079 /* CardsDatabase.m in Sources */,
 			);
@@ -847,6 +863,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch copy2-Info.plist";
@@ -873,6 +891,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch copy2-Info.plist";
@@ -1061,7 +1081,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D12DE7719E2E59C001C11D6 /* Build configuration list for PBXNativeTarget "MTGSearch TF" */ = {
+		6D12DE7719E2E59C001C11D6 /* Build configuration list for PBXNativeTarget "MTGSearch Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D12DE7819E2E59C001C11D6 /* Debug */,

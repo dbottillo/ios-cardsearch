@@ -42,14 +42,8 @@
         [userDefaults synchronize];
     }
     
-    NSString *GACode;
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    if (kDebug){
-        //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-        GACode = [infoDict objectForKey:@"GA_CODE_DEBUG"];
-    } else {
-        GACode = [infoDict objectForKey:@"GA_CODE"];
-    }
+    NSString *GACode = [infoDict objectForKey:@"GA_CODE"];
     tracker = [[GAI sharedInstance] trackerWithTrackingId:GACode];
     
     return YES;

@@ -7,15 +7,31 @@
 //
 
 #import "MTGCard.h"
-
 @implementation MTGCard
 
 @synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name;
 
-- (id)initWithName:(NSString *)name{
+- (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore{
+    if (self = [super initNanoObjectFromDictionaryRepresentation:theDictionary forKey:aKey store:theStore]) {
+        name = [theDictionary objectForKey:kNanoKeyName];
+        type = [theDictionary objectForKey:kNanoKeyType];
+        multiverseId = [[theDictionary objectForKey:kNanoKeyMultiverseId] intValue];
+    }
+    
+    return self;
+}
+
+- (NSDictionary *)nanoObjectDictionaryRepresentation{
+    NSDictionary *ret = [NSDictionary dictionaryWithObjectsAndKeys:name, kNanoKeyName,
+                         type, kNanoKeyType,
+                         [NSNumber numberWithInt:multiverseId], kNanoKeyMultiverseId, nil];
+    return ret;
+}
+
+- (id)initWithName:(NSString *)_name{
     self = [super init];
     if (self != nil){
-        self.name = name;
+        name = _name;
         isMultiColor = NO;
         isALand = NO;
         isAnArtifact = NO;
@@ -122,6 +138,18 @@
     if (color < otherColor) return NSOrderedAscending;
 
     return NSOrderedDescending;
+}
+
+- (NSString *)nanoObjectKey{
+    return self.key;
+}
+
+- (id) rootObject{
+    return self;
+}
+
+- (NSString *) description{
+    return [NSString stringWithFormat:@"[MTGCard] %@ - %d ", self.name, multiverseId];
 }
 
 @end

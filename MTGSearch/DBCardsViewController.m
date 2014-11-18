@@ -14,14 +14,14 @@
 #import "DBSettingsViewController.h"
 #import <AFNetworking.h>
 #import "DBCardViewController.h"
+#import "LocalDataProvider.h"
 
 @interface DBCardsViewController ()
 @end
 
 @implementation DBCardsViewController
 
-@synthesize cards, title, pageViewController;
-
+@synthesize cards, pageViewController, savedCards, localDataProvider, favBtn, currentSavedCard;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -29,11 +29,13 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     showImage = [userDefaults boolForKey:kUserImage];
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_share"]  style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    UIBarButtonItem *shareBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_share"]  style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
+    favBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_fav_off"]  style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: shareBtn, favBtn, nil]];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
+    self.pageViewController.delegate = self;
     
     DBCardViewController *startingViewController = [self viewControllerAtIndex:currentPosition];
     NSArray *viewControllers = @[startingViewController];
@@ -48,18 +50,35 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
-    self.navigationItem.title = title;
+    localDataProvider = [[LocalDataProvider alloc] init];
+    
+    self.navigationItem.title = @"";
 }
 
 - (void) viewWillAppear:(BOOL)animated{
     [app_delegate trackPage:@"/cards"];
+    
+    [self loadSavedCards];
 }
 
+- (void) loadSavedCards{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self checkSavedCard];
+        });
+    });
+}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)save:(UIBarButtonItem *)barButtonItem{
+    if (currentSavedCard){
+        [localDataProvider removeCard:currentSavedCard];
+    } else {
+        [localDataProvider addCard:[cards objectAtIndex:currentPosition]];
+    }
+    [self loadSavedCards];
 }
 
 - (void)share:(UIBarButtonItem *)barButtonItem{
@@ -123,9 +142,27 @@
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
-    
-    DBCardViewController *currentView = [self.pageViewController.viewControllers objectAtIndex:0];
-    currentPosition = currentView.pageIndex;
+    if (completed){
+        DBCardViewController *currentView = [self.pageViewController.viewControllers objectAtIndex:0];
+        currentPosition = currentView.pageIndex;
+        [self checkSavedCard];
+    }
+}
+
+- (void) checkSavedCard{
+    currentSavedCard = nil;
+    MTGCard *currentCard = [cards objectAtIndex:currentPosition];
+    for (MTGCard *card in savedCards){
+        if([card getMultiverseId] == [currentCard getMultiverseId]){
+            currentSavedCard = card;
+            break;
+        }
+    }
+    if (currentSavedCard){
+        [favBtn setImage:[[UIImage imageNamed:@"nav_icon_fav_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    } else {
+        [favBtn setImage:[UIImage imageNamed:@"nav_icon_fav_off"]];
+    }
 }
 
 

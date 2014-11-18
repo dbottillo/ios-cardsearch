@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DBAppDelegate.h"
+#import "LocalDataProvider.h"
 
-@interface DBCardsViewController : UIViewController <UIPageViewControllerDataSource> {
+@interface DBCardsViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     NSInteger currentPosition;
     BOOL showImage;
 }
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *cards;
-@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSArray *savedCards;
+@property (strong, nonatomic) LocalDataProvider *localDataProvider;
+@property (strong, nonatomic) UIBarButtonItem *favBtn;
+@property (strong, nonatomic) MTGCard *currentSavedCard;
 
 - (void)setCurrentPosition:(NSInteger)pos;
 
