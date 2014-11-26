@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D06F2961A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
+		6D06F2971A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
+		6D06F2981A23E10C00F5C34E /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D06F2951A23E10C00F5C34E /* libnanostore2.a */; };
+		6D06F2991A23E10C00F5C34E /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D06F2951A23E10C00F5C34E /* libnanostore2.a */; };
 		6D12DE4F19E2E59C001C11D6 /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
 		6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
 		6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037719BE2C0C00AAC079 /* DBSetPickerViewController.m */; };
@@ -79,10 +83,6 @@
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
 		6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
 		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
-		6DEA9B4F1A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B401A18F4B800AF7D57 /* fopenCompatibilityFix.c */; };
-		6DEA9B501A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B401A18F4B800AF7D57 /* fopenCompatibilityFix.c */; };
-		6DEA9B511A18F4B800AF7D57 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */; };
-		6DEA9B521A18F4B800AF7D57 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */; };
 		6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		92434AB9211B463A8792252B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DAD1DACEA824BEFAF35E1A5 /* libPods.a */; };
@@ -104,6 +104,20 @@
 		6D0128B919E180A70047C117 /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "Pods/build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
 		6D0128E919E180E00047C117 /* MTGSearch copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTGSearch copy-Info.plist"; path = "/Users/danielebottillo/XCodeProjects/MTGSearch/MTGSearch copy-Info.plist"; sourceTree = "<absolute>"; };
 		6D0128F019E19B2B0047C117 /* HSLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HSLaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fopenCompatibilityFix.c; sourceTree = "<group>"; };
+		6D06F2881A23E10C00F5C34E /* NanoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NanoStore.h; sourceTree = "<group>"; };
+		6D06F2891A23E10C00F5C34E /* NSFNanoBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoBag.h; sourceTree = "<group>"; };
+		6D06F28A1A23E10C00F5C34E /* NSFNanoEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoEngine.h; sourceTree = "<group>"; };
+		6D06F28B1A23E10C00F5C34E /* NSFNanoExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoExpression.h; sourceTree = "<group>"; };
+		6D06F28C1A23E10C00F5C34E /* NSFNanoGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoGlobals.h; sourceTree = "<group>"; };
+		6D06F28D1A23E10C00F5C34E /* NSFNanoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoObject.h; sourceTree = "<group>"; };
+		6D06F28E1A23E10C00F5C34E /* NSFNanoObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoObjectProtocol.h; sourceTree = "<group>"; };
+		6D06F28F1A23E10C00F5C34E /* NSFNanoPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoPredicate.h; sourceTree = "<group>"; };
+		6D06F2901A23E10C00F5C34E /* NSFNanoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoResult.h; sourceTree = "<group>"; };
+		6D06F2911A23E10C00F5C34E /* NSFNanoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoSearch.h; sourceTree = "<group>"; };
+		6D06F2921A23E10C00F5C34E /* NSFNanoSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoSortDescriptor.h; sourceTree = "<group>"; };
+		6D06F2931A23E10C00F5C34E /* NSFNanoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoStore.h; sourceTree = "<group>"; };
+		6D06F2951A23E10C00F5C34E /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanostore2.a; sourceTree = "<group>"; };
 		6D12DE7A19E2E59C001C11D6 /* MTGSearch copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTGSearch copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D12DE7B19E2E59C001C11D6 /* MTGSearch copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTGSearch copy2-Info.plist"; path = "/Users/danielebottillo/XCodeProjects/MTGSearch/MTGSearch copy2-Info.plist"; sourceTree = "<absolute>"; };
 		6D12DEAD19E33E0A001C11D6 /* HSSearch copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HSSearch copy-Info.plist"; path = "/Users/danielebottillo/XCodeProjects/MTGSearch/HSSearch copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -182,20 +196,6 @@
 		6DDC9CD519DC524C002BBB4F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6DEA9B401A18F4B800AF7D57 /* fopenCompatibilityFix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fopenCompatibilityFix.c; sourceTree = "<group>"; };
-		6DEA9B411A18F4B800AF7D57 /* NanoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NanoStore.h; sourceTree = "<group>"; };
-		6DEA9B421A18F4B800AF7D57 /* NSFNanoBag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoBag.h; sourceTree = "<group>"; };
-		6DEA9B431A18F4B800AF7D57 /* NSFNanoEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoEngine.h; sourceTree = "<group>"; };
-		6DEA9B441A18F4B800AF7D57 /* NSFNanoExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoExpression.h; sourceTree = "<group>"; };
-		6DEA9B451A18F4B800AF7D57 /* NSFNanoGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoGlobals.h; sourceTree = "<group>"; };
-		6DEA9B461A18F4B800AF7D57 /* NSFNanoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoObject.h; sourceTree = "<group>"; };
-		6DEA9B471A18F4B800AF7D57 /* NSFNanoObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoObjectProtocol.h; sourceTree = "<group>"; };
-		6DEA9B481A18F4B800AF7D57 /* NSFNanoPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoPredicate.h; sourceTree = "<group>"; };
-		6DEA9B491A18F4B800AF7D57 /* NSFNanoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoResult.h; sourceTree = "<group>"; };
-		6DEA9B4A1A18F4B800AF7D57 /* NSFNanoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoSearch.h; sourceTree = "<group>"; };
-		6DEA9B4B1A18F4B800AF7D57 /* NSFNanoSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoSortDescriptor.h; sourceTree = "<group>"; };
-		6DEA9B4C1A18F4B800AF7D57 /* NSFNanoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFNanoStore.h; sourceTree = "<group>"; };
-		6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanostore2.a; sourceTree = "<group>"; };
 		6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataProvider.h; sourceTree = "<group>"; };
 		6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataProvider.m; sourceTree = "<group>"; };
 		8DAD1DACEA824BEFAF35E1A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DEA9B521A18F4B800AF7D57 /* libnanostore2.a in Frameworks */,
+				6D06F2991A23E10C00F5C34E /* libnanostore2.a in Frameworks */,
 				6D12DE6519E2E59C001C11D6 /* libz.dylib in Frameworks */,
 				6D12DE6619E2E59C001C11D6 /* SystemConfiguration.framework in Frameworks */,
 				6D12DE6719E2E59C001C11D6 /* libGoogleAnalyticsServices.a in Frameworks */,
@@ -225,7 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DEA9B511A18F4B800AF7D57 /* libnanostore2.a in Frameworks */,
+				6D06F2981A23E10C00F5C34E /* libnanostore2.a in Frameworks */,
 				6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */,
 				6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */,
 				6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */,
@@ -252,6 +252,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D06F2841A23E10C00F5C34E /* NanoStore2 */ = {
+			isa = PBXGroup;
+			children = (
+				6D06F2851A23E10C00F5C34E /* Release */,
+			);
+			name = NanoStore2;
+			path = Distribution/NanoStore2;
+			sourceTree = "<group>";
+		};
+		6D06F2851A23E10C00F5C34E /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				6D06F2861A23E10C00F5C34E /* Headers */,
+				6D06F2941A23E10C00F5C34E /* Library */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		6D06F2861A23E10C00F5C34E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */,
+				6D06F2881A23E10C00F5C34E /* NanoStore.h */,
+				6D06F2891A23E10C00F5C34E /* NSFNanoBag.h */,
+				6D06F28A1A23E10C00F5C34E /* NSFNanoEngine.h */,
+				6D06F28B1A23E10C00F5C34E /* NSFNanoExpression.h */,
+				6D06F28C1A23E10C00F5C34E /* NSFNanoGlobals.h */,
+				6D06F28D1A23E10C00F5C34E /* NSFNanoObject.h */,
+				6D06F28E1A23E10C00F5C34E /* NSFNanoObjectProtocol.h */,
+				6D06F28F1A23E10C00F5C34E /* NSFNanoPredicate.h */,
+				6D06F2901A23E10C00F5C34E /* NSFNanoResult.h */,
+				6D06F2911A23E10C00F5C34E /* NSFNanoSearch.h */,
+				6D06F2921A23E10C00F5C34E /* NSFNanoSortDescriptor.h */,
+				6D06F2931A23E10C00F5C34E /* NSFNanoStore.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		6D06F2941A23E10C00F5C34E /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6D06F2951A23E10C00F5C34E /* libnanostore2.a */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		6D70035D19BDC64100AAC079 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +481,7 @@
 		6DDC9CC519DC51E4002BBB4F /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				6DEA9B3C1A18F4B800AF7D57 /* NanoStore */,
+				6D06F2841A23E10C00F5C34E /* NanoStore2 */,
 				6D3B3F1A19E88708008BFB64 /* Crashlytics.framework */,
 				6DDC9CD019DC521B002BBB4F /* Google Analytics */,
 			);
@@ -458,60 +504,6 @@
 				6DDC9CCF19DC5214002BBB4F /* GAITracker.h */,
 			);
 			name = "Google Analytics";
-			sourceTree = "<group>";
-		};
-		6DEA9B3C1A18F4B800AF7D57 /* NanoStore */ = {
-			isa = PBXGroup;
-			children = (
-				6DEA9B3D1A18F4B800AF7D57 /* NanoStore2 */,
-			);
-			name = NanoStore;
-			path = Distribution;
-			sourceTree = "<group>";
-		};
-		6DEA9B3D1A18F4B800AF7D57 /* NanoStore2 */ = {
-			isa = PBXGroup;
-			children = (
-				6DEA9B3E1A18F4B800AF7D57 /* Release */,
-			);
-			path = NanoStore2;
-			sourceTree = "<group>";
-		};
-		6DEA9B3E1A18F4B800AF7D57 /* Release */ = {
-			isa = PBXGroup;
-			children = (
-				6DEA9B3F1A18F4B800AF7D57 /* Headers */,
-				6DEA9B4D1A18F4B800AF7D57 /* Library */,
-			);
-			path = Release;
-			sourceTree = "<group>";
-		};
-		6DEA9B3F1A18F4B800AF7D57 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				6DEA9B401A18F4B800AF7D57 /* fopenCompatibilityFix.c */,
-				6DEA9B411A18F4B800AF7D57 /* NanoStore.h */,
-				6DEA9B421A18F4B800AF7D57 /* NSFNanoBag.h */,
-				6DEA9B431A18F4B800AF7D57 /* NSFNanoEngine.h */,
-				6DEA9B441A18F4B800AF7D57 /* NSFNanoExpression.h */,
-				6DEA9B451A18F4B800AF7D57 /* NSFNanoGlobals.h */,
-				6DEA9B461A18F4B800AF7D57 /* NSFNanoObject.h */,
-				6DEA9B471A18F4B800AF7D57 /* NSFNanoObjectProtocol.h */,
-				6DEA9B481A18F4B800AF7D57 /* NSFNanoPredicate.h */,
-				6DEA9B491A18F4B800AF7D57 /* NSFNanoResult.h */,
-				6DEA9B4A1A18F4B800AF7D57 /* NSFNanoSearch.h */,
-				6DEA9B4B1A18F4B800AF7D57 /* NSFNanoSortDescriptor.h */,
-				6DEA9B4C1A18F4B800AF7D57 /* NSFNanoStore.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		6DEA9B4D1A18F4B800AF7D57 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				6DEA9B4E1A18F4B800AF7D57 /* libnanostore2.a */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		74427FEC1EA5D2E742AC8C17 /* Pods */ = {
@@ -744,7 +736,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D12DE4F19E2E59C001C11D6 /* UIViewController+NavBar.m in Sources */,
-				6DEA9B501A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */,
 				6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */,
 				6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */,
@@ -753,6 +744,7 @@
 				6D12DE5519E2E59C001C11D6 /* DBAppDelegate.m in Sources */,
 				6D12DE5719E2E59C001C11D6 /* DBFullCardCell.m in Sources */,
 				6D12DE5819E2E59C001C11D6 /* UIViewController+FilterCards.m in Sources */,
+				6D06F2971A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */,
 				6D12DE5A19E2E59C001C11D6 /* MTGSet.m in Sources */,
 				6D12DE5B19E2E59C001C11D6 /* DBCardsViewController.m in Sources */,
 				6D12DE5C19E2E59C001C11D6 /* DBSearchViewController.m in Sources */,
@@ -771,7 +763,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
-				6DEA9B4F1A18F4B800AF7D57 /* fopenCompatibilityFix.c in Sources */,
 				6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
@@ -780,6 +771,7 @@
 				6DB12C8A19BDAB0A00B2BCC8 /* DBAppDelegate.m in Sources */,
 				6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */,
 				6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
+				6D06F2961A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */,
 				6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */,
 				6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
 				6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */,
@@ -856,6 +848,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 905B74DA559DF9384B07BA7E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -867,6 +863,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "MTGSearch copy2-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -884,6 +881,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -895,6 +896,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
+				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = "MTGSearch copy2-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -982,6 +984,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 905B74DA559DF9384B07BA7E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1012,6 +1018,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
