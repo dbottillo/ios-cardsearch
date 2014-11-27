@@ -37,19 +37,17 @@
     [cardsTable setDelegate:self];
     [cardsTable setDataSource:self];
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    showImage = [userDefaults boolForKey:kUserImage];
-    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
     self.navigationItem.leftBarButtonItem = leftButton;
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_switch"]  style:UIBarButtonItemStylePlain target:self action:@selector(lucky:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_lucky"]  style:UIBarButtonItemStylePlain target:self action:@selector(lucky:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     setLoaded = false;
     
     //self.navigationController.tabBarController.tabBar.barTintColor = [UIColor blackColor];
     self.navigationController.tabBarController.tabBar.tintColor = [DBAppDelegate mainColor];
+    self.navigationItem.title = @"MTG Cards Info";
     
     [self styleNavBar];
     
@@ -67,6 +65,8 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    showImage = [userDefaults boolForKey:kUserImage];
     if (setLoaded){
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSInteger indexSet = [userDefaults integerForKey:kSetId];

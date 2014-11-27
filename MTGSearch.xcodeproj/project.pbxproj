@@ -858,7 +858,7 @@
 			baseConfigurationReference = 905B74DA559DF9384B07BA7E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
-					armv7s,
+					armv64,
 					armv7,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -884,7 +884,7 @@
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -894,7 +894,7 @@
 			baseConfigurationReference = 4A4F24BAB8BB2153D5F9F6F5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
-					armv7s,
+					armv64,
 					armv7,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -919,7 +919,7 @@
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

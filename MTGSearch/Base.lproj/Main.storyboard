@@ -133,7 +133,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-my-JDa">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.94896673389999997" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -155,11 +155,11 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="Acd-my-JDa" secondAttribute="centerY" id="EWs-WL-SO6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Acd-my-JDa" secondAttribute="trailing" constant="20" id="LrT-Kr-StC"/>
-                                    <constraint firstItem="Acd-my-JDa" firstAttribute="leading" secondItem="JPZ-Ih-lm6" secondAttribute="leading" constant="20" id="RfF-dU-pMS"/>
+                                    <constraint firstItem="Acd-my-JDa" firstAttribute="leading" secondItem="JPZ-Ih-lm6" secondAttribute="leading" constant="15" id="RfF-dU-pMS"/>
                                     <constraint firstAttribute="centerY" secondItem="3Go-CD-udT" secondAttribute="centerY" id="paV-qZ-v6j"/>
                                     <constraint firstAttribute="height" constant="50" id="rS2-NU-GcL"/>
                                     <constraint firstAttribute="trailing" secondItem="3Go-CD-udT" secondAttribute="trailing" constant="20" id="uiv-6e-EpU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Acd-my-JDa" secondAttribute="trailing" constant="52" id="wEd-zw-Xdl"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0B2-Se-HGa">
@@ -174,6 +174,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hbs-Kj-bk5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="5" height="60"/>
                                                     <color key="backgroundColor" red="0.22352941179999999" green="0.38431372549999998" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -190,6 +191,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLy-I3-3vy">
+                                                    <rect key="frame" x="5" y="0.0" width="1" height="60"/>
                                                     <color key="backgroundColor" red="0.81239385190000002" green="0.81239385190000002" blue="0.81239385190000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6Q-bz-SyO">
@@ -499,7 +501,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WWF-yr-oi1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WWF-yr-oi1">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -511,6 +513,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O8l-EY-NP3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="5" height="60"/>
                                                     <color key="backgroundColor" red="0.22352941179999999" green="0.38431372549999998" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -527,6 +530,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fXD-u8-cRa">
+                                                    <rect key="frame" x="5" y="0.0" width="1" height="60"/>
                                                     <color key="backgroundColor" red="0.81239385190000002" green="0.81239385190000002" blue="0.81239385190000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqi-47-Tne">
@@ -790,6 +794,7 @@
                         <outlet property="cardCost" destination="3ak-P8-g5b" id="pPL-WP-eWk"/>
                         <outlet property="cardDetailContainer" destination="J64-ep-kAm" id="mvf-Fu-hRu"/>
                         <outlet property="cardImage" destination="ANB-bc-im9" id="NMS-RB-yCG"/>
+                        <outlet property="cardName" destination="4mw-DX-GJ6" id="CwM-j4-sfL"/>
                         <outlet property="cardPowerToughness" destination="K7X-VF-HpL" id="uT1-ex-iwr"/>
                         <outlet property="cardPrice" destination="cdg-JA-8e6" id="tIi-aB-QCW"/>
                         <outlet property="cardText" destination="x7q-Bp-6LU" id="gxi-xn-N0L"/>

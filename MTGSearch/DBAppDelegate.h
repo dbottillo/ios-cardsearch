@@ -25,6 +25,7 @@
 #define kUAActionClick          @"click"
 #define kUAActionToggle         @"toggle"
 #define kUAActionOpen           @"open"
+#define kUAActionLucky          @"lucky"
 #define kUAActionSaved          @"saved"
 #define kUAActionUnsaved        @"unsaved"
 #define kUAActionLifeCounter    @"lifeCounter"

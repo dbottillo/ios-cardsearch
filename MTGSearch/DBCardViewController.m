@@ -54,12 +54,17 @@
         needToLoadCard = YES;
         isLoading = NO;
         
-        self.navigationItem.title = @"I'm feeling lucky";
+        self.navigationItem.title = NSLocalizedString(@"Lucky?","lucky?");
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnImage)];
         singleTap.numberOfTapsRequired = 1;
         cardImage.userInteractionEnabled = YES;
         [cardImage addGestureRecognizer:singleTap];
+        
+        UITapGestureRecognizer *singleTapOnDetail = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnImage)];
+        singleTapOnDetail.numberOfTapsRequired = 1;
+        [cardDetailContainer setUserInteractionEnabled:YES];
+        [cardDetailContainer addGestureRecognizer:singleTapOnDetail];
 
         
         [self loadRandomCards];
@@ -79,8 +84,6 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
-    [app_delegate trackPage:track];
     [self loadSavedCards];
 }
 
@@ -130,6 +133,11 @@
     } else {
         [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", ((long)pageIndex + 1), (long)totalItems]];
     }
+    if (isLucky){
+        [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionLucky andLabel:card.name];
+    }
+    NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
+    [app_delegate trackPage:track];
 }
 
 - (void) updatePriceWith:(NSString *) string{
