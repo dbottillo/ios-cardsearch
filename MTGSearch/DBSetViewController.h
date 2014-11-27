@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "MTGSet.h"
 
-@interface DBSetViewController : UITableViewController {
+@interface DBSetViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSInteger currentIndexSet;
     BOOL setLoaded;
+    BOOL showImage;
 }
 
 @property (strong, nonatomic) NSArray *cards;
 @property (strong, nonatomic) NSMutableArray *filteredCards;
+@property (strong, nonatomic) IBOutlet UITableView *cardsTable;
+@property (weak, nonatomic) IBOutlet UILabel *setName;
+@property (weak, nonatomic) IBOutlet UIView *setPicker;
 
 @property (strong, nonatomic) MTGSet *set;
+- (IBAction)pickSet:(id)sender;
 
 @end

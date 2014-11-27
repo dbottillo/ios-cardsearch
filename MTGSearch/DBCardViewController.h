@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "DBAppDelegate.h"
 #import "MTGCard.h"
+#import "LocalDataProvider.h"
 
 @interface DBCardViewController : UIViewController {
     BOOL showImage;
+    BOOL isLucky;
+    BOOL needToLoadCard;
+    BOOL isLoading;
 }
 
 @property NSUInteger pageIndex;
@@ -39,7 +43,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardPowerToughness;
 @property (weak, nonatomic) IBOutlet UILabel *cardPrice;
 
+@property (strong, nonatomic) UIBarButtonItem *favBtn;
+@property (strong, nonatomic) MTGCard *currentSavedCard;
+
+// lucky mode
+@property (strong, nonatomic) NSArray *savedCards;
+@property (strong, nonatomic) LocalDataProvider *localDataProvider;
+@property (strong, nonatomic) NSMutableArray *randomCards;
+
 - (void) updatePriceWith:(NSString *) string;
 - (void)setShowImage:(BOOL)_show;
+
+- (void) setLuckyModeOff;
+- (void) setLuckyModeOn;
 
 @end

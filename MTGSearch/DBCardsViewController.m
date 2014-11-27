@@ -131,6 +131,7 @@
     
     // Create a new view controller and pass suitable data.
     DBCardViewController *cardViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CardViewController"];
+    [cardViewController setLuckyModeOff];
     cardViewController.pageIndex = index;
     cardViewController.totalItems = cards.count;
     

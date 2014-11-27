@@ -15,8 +15,10 @@
 #import "DBSetPickerViewController.h"
 #import "DBCardsViewController.h"
 #import "DBFilterViewController.h"
+#import "DBCardViewController.h"
 #import "UIViewController+FilterCards.h"
 #import "UIViewController+NavBar.h"
+#import "DBSettingsViewController.h"
 #import "DBCardCell.h"
 
 @interface DBSetViewController ()
@@ -25,16 +27,23 @@
 
 @implementation DBSetViewController
 
-@synthesize cards, set, filteredCards;
+@synthesize cards, set, filteredCards, cardsTable;
+@synthesize setName, setPicker;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [cardsTable setDelegate:self];
+    [cardsTable setDataSource:self];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    showImage = [userDefaults boolForKey:kUserImage];
+    
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_filter"]  style:UIBarButtonItemStylePlain target:self action:@selector(openFilter:)];
     self.navigationItem.leftBarButtonItem = leftButton;
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_switch"]  style:UIBarButtonItemStylePlain target:self action:@selector(pickSet:)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_switch"]  style:UIBarButtonItemStylePlain target:self action:@selector(lucky:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     setLoaded = false;
@@ -53,7 +62,6 @@
 
     UIImage *selectedIcon = [UIImage imageNamed:tabBarImage];
     [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-
     
     [self loadSets];
 }
@@ -75,10 +83,18 @@
     [app_delegate trackPage:@"/main"];
 }
 
-- (void)pickSet:(UIBarButtonItem *)barButtonItem{
-    DBSetPickerViewController *setPicker = (DBSetPickerViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"SetPicker"];
+- (IBAction)pickSet:(id)sender{
+    DBSetPickerViewController *setPickerController = (DBSetPickerViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"SetPicker"];
     
-    [self.navigationController pushViewController:setPicker animated:YES];
+    [self.navigationController pushViewController:setPickerController animated:YES];
+}
+
+- (void)lucky:(id)sender{
+    DBCardViewController *cardLuckyController = (DBCardViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"CardViewController"];
+    [cardLuckyController setLuckyModeOn];
+    cardLuckyController.hidesBottomBarWhenPushed = YES;
+    [cardLuckyController setShowImage:showImage];
+    [self.navigationController pushViewController:cardLuckyController animated:YES];
 }
 
 
@@ -137,7 +153,7 @@
 - (void) loadSet{
     set = [app_delegate.sets objectAtIndex: currentIndexSet];
     [app_delegate trackPage:[NSString stringWithFormat:@"/set/%@", set.code]];
-    self.navigationItem.title = set.name;
+    [setName setText:set.name];
     [self loadCardsOfSet];
 }
 
@@ -145,8 +161,6 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
-                MTGCard *first = [cards objectAtIndex:0];
-                NSLog(@"first: %@", first.power);
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self filterCards];
@@ -160,8 +174,8 @@
         filteredCards = [self realFilterCards:cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            [self.tableView reloadData];
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            [cardsTable reloadData];
+            [cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
 }

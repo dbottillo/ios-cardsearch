@@ -88,6 +88,19 @@ static CardsDatabase *_database;
     return retval;
 }
 
+- (NSArray *)randomCards{
+    NSMutableArray *retval = [[NSMutableArray alloc] init];
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM MTGCard ORDER BY RANDOM() LIMIT 4"];
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            [retval addObject:[self generateCardFromStatement:statement]];
+        }
+        sqlite3_finalize(statement);
+    }
+    return retval;
+}
+
 - (MTGCard *)generateCardFromStatement:(sqlite3_stmt *) statement{
     return [self generateMTGCardFromStatement:statement];
 }

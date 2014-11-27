@@ -22,4 +22,6 @@
 
 - (NSArray *)cardsOfSearch:(NSString *)text;
 
+- (NSArray *)randomCards;
+
 @end

@@ -9,6 +9,8 @@
 #import "DBCardViewController.h"
 #import "MTGCard.h"
 #import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import "CardsDatabase.h"
 
 @interface DBCardViewController ()
 
@@ -21,6 +23,8 @@
 @synthesize cardCost, cardPowerToughness, cardText, cardPrice;
 @synthesize ptTitle, manacostTitle, typeTitle, cardDetailContainer;
 @synthesize card, heightImage, widthImage, leftImage, topImage;
+@synthesize savedCards, localDataProvider, randomCards;
+@synthesize favBtn, currentSavedCard;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +34,9 @@
     [manacostTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Mana Cost", @"manacost")]];
     [typeTitle setText:[NSString stringWithFormat:@"%@:",NSLocalizedString(@"Type", @"type")]];
     
-    [self update];
+    UIBarButtonItem *shareBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_share"]  style:UIBarButtonItemStylePlain target:self action:@selector(share:)];
+     favBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_fav_off"]  style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: shareBtn, favBtn, nil]];
     
     int w = [[UIScreen mainScreen] bounds].size.width;
     if ([UIScreen mainScreen].bounds.size.height < 500){
@@ -41,12 +47,61 @@
     [widthImage setConstant:w];
     [heightImage setConstant:w*1.4];
     
+    if (isLucky){
+        localDataProvider = [[LocalDataProvider alloc] init];
+        randomCards = [[NSMutableArray alloc] init];
+        
+        needToLoadCard = YES;
+        isLoading = NO;
+        
+        self.navigationItem.title = @"I'm feeling lucky";
+        
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnImage)];
+        singleTap.numberOfTapsRequired = 1;
+        cardImage.userInteractionEnabled = YES;
+        [cardImage addGestureRecognizer:singleTap];
+
+        
+        [self loadRandomCards];
+    } else {
+        [self update];
+    }
+
+}
+
+- (void) setLuckyModeOff{
+    isLucky = NO;
+}
+
+- (void) setLuckyModeOn{
+    isLucky = YES;
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
+    [app_delegate trackPage:track];
+    [self loadSavedCards];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) update{
+    [cardName setText:card.name];
+    [cardType setText:card.type];
+    [cardCost setText:card.manaCost];
+    [cardPowerToughness setText:[NSString stringWithFormat:@"%@/%@",card.power,card.toughness]];
+    [cardText setText:card.text];
+    [cardText sizeToFit];
     
     [cardImage setHidden:YES];
     [cardDetailContainer setHidden:NO];
     if (showImage){
         cardImage.image = nil;
-        NSString *url = [NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", ((MTGCard *)card).getMultiverseId];
+        NSString *url = [NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", [card getMultiverseId]];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
@@ -69,33 +124,12 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
     }];
-
-
-}
-
-- (void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
-    [app_delegate trackPage:track];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (void) update{
-    MTGCard *mtgCard = (MTGCard *)card;
-    [cardName setText:mtgCard.name];
-    [cardType setText:mtgCard.type];
-    [cardCost setText:mtgCard.manaCost];
-    [cardPowerToughness setText:[NSString stringWithFormat:@"%@/%@",mtgCard.power,mtgCard.toughness]];
-    [cardText setText:mtgCard.text];
-    [cardText sizeToFit];
-    
-    [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", ((long)pageIndex + 1), (long)totalItems]];
+    if (isLucky){
+        [labelIndicator setHidden:YES];
+    } else {
+        [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", ((long)pageIndex + 1), (long)totalItems]];
+    }
 }
 
 - (void) updatePriceWith:(NSString *) string{
@@ -106,5 +140,98 @@
     showImage = _show;
 }
 
+
+- (void)save:(UIBarButtonItem *)barButtonItem{
+    if (currentSavedCard){
+        [localDataProvider removeCard:currentSavedCard];
+    } else {
+        [localDataProvider addCard:card];
+    }
+    [self loadSavedCards];
+}
+
+- (void)share:(UIBarButtonItem *)barButtonItem{
+    NSString *text = card.name;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"share"];
+}
+
+
+- (void) checkSavedCard{
+    currentSavedCard = nil;
+    for (MTGCard *cardSaved in savedCards){
+        if([cardSaved getMultiverseId] == [card getMultiverseId]){
+            currentSavedCard = cardSaved;
+            break;
+        }
+    }
+    if (currentSavedCard){
+        [favBtn setImage:[[UIImage imageNamed:@"nav_icon_fav_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    } else {
+        [favBtn setImage:[UIImage imageNamed:@"nav_icon_fav_off"]];
+    }
+}
+
+
+
+// lucky mode
+- (void) loadSavedCards{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self checkSavedCard];
+        });
+    });
+}
+
+- (void) loadRandomCards{
+    if (isLoading){
+        return;
+    }
+    isLoading = YES;
+    if (needToLoadCard){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSArray *newCards = [[CardsDatabase database] randomCards];
+        for (MTGCard *newCard in newCards){
+            [randomCards addObject:newCard];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (needToLoadCard){
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [self popCard];
+                needToLoadCard = NO;
+            }
+            isLoading = NO;
+        });
+    });
+}
+
+- (void)popCard{
+    card = [randomCards objectAtIndex:0];
+    [self update];
+    [self checkSavedCard];
+    [randomCards removeObjectAtIndex:0];
+    if (randomCards.count == 0){
+        needToLoadCard = YES;
+    }
+    if (randomCards.count < 2){
+        [self loadRandomCards];
+    }
+}
+
+- (void)tapOnImage{
+    [self popCard];
+}
 
 @end

@@ -44,10 +44,6 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
         savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
-        if (savedCards.count > 0){
-            MTGCard *first = [savedCards objectAtIndex:0];
-            NSLog(@"first: %@", first.power);
-        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (savedCards.count == 0){
