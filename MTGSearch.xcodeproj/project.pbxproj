@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6D06F2961A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
-		6D06F2971A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
-		6D06F2981A23E10C00F5C34E /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D06F2951A23E10C00F5C34E /* libnanostore2.a */; };
 		6D06F2991A23E10C00F5C34E /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D06F2951A23E10C00F5C34E /* libnanostore2.a */; };
 		6D12DE4F19E2E59C001C11D6 /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
 		6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70037C19BE840800AAC079 /* DBFilterViewController.m */; };
@@ -60,8 +58,7 @@
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
 		6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
-		6D8C46D81A1BF68F00C7C535 /* MTGTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */; };
-		6D8C46D91A1BF68F00C7C535 /* MTGTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */; };
+		6DAB8DAC1A232F8B00AAB494 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAB8DA91A232F8B00AAB494 /* libnanostore2.a */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
 		6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
 		6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7D19BDAB0A00B2BCC8 /* UIKit.framework */; };
@@ -77,7 +74,10 @@
 		6DB12CA619BDAB0B00B2BCC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12CA419BDAB0B00B2BCC8 /* InfoPlist.strings */; };
 		6DB12CA819BDAB0B00B2BCC8 /* MTGSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */; };
 		6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
+		6DC24CD61A1D415B00BF20DE /* DBSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */; };
+		6DC24CD71A1D415B00BF20DE /* DBSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */; };
 		6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
+		6DD55E501A25B631002BA504 /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
@@ -156,8 +156,7 @@
 		6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FilterCards.m"; sourceTree = "<group>"; };
 		6D835D4C19E58BED00F188DA /* DBCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardViewController.h; sourceTree = "<group>"; };
 		6D835D4D19E58BED00F188DA /* DBCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardViewController.m; sourceTree = "<group>"; };
-		6D8C46D61A1BF68F00C7C535 /* MTGTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGTestObject.h; sourceTree = "<group>"; };
-		6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGTestObject.m; sourceTree = "<group>"; };
+		6DAB8DA91A232F8B00AAB494 /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanostore2.a; sourceTree = "<group>"; };
 		6DB12C7619BDAB0A00B2BCC8 /* MTGSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -179,6 +178,8 @@
 		6DB12CA719BDAB0B00B2BCC8 /* MTGSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTGSearchTests.m; sourceTree = "<group>"; };
 		6DBEE8F019DC9D75009FC9BD /* UIViewController+NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavBar.h"; sourceTree = "<group>"; };
 		6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavBar.m"; sourceTree = "<group>"; };
+		6DC24CD41A1D415B00BF20DE /* DBSavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSavedViewController.h; sourceTree = "<group>"; };
+		6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSavedViewController.m; sourceTree = "<group>"; };
 		6DC9540A19C0504F008640C7 /* DBFullCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFullCardCell.h; sourceTree = "<group>"; };
 		6DC9540B19C0504F008640C7 /* DBFullCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFullCardCell.m; sourceTree = "<group>"; };
 		6DDC9CC619DC5214002BBB4F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -225,7 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D06F2981A23E10C00F5C34E /* libnanostore2.a in Frameworks */,
+				6DAB8DAC1A232F8B00AAB494 /* libnanostore2.a in Frameworks */,
 				6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */,
 				6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */,
 				6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */,
@@ -317,8 +318,6 @@
 				6D70037219BDCF8F00AAC079 /* MTGCard.m */,
 				6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */,
 				6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */,
-				6D8C46D61A1BF68F00C7C535 /* MTGTestObject.h */,
-				6D8C46D71A1BF68F00C7C535 /* MTGTestObject.m */,
 			);
 			name = "Data Provider";
 			sourceTree = "<group>";
@@ -428,6 +427,7 @@
 		6DB12C7F19BDAB0A00B2BCC8 /* MTGSearch */ = {
 			isa = PBXGroup;
 			children = (
+				6DC24CD31A1D412F00BF20DE /* Saved */,
 				6DDC9CC519DC51E4002BBB4F /* vendor */,
 				6D7C30BC19CE410300876B31 /* Search */,
 				6D7C30B519CE38FD00876B31 /* Settings */,
@@ -476,6 +476,15 @@
 				6DB12CA419BDAB0B00B2BCC8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DC24CD31A1D412F00BF20DE /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				6DC24CD41A1D415B00BF20DE /* DBSavedViewController.h */,
+				6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */,
+			);
+			name = Saved;
 			sourceTree = "<group>";
 		};
 		6DDC9CC519DC51E4002BBB4F /* vendor */ = {
@@ -744,15 +753,15 @@
 				6D12DE5519E2E59C001C11D6 /* DBAppDelegate.m in Sources */,
 				6D12DE5719E2E59C001C11D6 /* DBFullCardCell.m in Sources */,
 				6D12DE5819E2E59C001C11D6 /* UIViewController+FilterCards.m in Sources */,
-				6D06F2971A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */,
+				6DC24CD71A1D415B00BF20DE /* DBSavedViewController.m in Sources */,
 				6D12DE5A19E2E59C001C11D6 /* MTGSet.m in Sources */,
 				6D12DE5B19E2E59C001C11D6 /* DBCardsViewController.m in Sources */,
+				6DD55E501A25B631002BA504 /* fopenCompatibilityFix.c in Sources */,
 				6D12DE5C19E2E59C001C11D6 /* DBSearchViewController.m in Sources */,
 				6D12DE5E19E2E59C001C11D6 /* DBSetViewController.m in Sources */,
 				6D12DE5F19E2E59C001C11D6 /* DBCardCell.m in Sources */,
 				6D12DE6019E2E59C001C11D6 /* DBSettingsViewController.m in Sources */,
 				6D12DE6119E2E59C001C11D6 /* main.m in Sources */,
-				6D8C46D91A1BF68F00C7C535 /* MTGTestObject.m in Sources */,
 				6D12DE6219E2E59C001C11D6 /* MTGCard.m in Sources */,
 				6D12DE6319E2E59C001C11D6 /* CardsDatabase.m in Sources */,
 			);
@@ -772,6 +781,7 @@
 				6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */,
 				6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */,
 				6D06F2961A23E10C00F5C34E /* fopenCompatibilityFix.c in Sources */,
+				6DC24CD61A1D415B00BF20DE /* DBSavedViewController.m in Sources */,
 				6D70036B19BDC89E00AAC079 /* MTGSet.m in Sources */,
 				6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
 				6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */,
@@ -779,7 +789,6 @@
 				6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */,
 				6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */,
 				6DB12C8619BDAB0A00B2BCC8 /* main.m in Sources */,
-				6D8C46D81A1BF68F00C7C535 /* MTGTestObject.m in Sources */,
 				6D70037319BDCF8F00AAC079 /* MTGCard.m in Sources */,
 				6D70036219BDC69F00AAC079 /* CardsDatabase.m in Sources */,
 			);
@@ -869,10 +878,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
+					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -896,16 +908,18 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
-				GENERATE_PROFILING_CODE = NO;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = "MTGSearch copy2-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
+					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -930,6 +944,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -968,6 +983,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1006,6 +1022,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
+					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1040,6 +1057,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
+					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

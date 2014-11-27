@@ -8,7 +8,6 @@
 
 #import "LocalDataProvider.h"
 #import "NSFNanoBag.h"
-#import "MTGTestObject.h"
 
 
 #ifdef DEBUG
@@ -50,14 +49,6 @@
         }
     }
     
-    MTGTestObject *obj = [[MTGTestObject alloc] init];
-    obj.name = card.name;
-    obj.type = card.type;
-    
-    //NSFNanoObject *obj = [[NSFNanoObject alloc] init];
-    //[obj setObject:card.name forKey:@"name"];
-    //[obj setObject:card.type forKey:@"type"];
-    
     NSError *outError;
     BOOL res = [bag addObject:card error:&outError];
     if (res && nil == outError){
@@ -96,7 +87,7 @@
     
     NSFNanoBag *bag = [nanoStore bagWithName:kBagSaved];
     for (NSString *key in bag.savedObjects.allKeys){
-        MTGTestObject *object = [bag.savedObjects objectForKey:key];
+        MTGCard *object = [bag.savedObjects objectForKey:key];
         [ret addObject:object];
     }
 
