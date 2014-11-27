@@ -13,18 +13,53 @@
 
 - (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore{
     if (self = [super initNanoObjectFromDictionaryRepresentation:theDictionary forKey:aKey store:theStore]) {
-        name = [theDictionary objectForKey:kNanoKeyName];
-        type = [theDictionary objectForKey:kNanoKeyType];
-        multiverseId = [[theDictionary objectForKey:kNanoKeyMultiverseId] intValue];
+        [self createFromDictionary:theDictionary];
     }
     
     return self;
 }
 
+- (void)createFromDictionary:(NSDictionary *)dictionary{
+    name = [dictionary objectForKey:kNanoKeyName];
+    type = [dictionary objectForKey:kNanoKeyType];
+    types = [dictionary objectForKey:kNanoKeyTypes];
+    subTypes = [dictionary objectForKey:kNanoKeySubTypes];
+    colors = [dictionary objectForKey:kNanoKeyColors];
+    rarity = [dictionary objectForKey:kNanoKeyRarity];
+    power = [dictionary objectForKey:kNanoKeyPower];
+    toughness = [dictionary objectForKey:kNanoKeyToughness];
+    manaCost = [dictionary objectForKey:kNanoKeyManaCost];
+    text = [dictionary objectForKey:kNanoKeyText];
+    setName = [dictionary objectForKey:kNanoKeySetName];
+    setId = [[dictionary objectForKey:kNanoKeySetId] intValue];
+    cmc = [[dictionary objectForKey:kNanoKeyCMC] intValue];
+    isMultiColor = [[dictionary objectForKey:kNanoKeyIsMultiColor] boolValue];
+    isALand = [[dictionary objectForKey:kNanoKeyIsALand] boolValue];
+    isAnArtifact = [[dictionary objectForKey:kNanoKeyIsAnArtifact] boolValue];
+    isAnEldrazi = [[dictionary objectForKey:kNanoKeyIsAnEldrazi] boolValue];
+    multiverseId = [[dictionary objectForKey:kNanoKeyMultiverseId] intValue];
+}
+
 - (NSDictionary *)nanoObjectDictionaryRepresentation{
-    NSDictionary *ret = [NSDictionary dictionaryWithObjectsAndKeys:name, kNanoKeyName,
-                         type, kNanoKeyType,
-                         [NSNumber numberWithInt:multiverseId], kNanoKeyMultiverseId, nil];
+    NSMutableDictionary *ret = [[NSMutableDictionary alloc] init];
+    [ret setValue:name forKey:kNanoKeyName];
+    [ret setValue:type forKey:kNanoKeyType];
+    [ret setValue:types forKey:kNanoKeyTypes];
+    [ret setValue:subTypes forKey:kNanoKeySubTypes];
+    [ret setValue:colors forKey:kNanoKeyColors];
+    [ret setValue:rarity forKey:kNanoKeyRarity];
+    [ret setValue:power forKey:kNanoKeyPower];
+    [ret setValue:toughness forKey:kNanoKeyToughness];
+    [ret setValue:manaCost forKey:kNanoKeyManaCost];
+    [ret setValue:text forKey:kNanoKeyText];
+    [ret setValue:setName forKey:kNanoKeySetName];
+    [ret setValue:[NSNumber numberWithInt:setId] forKey:kNanoKeySetId];
+    [ret setValue:[NSNumber numberWithInt:cmc] forKey:kNanoKeyCMC];
+    [ret setValue:[NSNumber numberWithBool:isMultiColor] forKey:kNanoKeyIsMultiColor];
+    [ret setValue:[NSNumber numberWithBool:isALand] forKey:kNanoKeyIsALand];
+    [ret setValue:[NSNumber numberWithBool:isAnArtifact] forKey:kNanoKeyIsAnArtifact];
+    [ret setValue:[NSNumber numberWithBool:isAnEldrazi] forKey:kNanoKeyIsAnEldrazi];
+    [ret setValue:[NSNumber numberWithInt:multiverseId] forKey:kNanoKeyMultiverseId];
     return ret;
 }
 

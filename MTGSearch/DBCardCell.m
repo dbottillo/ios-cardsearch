@@ -25,7 +25,7 @@
     UIColor *colorIndicator = [DBAppDelegate grey];
     if (!card.isMultiColor && !card.isAnArtifact && !card.isALand){
         int cardColor = [[card.colors objectAtIndex:0] intValue];
-        //NSLog(@"%d card color", cardColor);
+        NSLog(@"%d card color", cardColor);
         if (cardColor == kColorWhite) {
             colorIndicator = [DBAppDelegate greyWhite];
         } else if (cardColor == kColorBlue) {

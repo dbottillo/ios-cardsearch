@@ -421,7 +421,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WWF-yr-oi1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95j-3p-kkJ" userLabel="empty">
+                                <rect key="frame" x="60" y="164" width="200" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="3OR-7G-djC"/>
+                                    <constraint firstAttribute="width" constant="200" id="Gwe-3S-vUB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WWF-yr-oi1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -477,12 +487,15 @@
                         <constraints>
                             <constraint firstItem="Gh8-hl-3Nf" firstAttribute="top" secondItem="WWF-yr-oi1" secondAttribute="bottom" id="BTW-0u-wRZ"/>
                             <constraint firstItem="WWF-yr-oi1" firstAttribute="top" secondItem="bzE-58-CqI" secondAttribute="topMargin" id="N0Z-cw-MVn"/>
+                            <constraint firstItem="95j-3p-kkJ" firstAttribute="top" secondItem="CF7-1j-fZX" secondAttribute="bottom" constant="100" id="Qgw-Fe-hff"/>
                             <constraint firstAttribute="trailing" secondItem="WWF-yr-oi1" secondAttribute="trailing" id="XIZ-Mb-kPt"/>
                             <constraint firstItem="WWF-yr-oi1" firstAttribute="leading" secondItem="bzE-58-CqI" secondAttribute="leading" id="ghc-Ss-w7m"/>
+                            <constraint firstAttribute="centerX" secondItem="95j-3p-kkJ" secondAttribute="centerX" id="rPC-2F-gSd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gRo-DM-QRp"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="95j-3p-kkJ" id="a1a-Sb-Zh4"/>
                         <outlet property="savedTable" destination="WWF-yr-oi1" id="R5K-yc-jc9"/>
                         <outlet property="searchDisplayController" destination="iKM-CH-API" id="vy8-7h-635"/>
                     </connections>

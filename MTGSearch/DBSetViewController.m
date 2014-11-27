@@ -145,6 +145,8 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
+                MTGCard *first = [cards objectAtIndex:0];
+                NSLog(@"first: %@", first.power);
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self filterCards];

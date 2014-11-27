@@ -19,9 +19,24 @@
 #define kRarityRare         @"Rare"
 #define kRarityMythic       @"Mythic Rare"
 
+#define     kNanoKeySetId           @"setId"
+#define     kNanoKeyCMC             @"cmc"
+#define     kNanoKeyIsMultiColor    @"isMultiColor"
+#define     kNanoKeyIsALand         @"isALand"
+#define     kNanoKeyIsAnArtifact    @"isAnArtifact"
+#define     kNanoKeyIsAnEldrazi     @"isAnEldrazi"
 #define     kNanoKeyMultiverseId    @"multiverseId"
-#define     kNanoKeyName    @"name"
-#define     kNanoKeyType    @"type"
+#define     kNanoKeyName            @"name"
+#define     kNanoKeyType            @"type"
+#define     kNanoKeyTypes           @"types"
+#define     kNanoKeySubTypes        @"subTypes"
+#define     kNanoKeyColors          @"colors"
+#define     kNanoKeyRarity          @"rarity"
+#define     kNanoKeyPower           @"power"
+#define     kNanoKeyToughness       @"toughness"
+#define     kNanoKeyManaCost        @"manaCost"
+#define     kNanoKeyText            @"text"
+#define     kNanoKeySetName         @"setName"
 
 @interface MTGCard : NSFNanoObject{
     int setId;

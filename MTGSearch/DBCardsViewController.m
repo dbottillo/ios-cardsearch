@@ -153,6 +153,7 @@
     currentSavedCard = nil;
     MTGCard *currentCard = [cards objectAtIndex:currentPosition];
     for (MTGCard *card in savedCards){
+        NSLog(@"checking %d against %d", [card getMultiverseId], [currentCard getMultiverseId]);
         if([card getMultiverseId] == [currentCard getMultiverseId]){
             currentSavedCard = card;
             break;
