@@ -167,11 +167,16 @@
     if (!isMultiColor && otherCard.isMultiColor) return NSOrderedAscending;
     if (isMultiColor) return NSOrderedDescending;
 
-    int color = [(NSNumber *)[self.colors objectAtIndex:0] integerValue];
-    int otherColor = [(NSNumber *)[otherCard.colors objectAtIndex:0] integerValue];
+    int color = -1;
+    if (self.colors.count > 0){
+        color = [(NSNumber *)[colors objectAtIndex:0] integerValue];
+    }
+    int otherColor = -1;
+    if (otherCard.colors.count > 0){
+        otherColor = [(NSNumber *)[otherCard.colors objectAtIndex:0] integerValue];
+    }
     if (color == otherColor) return NSOrderedSame;
     if (color < otherColor) return NSOrderedAscending;
-
     return NSOrderedDescending;
 }
 

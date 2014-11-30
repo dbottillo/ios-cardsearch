@@ -23,9 +23,8 @@
         cardCost.text = [card.types objectAtIndex:0];
     }
     UIColor *colorIndicator = [DBAppDelegate grey];
-    if (!card.isMultiColor && !card.isAnArtifact && !card.isALand){
+    if (!card.isMultiColor && !card.isAnArtifact && !card.isALand && !card.isAnEldrazi){
         int cardColor = [[card.colors objectAtIndex:0] intValue];
-        NSLog(@"%d card color", cardColor);
         if (cardColor == kColorWhite) {
             colorIndicator = [DBAppDelegate greyWhite];
         } else if (cardColor == kColorBlue) {
