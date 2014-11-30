@@ -151,7 +151,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [searchTable reloadData];
-            [searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            self.navigationItem.title = [NSString stringWithFormat:@"%@ (%d)",NSLocalizedString(@"Search", @"search"), filteredCards.count];
+            if (filteredCards.count > 0){
+                [searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
         });
     });
 }
