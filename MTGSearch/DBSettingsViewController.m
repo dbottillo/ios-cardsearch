@@ -112,16 +112,26 @@
             [alert show];
             [app_delegate trackPage:@"/about"];
         } else {
-            NSBundle *bundle = [NSBundle mainBundle];
-            NSDictionary *info = [bundle infoDictionary];
-            NSString *prodName = [info objectForKey:@"CFBundleDisplayName"];
             MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-            picker.mailComposeDelegate = self;
-            [picker setSubject:[NSString stringWithFormat:@"%@ - %@", NSLocalizedString(@"Feedback", @"send feedback"), prodName]];
-            NSArray *toRecipients = [NSArray arrayWithObjects:@"mtg@danielebottillo.com",
-                                     nil];
-            [picker setToRecipients:toRecipients];
-            [self presentViewController:picker animated:YES completion:nil];
+            if ([MFMailComposeViewController canSendMail]) {
+                NSBundle *bundle = [NSBundle mainBundle];
+                NSDictionary *info = [bundle infoDictionary];
+                NSString *prodName = [info objectForKey:@"CFBundleDisplayName"];
+                picker.mailComposeDelegate = self;
+                [picker setSubject:[NSString stringWithFormat:@"%@ - %@", NSLocalizedString(@"Feedback", @"send feedback"), prodName]];
+                NSArray *toRecipients = [NSArray arrayWithObjects:@"mtg@danielebottillo.com",
+                                         nil];
+                [picker setToRecipients:toRecipients];
+                [self presentViewController:picker animated:YES completion:nil];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle: NSLocalizedString(@"Feedback", @"feedback")
+                                      message: NSLocalizedString(@"feedback cansendemail error", @"feedback cansendemail error")
+                                      delegate: nil
+                                      cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
+                                      otherButtonTitles:nil];
+                [alert show];
+            }
             [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"feedback"];
         }
     } else {
