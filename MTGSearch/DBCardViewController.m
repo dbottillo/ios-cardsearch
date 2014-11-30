@@ -112,11 +112,14 @@
             cardImage.image = responseObject;
             [cardImage setHidden:NO];
             [cardDetailContainer setHidden:YES];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [cardImage setHidden:YES];
             [cardDetailContainer setHidden:NO];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         }];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [requestOperation start];
     }
     [self updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
