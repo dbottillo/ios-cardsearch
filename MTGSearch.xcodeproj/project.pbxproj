@@ -76,6 +76,10 @@
 		6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */; };
 		6DC24CD61A1D415B00BF20DE /* DBSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */; };
 		6DC24CD71A1D415B00BF20DE /* DBSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */; };
+		6DC71D3A1A2D19F100423E61 /* DBPriceCardParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC71D391A2D19F100423E61 /* DBPriceCardParser.m */; };
+		6DC71D3B1A2D19F100423E61 /* DBPriceCardParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC71D391A2D19F100423E61 /* DBPriceCardParser.m */; };
+		6DC71D3E1A2D1A2400423E61 /* MTGCardPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC71D3D1A2D1A2400423E61 /* MTGCardPrice.m */; };
+		6DC71D3F1A2D1A2400423E61 /* MTGCardPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC71D3D1A2D1A2400423E61 /* MTGCardPrice.m */; };
 		6DC9540C19C0504F008640C7 /* DBFullCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9540B19C0504F008640C7 /* DBFullCardCell.m */; };
 		6DD55E501A25B631002BA504 /* fopenCompatibilityFix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F2871A23E10C00F5C34E /* fopenCompatibilityFix.c */; };
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
@@ -180,6 +184,10 @@
 		6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavBar.m"; sourceTree = "<group>"; };
 		6DC24CD41A1D415B00BF20DE /* DBSavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSavedViewController.h; sourceTree = "<group>"; };
 		6DC24CD51A1D415B00BF20DE /* DBSavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBSavedViewController.m; sourceTree = "<group>"; };
+		6DC71D381A2D19F100423E61 /* DBPriceCardParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPriceCardParser.h; sourceTree = "<group>"; };
+		6DC71D391A2D19F100423E61 /* DBPriceCardParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPriceCardParser.m; sourceTree = "<group>"; };
+		6DC71D3C1A2D1A2400423E61 /* MTGCardPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGCardPrice.h; sourceTree = "<group>"; };
+		6DC71D3D1A2D1A2400423E61 /* MTGCardPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGCardPrice.m; sourceTree = "<group>"; };
 		6DC9540A19C0504F008640C7 /* DBFullCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFullCardCell.h; sourceTree = "<group>"; };
 		6DC9540B19C0504F008640C7 /* DBFullCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFullCardCell.m; sourceTree = "<group>"; };
 		6DDC9CC619DC5214002BBB4F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
@@ -310,6 +318,8 @@
 		6D70036419BDC84400AAC079 /* Data Provider */ = {
 			isa = PBXGroup;
 			children = (
+				6DC71D3C1A2D1A2400423E61 /* MTGCardPrice.h */,
+				6DC71D3D1A2D1A2400423E61 /* MTGCardPrice.m */,
 				6D70036019BDC69F00AAC079 /* CardsDatabase.h */,
 				6D70036119BDC69F00AAC079 /* CardsDatabase.m */,
 				6D70036919BDC89E00AAC079 /* MTGSet.h */,
@@ -366,6 +376,8 @@
 				6DC9540B19C0504F008640C7 /* DBFullCardCell.m */,
 				6D835D4C19E58BED00F188DA /* DBCardViewController.h */,
 				6D835D4D19E58BED00F188DA /* DBCardViewController.m */,
+				6DC71D381A2D19F100423E61 /* DBPriceCardParser.h */,
+				6DC71D391A2D19F100423E61 /* DBPriceCardParser.m */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -747,6 +759,7 @@
 				6D12DE4F19E2E59C001C11D6 /* UIViewController+NavBar.m in Sources */,
 				6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D12DE5019E2E59C001C11D6 /* DBFilterViewController.m in Sources */,
+				6DC71D3B1A2D19F100423E61 /* DBPriceCardParser.m in Sources */,
 				6D12DE5119E2E59C001C11D6 /* DBSetPickerViewController.m in Sources */,
 				6D12DE5219E2E59C001C11D6 /* CardFilter.m in Sources */,
 				6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */,
@@ -759,6 +772,7 @@
 				6DD55E501A25B631002BA504 /* fopenCompatibilityFix.c in Sources */,
 				6D12DE5C19E2E59C001C11D6 /* DBSearchViewController.m in Sources */,
 				6D12DE5E19E2E59C001C11D6 /* DBSetViewController.m in Sources */,
+				6DC71D3F1A2D1A2400423E61 /* MTGCardPrice.m in Sources */,
 				6D12DE5F19E2E59C001C11D6 /* DBCardCell.m in Sources */,
 				6D12DE6019E2E59C001C11D6 /* DBSettingsViewController.m in Sources */,
 				6D12DE6119E2E59C001C11D6 /* main.m in Sources */,
@@ -774,6 +788,7 @@
 				6DBEE8F219DC9D75009FC9BD /* UIViewController+NavBar.m in Sources */,
 				6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */,
 				6D70037D19BE840800AAC079 /* DBFilterViewController.m in Sources */,
+				6DC71D3A1A2D19F100423E61 /* DBPriceCardParser.m in Sources */,
 				6D70037819BE2C0C00AAC079 /* DBSetPickerViewController.m in Sources */,
 				6D70038119BF380A00AAC079 /* CardFilter.m in Sources */,
 				6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */,
@@ -786,6 +801,7 @@
 				6D70038519BF48BE00AAC079 /* DBCardsViewController.m in Sources */,
 				6D7C30BF19CE417400876B31 /* DBSearchViewController.m in Sources */,
 				6DB12C9019BDAB0A00B2BCC8 /* DBSetViewController.m in Sources */,
+				6DC71D3E1A2D1A2400423E61 /* MTGCardPrice.m in Sources */,
 				6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */,
 				6D7C30B819CE390E00876B31 /* DBSettingsViewController.m in Sources */,
 				6DB12C8619BDAB0A00B2BCC8 /* main.m in Sources */,

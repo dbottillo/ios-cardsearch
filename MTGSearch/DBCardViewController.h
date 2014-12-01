@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DBAppDelegate.h"
 #import "MTGCard.h"
+#import "MTGCardPrice.h"
 #import "LocalDataProvider.h"
 
 @interface DBCardViewController : UIViewController {
@@ -22,6 +23,7 @@
 @property NSUInteger totalItems;
 
 @property (strong, nonatomic) MTGCard *card;
+@property (strong, nonatomic) MTGCardPrice *priceCard;
 
 @property (weak, nonatomic) IBOutlet UIView *cardDetailContainer;
 @property (weak, nonatomic) IBOutlet UIImageView *cardImage;
@@ -42,6 +44,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardCost;
 @property (weak, nonatomic) IBOutlet UILabel *cardPowerToughness;
 @property (weak, nonatomic) IBOutlet UILabel *cardPrice;
+@property (weak, nonatomic) IBOutlet UIView *priceContainer;
+@property (weak, nonatomic) IBOutlet UILabel *viewOnTCG;
 
 @property (strong, nonatomic) UIBarButtonItem *favBtn;
 @property (strong, nonatomic) MTGCard *currentSavedCard;

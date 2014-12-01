@@ -10,6 +10,7 @@
 #import "MTGCard.h"
 #import <AFNetworking.h>
 #import <MBProgressHUD.h>
+#import "DBPriceCardParser.h"
 #import "CardsDatabase.h"
 
 @interface DBCardViewController ()
@@ -18,13 +19,14 @@
 
 @implementation DBCardViewController
 
-@synthesize pageIndex, totalItems;
+@synthesize pageIndex, totalItems, priceCard;
 @synthesize cardImage, cardName, cardType, labelIndicator;
 @synthesize cardCost, cardPowerToughness, cardText, cardPrice;
 @synthesize ptTitle, manacostTitle, typeTitle, cardDetailContainer;
 @synthesize card, heightImage, widthImage, leftImage, topImage;
 @synthesize savedCards, localDataProvider, randomCards;
 @synthesize favBtn, currentSavedCard;
+@synthesize priceContainer, viewOnTCG;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,7 +73,11 @@
     } else {
         [self update];
     }
-
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(openCardOnTCG:)];
+    [priceContainer addGestureRecognizer:singleFingerTap];
 }
 
 - (void) setLuckyModeOff{
@@ -122,15 +128,6 @@
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [requestOperation start];
     }
-    [self updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
-    NSString *url = [NSString stringWithFormat:@"http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self updatePriceWith:[responseObject objectAtIndex:0]];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
-    }];
-    
     if (isLucky){
         [labelIndicator setHidden:YES];
     } else {
@@ -139,6 +136,22 @@
     if (isLucky){
         [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionLucky andLabel:card.name];
     }
+    [self updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
+    [viewOnTCG setHidden:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer new];
+    NSString *url = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=%@&p=%@", [card.setName stringByReplacingOccurrencesOfString:@" " withString:@"%20"], [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    //NSLog(@"url %@", url);
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSData * data = (NSData *)responseObject;
+        DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
+        priceCard = [parser parse];
+        [cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", priceCard.hiPrice, priceCard.avgprice, priceCard.lowprice]];
+        [viewOnTCG setHidden:NO];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
+    }];
+
     NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
     [app_delegate trackPage:track];
 }
@@ -149,6 +162,12 @@
 
 - (void)setShowImage:(BOOL)_show{
     showImage = _show;
+}
+
+- (void)openCardOnTCG:(UIGestureRecognizer *)gesture{
+    if (priceCard != nil && priceCard.link != nil){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:priceCard.link]];
+    }
 }
 
 
@@ -244,5 +263,7 @@
 - (void)tapOnImage{
     [self popCard];
 }
+
+
 
 @end
