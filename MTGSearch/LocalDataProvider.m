@@ -138,8 +138,8 @@
 - (void)openStore{
     NSError *outError;
     nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFPersistentStoreType path:[LocalDataProvider pathForNanoStore] error:&outError];
-    if (outError != nil) __debugLog(@"nanostore open with error: %@",outError);
-    else __debugLog(@"nanostore open correctly: %@", nanoStore);
+    /*if (outError != nil) __debugLog(@"nanostore open with error: %@",outError);
+    else __debugLog(@"nanostore open correctly: %@", nanoStore);*/
 }
 
 @end

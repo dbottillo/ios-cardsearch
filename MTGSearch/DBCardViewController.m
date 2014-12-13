@@ -140,16 +140,25 @@
     [viewOnTCG setHidden:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer new];
-    NSString *url = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=%@&p=%@", [card.setName stringByReplacingOccurrencesOfString:@" " withString:@"%20"], [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
-    //NSLog(@"url %@", url);
+    NSString *url = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData * data = (NSData *)responseObject;
         DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
         priceCard = [parser parse];
-        [cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", priceCard.hiPrice, priceCard.avgprice, priceCard.lowprice]];
+        if (priceCard.hiPrice.length > 5){
+            [cardPrice setText:[NSString stringWithFormat:@"H: %@$  -  L: %@$", priceCard.hiPrice, priceCard.lowprice]];
+        } else {
+            [cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", priceCard.hiPrice, priceCard.avgprice, priceCard.lowprice]];
+        }
         [viewOnTCG setHidden:NO];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
+        int statusCode = [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
+        if (statusCode == 500){
+            [cardPrice setText:NSLocalizedString(@"Product not found on TCG", nil)];
+        } else {
+            [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
+        }
+        
     }];
 
     NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
