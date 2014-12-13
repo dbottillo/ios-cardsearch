@@ -61,7 +61,16 @@
     UIImage *selectedIcon = [UIImage imageNamed:tabBarImage];
     [targetTabBarItem setSelectedImage:[selectedIcon imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
+    UITapGestureRecognizer *singleTapOnDetail = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSetPicker)];
+    singleTapOnDetail.numberOfTapsRequired = 1;
+    [setPicker setUserInteractionEnabled:YES];
+    [setPicker addGestureRecognizer:singleTapOnDetail];
+    
     [self loadSets];
+}
+
+- (void)tapOnSetPicker{
+    [self pickSet:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated{
