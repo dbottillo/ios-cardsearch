@@ -132,7 +132,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-Ih-lm6" userLabel="set selector">
                                 <rect key="frame" x="0.0" y="64" width="320" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-my-JDa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-my-JDa">
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.94896673389999997" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -596,7 +596,7 @@
         <scene sceneID="vZn-cv-Mv0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oOm-50-qdw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="DrC-yv-l3n"/>
+                    <tabBarItem key="tabBarItem" image="tab_bar_saved" id="DrC-yv-l3n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bJa-Bt-ya3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -836,6 +836,7 @@
     <resources>
         <image name="nav_icon_switch" width="22" height="22"/>
         <image name="tab_bar_cards" width="33" height="32"/>
+        <image name="tab_bar_saved" width="25" height="25"/>
         <image name="tab_bar_search" width="25" height="25"/>
         <image name="tab_bar_settings" width="25" height="24"/>
     </resources>

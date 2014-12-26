@@ -22,7 +22,7 @@
     [emptyLabel setText:@"You don\'t have any favourite cards yet, use the star button on the card page to add it as a favourite."];
     [emptyLabel sizeToFit];
     
-    self.navigationItem.title = NSLocalizedString(@"Saved", @"saved");
+    self.navigationItem.title = NSLocalizedString(@"saved.title", nil);
     
     [self styleNavBar];
     

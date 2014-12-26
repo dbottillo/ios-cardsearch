@@ -67,7 +67,15 @@
         singleTapOnDetail.numberOfTapsRequired = 1;
         [cardDetailContainer setUserInteractionEnabled:YES];
         [cardDetailContainer addGestureRecognizer:singleTapOnDetail];
-
+        
+        UISwipeGestureRecognizer *mSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeOnImage:)];
+        [mSwipeRecognizer setDirection:(UISwipeGestureRecognizerDirectionUp | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight)];
+        
+        [cardImage addGestureRecognizer:mSwipeRecognizer];
+        
+        UISwipeGestureRecognizer *mSwipeRecognizerOnDetail = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeOnImage:)];
+        [mSwipeRecognizerOnDetail setDirection:(UISwipeGestureRecognizerDirectionUp | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight)];
+        [cardDetailContainer addGestureRecognizer:mSwipeRecognizerOnDetail];
         
         [self loadRandomCards];
     } else {
@@ -269,10 +277,12 @@
     }
 }
 
-- (void)tapOnImage{
+- (void)swipeOnImage:(UISwipeGestureRecognizer *)gesture{
     [self popCard];
 }
 
-
+- (void)tapOnImage{
+    [self popCard];
+}
 
 @end
