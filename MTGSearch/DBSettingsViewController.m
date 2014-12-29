@@ -125,11 +125,11 @@
                 [self presentViewController:picker animated:YES completion:nil];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle: NSLocalizedString(@"Feedback", @"feedback")
-                                      message: NSLocalizedString(@"feedback cansendemail error", @"feedback cansendemail error")
-                                      delegate: nil
-                                      cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
-                                      otherButtonTitles:nil];
+                    initWithTitle: NSLocalizedString(@"Feedback", @"feedback")
+                    message: NSLocalizedString(@"feedback cansendemail error", @"feedback cansendemail error")
+                        delegate: nil
+                    cancelButtonTitle: NSLocalizedString(@"Ok", @"ok")
+                        otherButtonTitles:nil];
                 [alert show];
             }
             [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"feedback"];
