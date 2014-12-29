@@ -54,7 +54,9 @@
     if (section == 0) {
         NSBundle *bundle = [NSBundle mainBundle];
         NSDictionary *info = [bundle infoDictionary];
-        return [info objectForKey:@"CFBundleDisplayName"];
+        NSString *name = [info objectForKey:@"CFBundleDisplayName"];
+        NSString *version = [info objectForKey:@"CFBundleShortVersionString"];
+        return [NSString stringWithFormat:@"%@ - v%@", name, version];
     }
     return NSLocalizedString(@"Cards", @"cards");
 }
