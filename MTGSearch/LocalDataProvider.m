@@ -9,7 +9,6 @@
 #import "LocalDataProvider.h"
 #import "NSFNanoBag.h"
 
-
 #ifdef DEBUG
 #   define __debugLog(fmt, args...) NSLog(@"[LocalDataProvider debug]: " fmt, ##args)
 #else
@@ -37,7 +36,6 @@
     __debugLog(@"bag savedObjects %@", bag.savedObjects);
     
     if (!bag){
-        NSLog(@"bag is nill!");
         bag = [NSFNanoBag bagWithName:kBagSaved];
         NSError *outError;
         BOOL res = [nanoStore addObject:bag error:&outError];
@@ -45,6 +43,7 @@
             __debugLog("bad %@ added correctly", bag);
         } else {
             __debugLog("error adding bag %@",outError);
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"error adding bag" andLabel:outError.localizedDescription];
             return NO;
         }
     }
@@ -58,10 +57,12 @@
             __debugLog("object %@ saved correctly", card.name);
         }else{
             __debugLog("error saving object %@",outErrorSave);
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"error saving object" andLabel:outError.localizedDescription];
         }
         res = resSave;
     }else{
         __debugLog("error adding object %@",outError);
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"error adding object" andLabel:outError.localizedDescription];
     }
 
     return res;
@@ -75,7 +76,8 @@
     if (nil == outError){
         __debugLog("object %@ removed correctly", card);
     }else{
-        __debugLog("error adding object %@",outError);
+        __debugLog("error removing object %@",outError);
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"error removing object" andLabel:outError.localizedDescription];
     }
     return res;
 }
@@ -116,6 +118,7 @@
         
     }else{
         __debugLog("error committing changes %@",outError);
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"error committing changes" andLabel:outError.localizedDescription];
     }
 }
 
@@ -138,8 +141,10 @@
 - (void)openStore{
     NSError *outError;
     nanoStore = [NSFNanoStore createAndOpenStoreWithType:NSFPersistentStoreType path:[LocalDataProvider pathForNanoStore] error:&outError];
-    /*if (outError != nil) __debugLog(@"nanostore open with error: %@",outError);
-    else __debugLog(@"nanostore open correctly: %@", nanoStore);*/
+    if (outError != nil) {
+        __debugLog(@"nanostore open with error: %@",outError);
+     [app_delegate trackEventWithCategory:kUACategoryError andAction:@"nanostore open with error" andLabel:outError.localizedDescription];
+    } // else __debugLog(@"nanostore open correctly: %@", nanoStore);
 }
 
 @end

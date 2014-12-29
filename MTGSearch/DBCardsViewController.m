@@ -90,7 +90,7 @@
     
     [self presentViewController:controller animated:YES completion:nil];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"share"];
+    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionShare andLabel:card.name];
 }
 
 - (void)setCurrentPosition:(NSInteger)pos{
@@ -154,7 +154,6 @@
     currentSavedCard = nil;
     MTGCard *currentCard = [cards objectAtIndex:currentPosition];
     for (MTGCard *card in savedCards){
-        //NSLog(@"checking %d against %d", [card getMultiverseId], [currentCard getMultiverseId]);
         if([card getMultiverseId] == [currentCard getMultiverseId]){
             currentSavedCard = card;
             break;

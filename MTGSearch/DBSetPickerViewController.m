@@ -87,7 +87,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"set_selected" andLabel:set.code];
+    [app_delegate trackEventWithCategory:kUACategorySet andAction:kUAActionSelect andLabel:set.code];
 }
 
 /*

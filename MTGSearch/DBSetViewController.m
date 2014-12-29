@@ -143,7 +143,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:[NSString stringWithFormat:@"card_at_pos:%ld", (long)indexPath.row]];
+    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionSelect andLabel:[NSString stringWithFormat:@"%@ pos:%ld", set.name, (long)indexPath.row]];
 }
 
 - (void)loadSets{

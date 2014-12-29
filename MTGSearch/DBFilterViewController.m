@@ -70,7 +70,7 @@
 }
 
 - (void)apply:(UIBarButtonItem *)barButtonItem{
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:@"update_filter" andLabel:@""];
+    [app_delegate trackEventWithCategory:kUACategoryFilter andAction:kUAActionClose andLabel:@""];
     [app_delegate setFilterChanged:YES];
     [app_delegate setFilterChangedSearch:YES];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -124,7 +124,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionToggle andLabel:filter.gaLabel];
+    [app_delegate trackEventWithCategory:kUACategoryFilter andAction:kUAActionToggle andLabel:filter.gaLabel];
 }
 
 @end

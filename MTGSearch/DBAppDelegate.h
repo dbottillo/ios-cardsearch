@@ -20,15 +20,24 @@
 #endif
 
 #define kUACategoryUI           @"ui"
+#define kUACategoryPopup        @"popup"
+#define kUACategorySet          @"set"
+#define kUACategoryCard         @"card"
 #define kUACategorySearch       @"search"
+#define kUACategoryFilter       @"filter"
 #define kUACategoryFavourite    @"favourite"
+#define kUACategoryLifeCounter  @"lifeCounter"
+#define kUACategoryError        @"error"
+
 #define kUAActionClick          @"click"
 #define kUAActionToggle         @"toggle"
+#define kUAActionShare          @"share"
+#define kUAActionSelect         @"select"
 #define kUAActionOpen           @"open"
-#define kUAActionLucky          @"lucky"
+#define kUAActionClose          @"close"
 #define kUAActionSaved          @"saved"
 #define kUAActionUnsaved        @"unsaved"
-#define kUAActionLifeCounter    @"lifeCounter"
+#define kUAActionLucky          @"lucky"
 
 @interface DBAppDelegate : UIResponder <UIApplicationDelegate>{
     BOOL filterChanged;

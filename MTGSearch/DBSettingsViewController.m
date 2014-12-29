@@ -132,7 +132,7 @@
                                       otherButtonTitles:nil];
                 [alert show];
             }
-            [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"feedback"];
+            [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"feedback"];
         }
     } else {
         showImage = !showImage;
@@ -140,7 +140,7 @@
         [userDefaults setBool:showImage forKey:kUserImage];
         [userDefaults synchronize];
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionClick andLabel:@"image_on_off"];
+        [app_delegate trackEventWithCategory:kUACategoryCard andAction:@"image_on_off" andLabel:@""];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -58,13 +58,6 @@
     [cardRarity setTextColor:colorRarity];
     [cardRarity setText:textRariry];
     
-    //   NSLog(@"%@ card name", card.name);
-    // NSLog(@"card color %@", card.colors);
-    
-    //    cell.textLabel.text = card.name;
-    //  cell.detailTextLabel.text = [NSString stringWithFormat:@"subtitle %d", indexPath.row];
-    
-
 }
 
 @end

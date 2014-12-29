@@ -132,6 +132,10 @@
             [cardImage setHidden:YES];
             [cardDetailContainer setHidden:NO];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image" andLabel:url];
+            if ([AFNetworkReachabilityManager sharedManager].reachable){
+                [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:url];
+            }
         }];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [requestOperation start];
@@ -140,9 +144,6 @@
         [labelIndicator setHidden:YES];
     } else {
         [labelIndicator setText:[NSString stringWithFormat:@"%ld / %ld", ((long)pageIndex + 1), (long)totalItems]];
-    }
-    if (isLucky){
-        [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionLucky andLabel:card.name];
     }
     [self updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
     [viewOnTCG setHidden:YES];
@@ -166,7 +167,11 @@
         } else {
             [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
         }
-        
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"price" andLabel:error.localizedDescription];
+        if ([AFNetworkReachabilityManager sharedManager].reachable){
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"price-with-connection" andLabel:url];
+        }
+
     }];
 
     NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
@@ -191,8 +196,10 @@
 - (void)save:(UIBarButtonItem *)barButtonItem{
     if (currentSavedCard){
         [localDataProvider removeCard:currentSavedCard];
+        [app_delegate trackEventWithCategory:kUACategoryFavourite andAction:kUAActionUnsaved andLabel:[NSString stringWithFormat:@"%d",currentSavedCard.getMultiverseId]];
     } else {
         [localDataProvider addCard:card];
+        [app_delegate trackEventWithCategory:kUACategoryFavourite andAction:kUAActionSaved andLabel:[NSString stringWithFormat:@"%d",currentSavedCard.getMultiverseId]];
     }
     [self loadSavedCards];
 }
@@ -205,7 +212,7 @@
     
     [self presentViewController:controller animated:YES completion:nil];
     
-    [app_delegate trackEventWithCategory:kUACategoryUI andAction:kUAActionOpen andLabel:@"share"];
+    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionOpen andLabel:@"share"];
 }
 
 
@@ -275,6 +282,7 @@
     if (randomCards.count < 2){
         [self loadRandomCards];
     }
+    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionLucky andLabel:card.name];
 }
 
 - (void)swipeOnImage:(UISwipeGestureRecognizer *)gesture{

@@ -11,6 +11,12 @@
 #import "MTGCard.h"
 #import "DBAppDelegate.h"
 
+#ifdef DEBUG
+#   define __debugLog(fmt, args...) NSLog(@"[CardsDatabase debug]: " fmt, ##args)
+#else
+#   define __debugLog(...)
+#endif
+
 @implementation CardsDatabase
 
 static CardsDatabase *_database;
@@ -29,9 +35,10 @@ static CardsDatabase *_database;
                                                              ofType:@"sqlite3"];
         
         if (sqlite3_open([sqLiteDb UTF8String], &_database) != SQLITE_OK) {
-            NSLog(@"Failed to open database!");
+            __debugLog(@"Failed to open database!");
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"failed to open database" andLabel:@""];
         } else {
-            NSLog(@"Database opened!");
+            __debugLog(@"database opened!");
         }
     }
     return self;
@@ -56,6 +63,9 @@ static CardsDatabase *_database;
             
         }
         sqlite3_finalize(statement);
+    } else {
+        __debugLog(@"Failed to load sets! %s",sqlite3_errmsg(_database));
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"failed to load sets" andLabel:[NSString stringWithFormat:@"%s",sqlite3_errmsg(_database)]];
     }
     return retval;
 }
@@ -70,6 +80,9 @@ static CardsDatabase *_database;
             [retval addObject:[self generateCardFromStatement:statement]];
         }
         sqlite3_finalize(statement);
+    } else {
+        __debugLog(@"Failed to load cards of a set! %s",sqlite3_errmsg(_database));
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"failed to load cards of a set" andLabel:[NSString stringWithFormat:@"%s",sqlite3_errmsg(_database)]];
     }
     return retval;
 }
@@ -79,11 +92,15 @@ static CardsDatabase *_database;
     NSString *table = @"MTGCard";
     NSString *query = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE name LIKE '%%%@%%'", table, text];
     sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+    int res =sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil);
+    if (res == SQLITE_OK) {
         while (sqlite3_step(statement) == SQLITE_ROW) {
             [retval addObject:[self generateCardFromStatement:statement]];
         }
         sqlite3_finalize(statement);
+    } else {
+        __debugLog(@"Failed to search cards! %s",sqlite3_errmsg(_database));
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"failed to search cards" andLabel:[NSString stringWithFormat:@"%s",sqlite3_errmsg(_database)]];
     }
     return retval;
 }
@@ -97,6 +114,9 @@ static CardsDatabase *_database;
             [retval addObject:[self generateCardFromStatement:statement]];
         }
         sqlite3_finalize(statement);
+    } else {
+        __debugLog(@"Failed to load random cards! %s",sqlite3_errmsg(_database));
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"failed to load random cards" andLabel:[NSString stringWithFormat:@"%s",sqlite3_errmsg(_database)]];
     }
     return retval;
 }

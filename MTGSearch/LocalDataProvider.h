@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NanoStore.h"
 #import "MTGCard.h"
+#import "DBAppDelegate.h"
 
 #define     kSqliteNanostore    @"mtg.sqlite"
 
