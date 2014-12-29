@@ -83,10 +83,9 @@
 
 - (void)share:(UIBarButtonItem *)barButtonItem{
     MTGCard *card = [cards objectAtIndex:currentPosition];
-    NSString *text = card.name;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=%d", card.getMultiverseId]];
     
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
     

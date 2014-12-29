@@ -149,7 +149,8 @@
     [viewOnTCG setHidden:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer new];
-    NSString *url = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=%@", [card.name stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    NSString *baseUrl = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=%@", card.name];
+    NSString *url = [baseUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData * data = (NSData *)responseObject;
         DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
@@ -205,14 +206,14 @@
 }
 
 - (void)share:(UIBarButtonItem *)barButtonItem{
-    NSString *text = card.name;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", card.getMultiverseId]];
+    NSString *baseUrl =[NSString stringWithFormat:@"http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=%d", card.getMultiverseId];
+    NSURL *url = [NSURL URLWithString:baseUrl];
     
-    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
     
-    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionOpen andLabel:@"share"];
+    [app_delegate trackEventWithCategory:kUACategoryCard andAction:kUAActionShare andLabel:card.name];
 }
 
 
@@ -230,8 +231,6 @@
         [favBtn setImage:[UIImage imageNamed:@"nav_icon_fav_off"]];
     }
 }
-
-
 
 // lucky mode
 - (void) loadSavedCards{
