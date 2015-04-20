@@ -118,7 +118,7 @@
     [cardDetailContainer setHidden:NO];
     if (showImage){
         cardImage.image = nil;
-        NSString *url = [NSString stringWithFormat:@"http://mtgimage.com/multiverseid/%d.jpg", [card getMultiverseId]];
+        NSString *url = [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
