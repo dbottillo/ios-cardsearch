@@ -1030,11 +1030,11 @@
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
 					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1063,10 +1063,11 @@
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
 					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
