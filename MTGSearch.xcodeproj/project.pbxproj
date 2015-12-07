@@ -40,8 +40,6 @@
 		6D12DE7419E2E59C001C11D6 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
 		6D12DE7519E2E59C001C11D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
 		6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
-		6D3B3F1B19E88708008BFB64 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3B3F1A19E88708008BFB64 /* Crashlytics.framework */; };
-		6D3B3F1D19E88708008BFB64 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3B3F1A19E88708008BFB64 /* Crashlytics.framework */; };
 		6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
 		6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */; };
 		6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
@@ -57,7 +55,7 @@
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
 		6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
-		6D9FA8F21BB41ECE00B8BA39 /* NanoStore2 in Resources */ = {isa = PBXBuildFile; fileRef = 6D9FA8F01BB41ECE00B8BA39 /* NanoStore2 */; settings = {ASSET_TAGS = (); }; };
+		6D9FA8F21BB41ECE00B8BA39 /* NanoStore2 in Resources */ = {isa = PBXBuildFile; fileRef = 6D9FA8F01BB41ECE00B8BA39 /* NanoStore2 */; };
 		6D9FA8F41BB4200400B8BA39 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9FA8F31BB4200400B8BA39 /* libnanostore2.a */; };
 		6DAB8DAC1A232F8B00AAB494 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAB8DA91A232F8B00AAB494 /* libnanostore2.a */; };
 		6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7919BDAB0A00B2BCC8 /* Foundation.framework */; };
@@ -126,7 +124,6 @@
 		6D12DE7B19E2E59C001C11D6 /* MTGSearch copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTGSearch copy2-Info.plist"; path = "/Users/danielebottillo/XCodeProjects/MTGSearch/MTGSearch copy2-Info.plist"; sourceTree = "<absolute>"; };
 		6D25A10519DDD53600ACB73A /* DBCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardCell.h; sourceTree = "<group>"; };
 		6D25A10619DDD53600ACB73A /* DBCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardCell.m; sourceTree = "<group>"; };
-		6D3B3F1A19E88708008BFB64 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6D57A4A619E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		6D57A4A719E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D57A4A819E023A20099C96B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -223,7 +220,6 @@
 				6D12DE6919E2E59C001C11D6 /* libsqlite3.dylib in Frameworks */,
 				6D12DE6A19E2E59C001C11D6 /* CoreGraphics.framework in Frameworks */,
 				6D9FA8F41BB4200400B8BA39 /* libnanostore2.a in Frameworks */,
-				6D3B3F1D19E88708008BFB64 /* Crashlytics.framework in Frameworks */,
 				6D12DE6B19E2E59C001C11D6 /* UIKit.framework in Frameworks */,
 				6D12DE6C19E2E59C001C11D6 /* Foundation.framework in Frameworks */,
 				6D12DE6D19E2E59C001C11D6 /* libPods.a in Frameworks */,
@@ -241,7 +237,6 @@
 				6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */,
 				6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */,
 				6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */,
-				6D3B3F1B19E88708008BFB64 /* Crashlytics.framework in Frameworks */,
 				6DB12C7E19BDAB0A00B2BCC8 /* UIKit.framework in Frameworks */,
 				6DB12C7A19BDAB0A00B2BCC8 /* Foundation.framework in Frameworks */,
 				92434AB9211B463A8792252B /* libPods.a in Frameworks */,
@@ -502,7 +497,6 @@
 			isa = PBXGroup;
 			children = (
 				6D06F2841A23E10C00F5C34E /* NanoStore2 */,
-				6D3B3F1A19E88708008BFB64 /* Crashlytics.framework */,
 				6DDC9CD019DC521B002BBB4F /* Google Analytics */,
 			);
 			name = vendor;
@@ -566,7 +560,6 @@
 				6DB12C7319BDAB0A00B2BCC8 /* Frameworks */,
 				6DB12C7419BDAB0A00B2BCC8 /* Resources */,
 				5F4ED6E09B93452197D61509 /* Copy Pods Resources */,
-				6D3B3F1919E886BD008BFB64 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -721,19 +714,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D3B3F1919E886BD008BFB64 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6";
-		};
 		6ECF5B40EBD748BCB1F37853 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -881,6 +861,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
+					"$(PROJECT_DIR)",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
@@ -916,6 +897,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
+					"$(PROJECT_DIR)",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
