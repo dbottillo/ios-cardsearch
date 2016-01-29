@@ -52,14 +52,16 @@ static CardsDatabase *_database;
         while (sqlite3_step(statement) == SQLITE_ROW) {
             int uniqueId = sqlite3_column_int(statement, 0);
             
-            char *code = (char *) sqlite3_column_text(statement, 1);
-            char *name = (char *) sqlite3_column_text(statement, 2);
+            char *code = (char *) sqlite3_column_text(statement, 2);
+            char *name = (char *) sqlite3_column_text(statement, 1);
             
             MTGSet *set = [[MTGSet alloc] init];
             [set setName:[[NSString alloc] initWithUTF8String:name]];
             [set setCode:[[NSString alloc] initWithUTF8String:code]];
             [set setId:uniqueId];
             [retval addObject:set];
+            
+            NSLog(@"set created with %@ and %@",set.name, set.code);
             
         }
         sqlite3_finalize(statement);
@@ -126,7 +128,8 @@ static CardsDatabase *_database;
 }
 
 - (MTGCard *)generateMTGCardFromStatement:(sqlite3_stmt *) statement{
-    /*int numberOfColumns = sqlite3_column_count(statement);
+    /*
+     int numberOfColumns = sqlite3_column_count(statement);
      for (int i=0; i<numberOfColumns; i++){
      char *el = (char *) sqlite3_column_text(statement, i);
      NSLog(@"%d - value: %s", i, el);
@@ -199,9 +202,29 @@ static CardsDatabase *_database;
     char *setName = (char *) sqlite3_column_text(statement, 17);
     [card setSetName:[[NSString alloc] initWithUTF8String:setName]];
     
+    char *setCode = (char *) sqlite3_column_text(statement, 18);
+    [card setSetCode:[[NSString alloc] initWithUTF8String:setCode]];
+    
+    char *rulings = (char *) sqlite3_column_text(statement, 19);
+    if (rulings != nil){
+        NSString *rules = [[NSString alloc] initWithUTF8String:rulings];
+        NSError *jsonError;
+        NSData *objectData = [rules dataUsingEncoding:NSUTF8StringEncoding];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:objectData
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:&jsonError];
+        [json enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop){
+            [card.rulings addObject:[obj objectForKey:@"text"]];
+        }];
+    }
+    
+    int number = sqlite3_column_int(statement, 21);
+    [card setNumber:number];
+
     if (!card.isMultiColor && !card.isALand && !card.isAnArtifact && card.colors.count == 0){
         [card setAsEldrazi];
     }
+    
     return card;
 }
 

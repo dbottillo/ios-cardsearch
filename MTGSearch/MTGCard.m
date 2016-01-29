@@ -9,7 +9,8 @@
 #import "MTGCard.h"
 @implementation MTGCard
 
-@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name;
+@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name, setCode;
+@synthesize rulings;
 
 - (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore{
     if (self = [super initNanoObjectFromDictionaryRepresentation:theDictionary forKey:aKey store:theStore]) {
@@ -31,6 +32,7 @@
     manaCost = [dictionary objectForKey:kNanoKeyManaCost];
     text = [dictionary objectForKey:kNanoKeyText];
     setName = [dictionary objectForKey:kNanoKeySetName];
+    setCode = [dictionary objectForKey:kNanoKeySetCode];
     setId = [[dictionary objectForKey:kNanoKeySetId] intValue];
     cmc = [[dictionary objectForKey:kNanoKeyCMC] intValue];
     isMultiColor = [[dictionary objectForKey:kNanoKeyIsMultiColor] boolValue];
@@ -38,6 +40,8 @@
     isAnArtifact = [[dictionary objectForKey:kNanoKeyIsAnArtifact] boolValue];
     isAnEldrazi = [[dictionary objectForKey:kNanoKeyIsAnEldrazi] boolValue];
     multiverseId = [[dictionary objectForKey:kNanoKeyMultiverseId] intValue];
+    number = [[dictionary objectForKey:kNanoKeyNumber] intValue];
+    rulings = [dictionary objectForKey:kNanoKeyRulings];
 }
 
 - (NSDictionary *)nanoObjectDictionaryRepresentation{
@@ -53,6 +57,7 @@
     [ret setValue:manaCost forKey:kNanoKeyManaCost];
     [ret setValue:text forKey:kNanoKeyText];
     [ret setValue:setName forKey:kNanoKeySetName];
+    [ret setValue:setCode forKey:kNanoKeySetCode];
     [ret setValue:[NSNumber numberWithInt:setId] forKey:kNanoKeySetId];
     [ret setValue:[NSNumber numberWithInt:cmc] forKey:kNanoKeyCMC];
     [ret setValue:[NSNumber numberWithBool:isMultiColor] forKey:kNanoKeyIsMultiColor];
@@ -60,6 +65,8 @@
     [ret setValue:[NSNumber numberWithBool:isAnArtifact] forKey:kNanoKeyIsAnArtifact];
     [ret setValue:[NSNumber numberWithBool:isAnEldrazi] forKey:kNanoKeyIsAnEldrazi];
     [ret setValue:[NSNumber numberWithInt:multiverseId] forKey:kNanoKeyMultiverseId];
+    [ret setValue:[NSNumber numberWithInt:number] forKey:kNanoKeyNumber];
+    [ret setValue:rulings forKey:kNanoKeyRulings];
     return ret;
 }
 
@@ -72,6 +79,7 @@
         isAnArtifact = NO;
         isAnEldrazi = NO;
         self.colors = [[NSMutableArray alloc] init];
+        self.rulings = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -169,15 +177,24 @@
 
     int color = -1;
     if (self.colors.count > 0){
-        color = [(NSNumber *)[colors objectAtIndex:0] integerValue];
+        color = [(NSNumber *)[colors objectAtIndex:0] intValue];
     }
     int otherColor = -1;
     if (otherCard.colors.count > 0){
-        otherColor = [(NSNumber *)[otherCard.colors objectAtIndex:0] integerValue];
+        otherColor = [(NSNumber *)[otherCard.colors objectAtIndex:0] intValue];
     }
     if (color == otherColor) return NSOrderedSame;
     if (color < otherColor) return NSOrderedAscending;
     return NSOrderedDescending;
+}
+
+
+- (void)setNumber:(int)nmb{
+    self->number = nmb;
+}
+
+- (int) getNumber{
+    return number;
 }
 
 - (NSString *)nanoObjectKey{

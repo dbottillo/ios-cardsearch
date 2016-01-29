@@ -560,6 +560,7 @@
 				6DB12C7319BDAB0A00B2BCC8 /* Frameworks */,
 				6DB12C7419BDAB0A00B2BCC8 /* Resources */,
 				5F4ED6E09B93452197D61509 /* Copy Pods Resources */,
+				A078F499CE71C7CDCCED5EF9 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -729,6 +730,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A078F499CE71C7CDCCED5EF9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -875,12 +891,12 @@
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
 					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielebottillo.mtgsearch.test;
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -911,6 +927,7 @@
 					"$(PROJECT_DIR)/MTGSearch/Distribution/NanoStore2/Release/Library",
 					"$(PROJECT_DIR)/MTGSearch/NanoStore2/Release/Library",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielebottillo.mtgsearch.test;
 				PRODUCT_NAME = "MTGSearch copy";
 				PROVISIONING_PROFILE = "";

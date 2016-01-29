@@ -37,6 +37,9 @@
 #define     kNanoKeyManaCost        @"manaCost"
 #define     kNanoKeyText            @"text"
 #define     kNanoKeySetName         @"setName"
+#define     kNanoKeySetCode         @"setCode"
+#define     kNanoKeyNumber          @"number"
+#define     kNanoKeyRulings         @"rulings"
 
 @interface MTGCard : NSFNanoObject{
     int setId;
@@ -46,6 +49,7 @@
     BOOL isAnArtifact;
     BOOL isAnEldrazi;
     int multiverseId;
+    int number;
 }
 
 @property (nonatomic, strong) NSString *name;
@@ -59,6 +63,8 @@
 @property (strong, nonatomic) NSString *manaCost;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *setName;
+@property (strong, nonatomic) NSString *setCode;
+@property (strong, nonatomic) NSMutableArray *rulings;
 
 - (id)initWithName:(NSString *)_name;
 
@@ -67,6 +73,8 @@
 - (void)convertColors:(NSArray *)newColors;
 - (void)setManaCostConverted:(int)manaCostConverted;
 - (int) getCmc;
+- (void)setNumber:(int)numer;
+- (int) getNumber;
 - (void)setMultiverseId:(int)idMultiverse;
 - (int) getMultiverseId;
 - (void)setAsMultiColor;

@@ -118,8 +118,13 @@
     [cardDetailContainer setHidden:NO];
     if (showImage){
         cardImage.image = nil;
-        NSString *url = [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
-            NSLog(@"url: %@",url);
+        NSString *url;
+        if (card.getNumber > 0 && card.setCode.length > 0){
+            url= [NSString stringWithFormat:@"http://magiccards.info/scans/en/%@/%d.jpg", [card setCode].lowercaseString, card.getNumber];
+        } else {
+            url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
+        }
+        NSLog(@"url: %@",url);
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
@@ -152,7 +157,7 @@
     manager.responseSerializer = [AFHTTPResponseSerializer new];
     NSString *baseUrl = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=%@", card.name];
     NSString *url = [baseUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"url: %@",url);
+    //NSLog(@"url: %@",url);
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSData * data = (NSData *)responseObject;
         DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
