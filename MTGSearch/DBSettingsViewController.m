@@ -72,14 +72,16 @@
     UISwitch *switchImage = (UISwitch *)[cell viewWithTag:2];
     [switchImage setHidden:YES];
     
+    UILabel *label = (UILabel *)[cell viewWithTag:3];
+    
     if (indexPath.section == 0){
         if (indexPath.row == 0){
-            cell.textLabel.text = NSLocalizedString(@"About", @"about");
+            label.text = NSLocalizedString(@"About", @"about");
         }else{
-            cell.textLabel.text = NSLocalizedString(@"Feedback", @"feedback");
+            label.text = NSLocalizedString(@"Feedback", @"feedback");
         }
     } else {
-        cell.textLabel.text = NSLocalizedString(@"Show image", @"show image");
+        label.text = NSLocalizedString(@"Show image", @"show image");
         [switchImage setHidden:NO];
 
         [switchImage setOn:showImage animated:YES];
@@ -87,8 +89,8 @@
         
     }
     
-    [cell.textLabel setTextColor:[DBAppDelegate mainColor]];
-    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
+    [label setTextColor:[DBAppDelegate mainColor]];
+    [label setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
     
     return cell;
 }

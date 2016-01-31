@@ -21,11 +21,9 @@
 
 - (NSMutableArray *)realFilterCards:(NSArray *)cards{
     NSMutableArray *filteredCards = [[NSMutableArray alloc] init];
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     for (MTGCard *card in cards){
         BOOL toAdd = NO;
-        
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
         /*if (card.colors.count > 0){
             NSNumber *number = [card.colors objectAtIndex:0];
@@ -53,6 +51,16 @@
         }
     }
     //    NSLog(@"filtering cards");
+    
+    BOOL alphabeticalOrder = [userDefaults boolForKey:kSortAlphabet];
+    if (alphabeticalOrder){
+        NSArray *sortedArray = [filteredCards sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            MTGCard *card1 = (MTGCard *)obj1;
+            MTGCard *card2 = (MTGCard *)obj2;
+            return [card1.name compare:card2.name options:NSNumericSearch];
+        }];
+        return [NSMutableArray arrayWithArray:sortedArray];
+    }
     return filteredCards;
 }
 

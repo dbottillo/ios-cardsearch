@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Daniele Bottillo. All rights reserved.
 //
 
+#define kSortAlphabet   @"alphabethicOrder"
+
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (FilterCards)

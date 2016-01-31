@@ -152,7 +152,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     currentIndexSet = [userDefaults integerForKey:kSetId];
     if (kDebug){
-        NSLog(@"number of set loaded: %d", [app_delegate.sets count]);
+        NSLog(@"number of set loaded: %lu", (unsigned long)app_delegate.sets.count);
     }
     
     setLoaded = true;
@@ -181,6 +181,24 @@
 - (void)filterCards{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        filteredCards = [self realFilterCards:cards];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [cardsTable reloadData];
+            [cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        });
+    });
+}
+- (IBAction)changeOrder:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        if ([userDefaults boolForKey:kSortAlphabet]){
+            [userDefaults setBool:NO forKey:kSortAlphabet];
+        } else {
+            [userDefaults setBool:YES forKey:kSortAlphabet];
+        }
+        [userDefaults synchronize];
         filteredCards = [self realFilterCards:cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
