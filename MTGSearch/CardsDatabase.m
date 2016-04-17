@@ -202,10 +202,7 @@ static CardsDatabase *_database;
     char *setName = (char *) sqlite3_column_text(statement, 17);
     [card setSetName:[[NSString alloc] initWithUTF8String:setName]];
     
-    char *setCode = (char *) sqlite3_column_text(statement, 18);
-    [card setSetCode:[[NSString alloc] initWithUTF8String:setCode]];
-    
-    char *rulings = (char *) sqlite3_column_text(statement, 19);
+    char *rulings = (char *) sqlite3_column_text(statement, 18);
     if (rulings != nil){
         NSString *rules = [[NSString alloc] initWithUTF8String:rulings];
         NSError *jsonError;
@@ -217,6 +214,10 @@ static CardsDatabase *_database;
             [card.rulings addObject:[obj objectForKey:@"text"]];
         }];
     }
+    
+    char *setCode = (char *) sqlite3_column_text(statement, 20);
+    [card setSetCode:[[NSString alloc] initWithUTF8String:setCode]];
+    
     
     int number = sqlite3_column_int(statement, 21);
     [card setNumber:number];
