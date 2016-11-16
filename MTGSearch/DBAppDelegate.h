@@ -42,10 +42,12 @@
 @interface DBAppDelegate : UIResponder <UIApplicationDelegate>{
     BOOL filterChanged;
     BOOL filterChangedSearch;
+    NSDictionary *cardsInfoMapper;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) id<GAITracker> tracker;
+@property (strong, nonatomic) NSDictionary *cardsInfoMapper;
 
 @property (strong, nonatomic) NSArray *sets;
 

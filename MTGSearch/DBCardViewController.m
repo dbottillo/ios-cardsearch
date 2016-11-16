@@ -12,6 +12,7 @@
 #import <MBProgressHUD.h>
 #import "DBPriceCardParser.h"
 #import "CardsDatabase.h"
+#import "DBAppDelegate.h"
 
 @interface DBCardViewController ()
 
@@ -119,12 +120,16 @@
     if (showImage){
         cardImage.image = nil;
         NSString *url;
-        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"EMN"] && ![card.setCode isEqualToString:@"EMA"]){
-            url= [NSString stringWithFormat:@"http://magiccards.info/scans/en/%@/%d.jpg", [card setCode].lowercaseString, card.getNumber];
+        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"C16"] && ![card.setCode isEqualToString:@"MPS"]){
+            NSString *set =[card setCode].lowercaseString;
+            if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
+                set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
+            }
+            url= [NSString stringWithFormat:@"http://magiccards.info/scans/en/%@/%d.jpg", set, card.getNumber];
         } else {
             url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         }
-        //NSLog(@"url: %@",url);
+        NSLog(@"url: %@",url);
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
         requestOperation.responseSerializer = [AFImageResponseSerializer serializer];

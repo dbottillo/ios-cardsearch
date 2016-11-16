@@ -14,7 +14,7 @@
 
 @implementation DBAppDelegate
 
-@synthesize sets, tracker;
+@synthesize sets, tracker, cardsInfoMapper;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -45,9 +45,60 @@
     NSString *GACode = [infoDict objectForKey:@"GA_CODE"];
     tracker = [[GAI sharedInstance] trackerWithTrackingId:GACode];
     
+    cardsInfoMapper = [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"tr", @"tor",
+                       @"dm", @"dkm",
+                       @"ex", @"exo",
+                       @"ug", @"ugl",
+                       @"us", @"usg",
+                       @"at", @"ath",
+                       @"ul", @"ulg",
+                       @"6e", @"6ed",
+                       @"p3k", @"ptk",
+                       @"ud", @"uds",
+                       @"st", @"s99",
+                       @"mm", @"mmq",
+                       @"ne", @"nms",
+                       @"pr", @"pcy",
+                       @"in", @"inv",
+                       @"ps", @"pls",
+                       @"7e", @"7ed",
+                       @"ap", @"apc",
+                       @"od", @"ody",
+                       @"ju", @"jud",
+                       @"on", @"ons",
+                       @"le", @"lgn",
+                       @"sc", @"scg",
+                       @"8e", @"8ed",
+                       @"mi", @"mrd",
+                       @"ds", @"dst",
+                       @"uh", @"unh",
+                       @"9e", @"9ed",
+                       @"gp", @"gpt",
+                       @"di", @"dis",
+                       @"cs", @"csp",
+                       @"ts", @"tsp",
+                       @"tsts", @"tsb",
+                       @"pc", @"plc",
+                       @"lw", @"lrw",
+                       @"mt", @"mor",
+                       @"fvd", @"drb",
+                       @"ddm", @"dd2",
+                       @"cfx", @"con",
+                       @"ddadvd", @"ddc",
+                       @"fve", @"v09",
+                       @"pch", @"hop",
+                       @"gvl", @"ddd",
+                       @"pds", @"j09",
+                       @"pvc", @"dde",
+                       @"fvr", @"fvr",
+                       @"fvl", @"fvl",
+                       @"cma", @"cma",
+                       nil];
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
