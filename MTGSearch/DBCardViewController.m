@@ -120,7 +120,7 @@
     if (showImage){
         cardImage.image = nil;
         NSString *url;
-        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"C16"] && ![card.setCode isEqualToString:@"MPS"]){
+        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"C16"] && ![card.setCode isEqualToString:@"MPS"]&& ![card.setCode isEqualToString:@"MPS_AKH"]){
             NSString *set =[card setCode].lowercaseString;
             if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
                 set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
