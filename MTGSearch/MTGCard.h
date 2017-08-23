@@ -85,5 +85,6 @@
 - (BOOL)isAnArtifact;
 - (void)setAsEldrazi;
 - (BOOL)isAnEldrazi;
+- (BOOL)isAPlane;
 
 @end

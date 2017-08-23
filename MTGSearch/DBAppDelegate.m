@@ -83,7 +83,7 @@
                        @"lw", @"lrw",
                        @"mt", @"mor",
                        @"fvd", @"drb",
-                       @"ddm", @"dd2",
+                       @"ddajvc", @"dd2",
                        @"cfx", @"con",
                        @"ddadvd", @"ddc",
                        @"fve", @"v09",
@@ -91,9 +91,11 @@
                        @"gvl", @"ddd",
                        @"pds", @"j09",
                        @"pvc", @"dde",
-                       @"fvr", @"fvr",
-                       @"fvl", @"fvl",
-                       @"cma", @"cma",
+                       @"fvr", @"v10",
+                       @"fvl", @"v11",
+                       @"cma", @"cm1",
+                       @"mpskld", @"mps",
+                       @"mpsakh", @"mps_akh",
                        nil];
     
     return YES;

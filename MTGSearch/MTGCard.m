@@ -140,6 +140,15 @@
     return isAnEldrazi;
 }
 
+- (BOOL)isAPlane{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",@"Plane"]; // if you need case sensitive search avoid '[c]' in the predicate
+    NSArray *results = [types filteredArrayUsingPredicate:predicate];
+    if (results.count > 0){
+        return true;
+    }
+    return false;
+}
+
 - (void)convertColors:(NSArray *)newColors{
     NSMutableArray *temp = [[NSMutableArray alloc] init];
     for (NSString *color in newColors){

@@ -8,7 +8,7 @@
 
 #import "DBSetViewController.h"
 #import <sqlite3.h>
-#import <MBProgressHUD.h>
+#import "MBProgressHUD.h"
 #import "MTGCard.h"
 #import "DBAppDelegate.h"
 #import "CardsDatabase.h"

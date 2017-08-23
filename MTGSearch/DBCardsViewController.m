@@ -9,10 +9,9 @@
 #import "DBCardsViewController.h"
 #import "MTGCard.h"
 #import "DBFullCardCell.h"
-#import <UIImageView+AFNetworking.h>
-#import <AFNetworking/AFHTTPRequestOperation.h>
+#import "UIImageView+AFNetworking.h"
 #import "DBSettingsViewController.h"
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 #import "DBCardViewController.h"
 #import "LocalDataProvider.h"
 

@@ -8,7 +8,7 @@
 
 #import "DBSearchViewController.h"
 #import "MTGCard.h"
-#import <MBProgressHUD.h>
+#import "MBProgressHUD.h"
 #import "CardsDatabase.h"
 #import "UIViewController+FilterCards.h"
 #import "DBCardsViewController.h"

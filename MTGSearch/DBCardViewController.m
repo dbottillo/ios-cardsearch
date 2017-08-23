@@ -8,8 +8,8 @@
 
 #import "DBCardViewController.h"
 #import "MTGCard.h"
-#import <AFNetworking.h>
-#import <MBProgressHUD.h>
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 #import "DBPriceCardParser.h"
 #import "CardsDatabase.h"
 #import "DBAppDelegate.h"
@@ -107,6 +107,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void) update{
     [cardName setText:card.name];
     [cardType setText:card.type];
@@ -120,7 +121,9 @@
     if (showImage){
         cardImage.image = nil;
         NSString *url;
-        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"C16"] && ![card.setCode isEqualToString:@"MPS"]&& ![card.setCode isEqualToString:@"MPS_AKH"]){
+        NSLog(@"url: %@",card.types);
+        NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
+        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"C17"] && ![card isAPlane]){
             NSString *set =[card setCode].lowercaseString;
             if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
                 set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
@@ -130,16 +133,18 @@
             url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         }
         NSLog(@"url: %@",url);
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-        AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
-        [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFImageResponseSerializer serializer];
+        [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+            // Success
             cardImage.image = responseObject;
             [cardImage setHidden:NO];
             [cardDetailContainer setHidden:YES];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            // Failure
             [cardImage setHidden:YES];
             [cardDetailContainer setHidden:NO];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -148,8 +153,7 @@
                 [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:url];
             }
         }];
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        [requestOperation start];
+        
     }
     if (isLucky){
         [labelIndicator setHidden:YES];
@@ -158,12 +162,13 @@
     }
     [self updatePriceWith:NSLocalizedString(@"Loading...", @"loading")];
     [viewOnTCG setHidden:YES];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer new];
     NSString *baseUrl = [NSString stringWithFormat:@"http://partner.tcgplayer.com/x3/phl.asmx/p?pk=MTGCARDSINFO&s=&p=%@", card.name];
     NSString *url = [baseUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //NSLog(@"url: %@",url);
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSData * data = (NSData *)responseObject;
         DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
         priceCard = [parser parse];
@@ -173,7 +178,7 @@
             [cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", priceCard.hiPrice, priceCard.avgprice, priceCard.lowprice]];
         }
         [viewOnTCG setHidden:NO];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
         int statusCode = [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
         if (statusCode == 500){
             [cardPrice setText:NSLocalizedString(@"Product not found on TCG", nil)];

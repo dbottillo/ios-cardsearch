@@ -1,4 +1,13 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
+use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'AFNetworking', '~> 2.2'
-pod 'MBProgressHUD', '~> 0.8'
+
+target 'MTGSearch' do
+    pod 'AFNetworking', '~> 3.0'
+    pod 'MBProgressHUD', '~> 1.0.0'
+end
+
+target 'MTGSearch Dev' do
+    pod 'AFNetworking', '~> 3.0'
+    pod 'MBProgressHUD', '~> 1.0.0'
+end
