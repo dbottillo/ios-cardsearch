@@ -151,7 +151,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             [searchTable reloadData];
-            self.navigationItem.title = [NSString stringWithFormat:@"%@ (%d)",NSLocalizedString(@"Search", @"search"), filteredCards.count];
+            self.navigationItem.title = [NSString stringWithFormat:@"%@ (%lu)",NSLocalizedString(@"Search", @"search"), (unsigned long)filteredCards.count];
             if (filteredCards.count > 0){
                 [searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
             }

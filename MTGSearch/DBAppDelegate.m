@@ -89,7 +89,7 @@
                        @"fve", @"v09",
                        @"pch", @"hop",
                        @"gvl", @"ddd",
-                       @"pds", @"j09",
+                       @"pds", @"h09",
                        @"pvc", @"dde",
                        @"fvr", @"v10",
                        @"fvl", @"v11",
@@ -97,7 +97,7 @@
                        @"mpskld", @"mps",
                        @"mpsakh", @"mps_akh",
                        nil];
-    
+
     return YES;
 }
 
