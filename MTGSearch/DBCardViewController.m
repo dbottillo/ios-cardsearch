@@ -123,7 +123,11 @@
         NSString *url;
         //NSLog(@"url: %@",card.types);
         //NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
-        if (card.getNumber > 0 && card.setCode.length > 0 && ![card.setCode isEqualToString:@"XLN"] && ![card isAPlane]){
+        /*if (card.getNumber > 0 && card.setCode.length > 0
+            && ![card.setCode isEqualToString:@"XLN"]
+            && ![card.setCode isEqualToString:@"IMA"]
+            && ![card.setCode isEqualToString:@"DDT"]
+            && ![card isAPlane]){
             NSString *set =[card setCode].lowercaseString;
             if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
                 set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
@@ -131,7 +135,8 @@
             url= [NSString stringWithFormat:@"https://magiccards.info/scans/en/%@/%d.jpg", set, card.getNumber];
         } else {
             url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
-        }
+        }*/
+        url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         NSLog(@"url: %@",url);
         
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

@@ -35,7 +35,6 @@
 		6D12DE6F19E2E59C001C11D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */; };
 		6D12DE7119E2E59C001C11D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8219BDAB0A00B2BCC8 /* InfoPlist.strings */; };
 		6D12DE7219E2E59C001C11D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D57A4B519E03BE00099C96B /* Localizable.strings */; };
-		6D12DE7319E2E59C001C11D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		6D12DE7419E2E59C001C11D6 /* mtgsearch.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D70035E19BDC65400AAC079 /* mtgsearch.sqlite3 */; };
 		6D12DE7519E2E59C001C11D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */; };
 		6D25A10719DDD53600ACB73A /* DBCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25A10619DDD53600ACB73A /* DBCardCell.m */; };
@@ -84,7 +83,6 @@
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
 		6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
-		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		876B34E6167D000EAB04B9C8 /* Pods_MTGSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B419215D512F81C6B6E15165 /* Pods_MTGSearch.framework */; };
@@ -202,7 +200,6 @@
 		6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6DDC9CD519DC524C002BBB4F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataProvider.h; sourceTree = "<group>"; };
 		6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataProvider.m; sourceTree = "<group>"; };
 		70BA6F758191B8C6094A1790 /* Pods-MTGSearch Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTGSearch Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTGSearch Dev/Pods-MTGSearch Dev.release.xcconfig"; sourceTree = "<group>"; };
@@ -470,7 +467,6 @@
 				6DB12C8B19BDAB0A00B2BCC8 /* Main.storyboard */,
 				6DB12C9419BDAB0B00B2BCC8 /* Images.xcassets */,
 				6DB12C8019BDAB0A00B2BCC8 /* Supporting Files */,
-				6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */,
 				6DBEE8F019DC9D75009FC9BD /* UIViewController+NavBar.h */,
 				6DBEE8F119DC9D75009FC9BD /* UIViewController+NavBar.m */,
 				6D57A4B519E03BE00099C96B /* Localizable.strings */,
@@ -656,7 +652,6 @@
 				6D9FA8F21BB41ECE00B8BA39 /* NanoStore2 in Resources */,
 				6D12DE7119E2E59C001C11D6 /* InfoPlist.strings in Resources */,
 				6D12DE7219E2E59C001C11D6 /* Localizable.strings in Resources */,
-				6D12DE7319E2E59C001C11D6 /* LaunchScreen.storyboard in Resources */,
 				6D12DE7419E2E59C001C11D6 /* mtgsearch.sqlite3 in Resources */,
 				6D12DE7519E2E59C001C11D6 /* Main.storyboard in Resources */,
 			);
@@ -669,7 +664,6 @@
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
 				6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */,
-				6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */,
 				6D70035F19BDC65400AAC079 /* mtgsearch.sqlite3 in Resources */,
 				6DB12C8D19BDAB0A00B2BCC8 /* Main.storyboard in Resources */,
 			);
@@ -1032,7 +1026,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1077,7 +1071,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1102,7 +1096,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch/MTGSearch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
@@ -1139,7 +1133,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MTGSearch/MTGSearch-Prefix.pch";
 				INFOPLIST_FILE = "MTGSearch/MTGSearch-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MTGSearch",
