@@ -81,7 +81,6 @@
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
-		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		876B34E6167D000EAB04B9C8 /* Pods_MTGSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B419215D512F81C6B6E15165 /* Pods_MTGSearch.framework */; };
@@ -188,7 +187,6 @@
 		6DDC9CD119DC523F002BBB4F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6DDC9CD519DC524C002BBB4F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>";  };
 		6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataProvider.h; sourceTree = "<group>"; };
 		6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataProvider.m; sourceTree = "<group>"; };
 		70BA6F758191B8C6094A1790 /* Pods-MTGSearch Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTGSearch Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTGSearch Dev/Pods-MTGSearch Dev.release.xcconfig"; sourceTree = "<group>"; };

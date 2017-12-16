@@ -17,11 +17,25 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.8.2</string>
+	<string>1.8.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>18</string>
+	<string>19</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>GA_CODE</key>
 	<string>UA-48823803-2</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -57,19 +71,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
 </dict>
 </plist>
