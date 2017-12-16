@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GAI.h"
 
 #define kSetId  @"setId"
 #define app_delegate ((DBAppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -46,7 +45,6 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) id<GAITracker> tracker;
 @property (strong, nonatomic) NSDictionary *cardsInfoMapper;
 
 @property (strong, nonatomic) NSArray *sets;

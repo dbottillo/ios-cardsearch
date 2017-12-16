@@ -9,18 +9,17 @@
 #import "DBAppDelegate.h"
 #import "DBFilterViewController.h"
 #import "DBSettingsViewController.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation DBAppDelegate
 
-@synthesize sets, tracker, cardsInfoMapper;
+@synthesize sets, cardsInfoMapper;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Override point for customization after application launch.
     
-    //[Crashlytics startWithAPIKey:@"f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8"];
+    [Fabric with:@[[Crashlytics class]]];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userDefaultsDictionary = [userDefaults dictionaryRepresentation];
@@ -42,8 +41,6 @@
     }
     
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *GACode = [infoDict objectForKey:@"GA_CODE"];
-    tracker = [[GAI sharedInstance] trackerWithTrackingId:GACode];
     
     cardsInfoMapper = [NSDictionary dictionaryWithObjectsAndKeys:
                        @"tr", @"tor",
@@ -145,16 +142,17 @@
 }
 
 - (void)trackPage:(NSString *)page{
-    [tracker send:[[[GAIDictionaryBuilder createAppView] set:page
-                                                      forKey:kGAIScreenName] build]];
+    [Answers logContentViewWithName:page
+                        contentType:nil
+                          contentId:nil
+                   customAttributes:nil];
 }
 
 - (void)trackEventWithCategory:(NSString *)category andAction:(NSString *)action andLabel:(NSString *)label{
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:category
-                                                          action:action
-                                                           label:label
-                                                           value:nil] build]];
-
+    [Answers logCustomEventWithName:category
+                   customAttributes:@{
+                                      @"action" : action,
+                                      label : label}];
 }
 
 + (UIColor *)mainColor{

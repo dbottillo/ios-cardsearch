@@ -26,7 +26,6 @@
 		6D12DE6319E2E59C001C11D6 /* CardsDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D70036119BDC69F00AAC079 /* CardsDatabase.m */; };
 		6D12DE6519E2E59C001C11D6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
 		6D12DE6619E2E59C001C11D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
-		6D12DE6719E2E59C001C11D6 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
 		6D12DE6819E2E59C001C11D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
 		6D12DE6919E2E59C001C11D6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D70035B19BDC56A00AAC079 /* libsqlite3.dylib */; };
 		6D12DE6A19E2E59C001C11D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB12C7B19BDAB0A00B2BCC8 /* CoreGraphics.framework */; };
@@ -82,7 +81,7 @@
 		6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD119DC523F002BBB4F /* CoreData.framework */; };
 		6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */; };
 		6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD519DC524C002BBB4F /* libz.dylib */; };
-		6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */; };
+		6DDC9CDB19DC7CAB002BBB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */; };
 		6DEA9B5A1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		6DEA9B5B1A195AE200AF7D57 /* LocalDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */; };
 		876B34E6167D000EAB04B9C8 /* Pods_MTGSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B419215D512F81C6B6E15165 /* Pods_MTGSearch.framework */; };
@@ -186,20 +185,10 @@
 		6DC71D3D1A2D1A2400423E61 /* MTGCardPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTGCardPrice.m; sourceTree = "<group>"; };
 		6DC9540A19C0504F008640C7 /* DBFullCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFullCardCell.h; sourceTree = "<group>"; };
 		6DC9540B19C0504F008640C7 /* DBFullCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFullCardCell.m; sourceTree = "<group>"; };
-		6DDC9CC619DC5214002BBB4F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		6DDC9CC719DC5214002BBB4F /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		6DDC9CC819DC5214002BBB4F /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
-		6DDC9CC919DC5214002BBB4F /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
-		6DDC9CCA19DC5214002BBB4F /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		6DDC9CCB19DC5214002BBB4F /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		6DDC9CCC19DC5214002BBB4F /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		6DDC9CCD19DC5214002BBB4F /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		6DDC9CCE19DC5214002BBB4F /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		6DDC9CCF19DC5214002BBB4F /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		6DDC9CD119DC523F002BBB4F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6DDC9CD319DC5246002BBB4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6DDC9CD519DC524C002BBB4F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		6DDC9CDA19DC7CAB002BBB4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>";  };
 		6DEA9B581A195AE200AF7D57 /* LocalDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataProvider.h; sourceTree = "<group>"; };
 		6DEA9B591A195AE200AF7D57 /* LocalDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataProvider.m; sourceTree = "<group>"; };
 		70BA6F758191B8C6094A1790 /* Pods-MTGSearch Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTGSearch Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTGSearch Dev/Pods-MTGSearch Dev.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,7 +204,6 @@
 			files = (
 				6D12DE6519E2E59C001C11D6 /* libz.dylib in Frameworks */,
 				6D12DE6619E2E59C001C11D6 /* SystemConfiguration.framework in Frameworks */,
-				6D12DE6719E2E59C001C11D6 /* libGoogleAnalyticsServices.a in Frameworks */,
 				6D12DE6819E2E59C001C11D6 /* CoreData.framework in Frameworks */,
 				6D12DE6919E2E59C001C11D6 /* libsqlite3.dylib in Frameworks */,
 				6D12DE6A19E2E59C001C11D6 /* CoreGraphics.framework in Frameworks */,
@@ -233,7 +221,6 @@
 				6DAB8DAC1A232F8B00AAB494 /* libnanostore2.a in Frameworks */,
 				6DDC9CD619DC524C002BBB4F /* libz.dylib in Frameworks */,
 				6DDC9CD419DC5246002BBB4F /* SystemConfiguration.framework in Frameworks */,
-				6DDC9CD919DC5406002BBB4F /* libGoogleAnalyticsServices.a in Frameworks */,
 				6DDC9CD219DC523F002BBB4F /* CoreData.framework in Frameworks */,
 				6D70035C19BDC56A00AAC079 /* libsqlite3.dylib in Frameworks */,
 				6DB12C7C19BDAB0A00B2BCC8 /* CoreGraphics.framework in Frameworks */,
@@ -517,27 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				6D06F2841A23E10C00F5C34E /* NanoStore2 */,
-				6DDC9CD019DC521B002BBB4F /* Google Analytics */,
 			);
 			name = vendor;
-			sourceTree = "<group>";
-		};
-		6DDC9CD019DC521B002BBB4F /* Google Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				6DDC9CD819DC5406002BBB4F /* libGoogleAnalyticsServices.a */,
-				6DDC9CC619DC5214002BBB4F /* GAI.h */,
-				6DDC9CC719DC5214002BBB4F /* GAIDictionaryBuilder.h */,
-				6DDC9CC819DC5214002BBB4F /* GAIEcommerceFields.h */,
-				6DDC9CC919DC5214002BBB4F /* GAIEcommerceProduct.h */,
-				6DDC9CCA19DC5214002BBB4F /* GAIEcommerceProductAction.h */,
-				6DDC9CCB19DC5214002BBB4F /* GAIEcommercePromotion.h */,
-				6DDC9CCC19DC5214002BBB4F /* GAIFields.h */,
-				6DDC9CCD19DC5214002BBB4F /* GAILogger.h */,
-				6DDC9CCE19DC5214002BBB4F /* GAITrackedViewController.h */,
-				6DDC9CCF19DC5214002BBB4F /* GAITracker.h */,
-			);
-			name = "Google Analytics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +521,7 @@
 				6D12DE6E19E2E59C001C11D6 /* Resources */,
 				173B4D6F1B3A1FB5AD5BD4E5 /* [CP] Embed Pods Frameworks */,
 				60127B559FE40419BD48DA31 /* [CP] Copy Pods Resources */,
+				6D48602C1FE557620011112A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -573,6 +542,7 @@
 				6DB12C7419BDAB0A00B2BCC8 /* Resources */,
 				86FB5D3FB3F15DE55185548A /* [CP] Embed Pods Frameworks */,
 				E33CB3F0D4AD0D896B07044D /* [CP] Copy Pods Resources */,
+				6D48602D1FE557770011112A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -750,6 +720,32 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		6D48602C1FE557620011112A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6";
+		};
+		6D48602D1FE557770011112A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6";
 		};
 		86FB5D3FB3F15DE55185548A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
