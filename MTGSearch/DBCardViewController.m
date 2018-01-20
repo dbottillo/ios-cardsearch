@@ -121,10 +121,11 @@
     if (showImage){
         cardImage.image = nil;
         NSString *url;
-        //NSLog(@"url: %@",card.types);
+        //NSLog(@"url: %@",card.setCode);
         //NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
         if (card.getNumber > 0 && card.setCode.length > 0
             && ![card.setCode isEqualToString:@"6ed"]
+            && ![card.setCode isEqualToString:@"RIX"]
             && ![card isAPlane]){
             NSString *set =[card setCode].lowercaseString;
             if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
