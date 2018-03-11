@@ -119,45 +119,24 @@
     [cardImage setHidden:YES];
     [cardDetailContainer setHidden:NO];
     if (showImage){
-        cardImage.image = nil;
-        NSString *url;
+        NSString *firstUrl;
+        NSString *secondUrl;
         //NSLog(@"url: %@",card.setCode);
         //NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
         if (card.getNumber > 0 && card.setCode.length > 0
             && ![card.setCode isEqualToString:@"6ed"]
-            && ![card.setCode isEqualToString:@"RIX"]
             && ![card isAPlane]){
             NSString *set =[card setCode].lowercaseString;
             if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
                 set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
             }
-            url= [NSString stringWithFormat:@"https://magiccards.info/scans/en/%@/%d.jpg", set, card.getNumber];
+            firstUrl = [NSString stringWithFormat:@"https://magiccards.info/scans/en/%@/%d.jpg", set, card.getNumber];
+            secondUrl = [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         } else {
-            url= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
+            firstUrl= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
+            secondUrl = nil;
         }
-
-        NSLog(@"url: %@",url);
-        
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.responseSerializer = [AFImageResponseSerializer serializer];
-        [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-            // Success
-            cardImage.image = responseObject;
-            [cardImage setHidden:NO];
-            [cardDetailContainer setHidden:YES];
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-
-        } failure:^(NSURLSessionTask *operation, NSError *error) {
-            // Failure
-            [cardImage setHidden:YES];
-            [cardDetailContainer setHidden:NO];
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image" andLabel:url];
-            if ([AFNetworkReachabilityManager sharedManager].reachable){
-                [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:url];
-            }
-        }];
-        
+        [self loadImage:firstUrl andSecondImage:secondUrl];
     }
     if (isLucky){
         [labelIndicator setHidden:YES];
@@ -198,6 +177,36 @@
 
     NSString *track = [NSString stringWithFormat:@"/card/%d",[((MTGCard *)card) getMultiverseId]];
     [app_delegate trackPage:track];
+}
+
+- (void)loadImage:(NSString *)firstImage andSecondImage:(NSString *)secondImage{
+    cardImage.image = nil;
+    
+    NSLog(@"url: %@",firstImage);
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFImageResponseSerializer serializer];
+    [manager GET:firstImage parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        // Success
+        cardImage.image = responseObject;
+        [cardImage setHidden:NO];
+        [cardDetailContainer setHidden:YES];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        // Failure
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image" andLabel:firstImage];
+        if ([AFNetworkReachabilityManager sharedManager].reachable){
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:firstImage];
+        }
+        if (secondImage != nil){
+            [self loadImage:secondImage andSecondImage:nil];
+            return;
+        }
+        [cardImage setHidden:YES];
+        [cardDetailContainer setHidden:NO];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
 }
 
 - (void) updatePriceWith:(NSString *) string{
