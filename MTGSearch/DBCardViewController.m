@@ -123,14 +123,8 @@
         NSString *secondUrl;
         //NSLog(@"url: %@",card.setCode);
         //NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
-        if (card.getNumber > 0 && card.setCode.length > 0
-            && ![card.setCode isEqualToString:@"6ed"]
-            && ![card isAPlane]){
-            NSString *set =[card setCode].lowercaseString;
-            if ([app_delegate.cardsInfoMapper valueForKey:set] != nil){
-                set = [[app_delegate cardsInfoMapper] valueForKey:[card setCode].lowercaseString];
-            }
-            firstUrl = [NSString stringWithFormat:@"https://magiccards.info/scans/en/%@/%d.jpg", set, card.getNumber];
+        if (card.uuid != nil && card.uuid.length > 0){
+            firstUrl = [NSString stringWithFormat:@"https://api.scryfall.com/cards/%@?format=image", card.uuid];
             secondUrl = [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
         } else {
             firstUrl= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];

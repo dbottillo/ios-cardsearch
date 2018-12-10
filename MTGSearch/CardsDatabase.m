@@ -221,6 +221,9 @@ static CardsDatabase *_database;
     
     int number = sqlite3_column_int(statement, 21);
     [card setNumber:number];
+    
+    char *uuid = (char *) sqlite3_column_text(statement, 31);
+    [card setUuid:[[NSString alloc] initWithUTF8String:uuid]];
 
     if (!card.isMultiColor && !card.isALand && !card.isAnArtifact && card.colors.count == 0){
         [card setAsEldrazi];

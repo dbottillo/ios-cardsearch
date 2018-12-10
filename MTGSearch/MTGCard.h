@@ -40,6 +40,7 @@
 #define     kNanoKeySetCode         @"setCode"
 #define     kNanoKeyNumber          @"number"
 #define     kNanoKeyRulings         @"rulings"
+#define     kNanoKeyUUID            @"uuid"
 
 @interface MTGCard : NSFNanoObject{
     int setId;
@@ -65,6 +66,7 @@
 @property (strong, nonatomic) NSString *setName;
 @property (strong, nonatomic) NSString *setCode;
 @property (strong, nonatomic) NSMutableArray *rulings;
+@property (strong, nonatomic) NSString *uuid;
 
 - (id)initWithName:(NSString *)_name;
 

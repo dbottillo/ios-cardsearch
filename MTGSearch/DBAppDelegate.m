@@ -39,9 +39,7 @@
         [userDefaults setBool:YES forKey:kUserImage];
         [userDefaults synchronize];
     }
-    
-    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
-    
+        
     cardsInfoMapper = [NSDictionary dictionaryWithObjectsAndKeys:
                        @"tr", @"tor",
                        @"dm", @"dkm",

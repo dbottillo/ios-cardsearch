@@ -9,7 +9,7 @@
 #import "MTGCard.h"
 @implementation MTGCard
 
-@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name, setCode;
+@synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name, setCode, uuid;
 @synthesize rulings;
 
 - (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore{
@@ -42,6 +42,7 @@
     multiverseId = [[dictionary objectForKey:kNanoKeyMultiverseId] intValue];
     number = [[dictionary objectForKey:kNanoKeyNumber] intValue];
     rulings = [dictionary objectForKey:kNanoKeyRulings];
+    uuid = [dictionary objectForKey:kNanoKeyUUID];
 }
 
 - (NSDictionary *)nanoObjectDictionaryRepresentation{
@@ -67,6 +68,7 @@
     [ret setValue:[NSNumber numberWithInt:multiverseId] forKey:kNanoKeyMultiverseId];
     [ret setValue:[NSNumber numberWithInt:number] forKey:kNanoKeyNumber];
     [ret setValue:rulings forKey:kNanoKeyRulings];
+    [ret setValue:uuid forKey:kNanoKeyUUID];
     return ret;
 }
 
