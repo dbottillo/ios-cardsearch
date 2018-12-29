@@ -119,18 +119,7 @@
     [cardImage setHidden:YES];
     [cardDetailContainer setHidden:NO];
     if (showImage){
-        NSString *firstUrl;
-        NSString *secondUrl;
-        //NSLog(@"url: %@",card.setCode);
-        //NSLog(@"url: %d",[card.types containsObject:@"Plane"]);
-        if (card.uuid != nil && card.uuid.length > 0){
-            firstUrl = [NSString stringWithFormat:@"https://api.scryfall.com/cards/%@?format=image", card.uuid];
-            secondUrl = [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
-        } else {
-            firstUrl= [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [card getMultiverseId]];
-            secondUrl = nil;
-        }
-        [self loadImage:firstUrl andSecondImage:secondUrl];
+        [self loadImage:[card imageUrl]];
     }
     if (isLucky){
         [labelIndicator setHidden:YES];
@@ -148,17 +137,17 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSData * data = (NSData *)responseObject;
         DBPriceCardParser *parser = [[DBPriceCardParser alloc] initWithData:data];
-        priceCard = [parser parse];
-        if (priceCard.hiPrice.length > 5){
-            [cardPrice setText:[NSString stringWithFormat:@"H: %@$  -  L: %@$", priceCard.hiPrice, priceCard.lowprice]];
+        self.priceCard = [parser parse];
+        if (self.priceCard.hiPrice.length > 5){
+            [self.cardPrice setText:[NSString stringWithFormat:@"H: %@$  -  L: %@$", self.priceCard.hiPrice, self.priceCard.lowprice]];
         } else {
-            [cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", priceCard.hiPrice, priceCard.avgprice, priceCard.lowprice]];
+            [self.cardPrice setText:[NSString stringWithFormat:@"H: %@$  A: %@$  L: %@$", self.priceCard.hiPrice, self.priceCard.avgprice,self. priceCard.lowprice]];
         }
-        [viewOnTCG setHidden:NO];
+        [self.viewOnTCG setHidden:NO];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         int statusCode = [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
         if (statusCode == 500){
-            [cardPrice setText:NSLocalizedString(@"Product not found on TCG", nil)];
+            [self.cardPrice setText:NSLocalizedString(@"Product not found on TCG", nil)];
         } else {
             [self updatePriceWith:NSLocalizedString(@"Error", @"error price")];
         }
@@ -173,32 +162,28 @@
     [app_delegate trackPage:track];
 }
 
-- (void)loadImage:(NSString *)firstImage andSecondImage:(NSString *)secondImage{
+- (void)loadImage:(NSString *)imageUrl{
     cardImage.image = nil;
     
-    NSLog(@"url: %@",firstImage);
+    NSLog(@"url: %@",imageUrl);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFImageResponseSerializer serializer];
-    [manager GET:firstImage parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    [manager GET:imageUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         // Success
-        cardImage.image = responseObject;
-        [cardImage setHidden:NO];
-        [cardDetailContainer setHidden:YES];
+        self.cardImage.image = responseObject;
+        [self.cardImage setHidden:NO];
+        [self.cardDetailContainer setHidden:YES];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         // Failure
-        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image" andLabel:firstImage];
+        [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image" andLabel:imageUrl];
         if ([AFNetworkReachabilityManager sharedManager].reachable){
-            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:firstImage];
+            [app_delegate trackEventWithCategory:kUACategoryError andAction:@"image-with-connection" andLabel:imageUrl];
         }
-        if (secondImage != nil){
-            [self loadImage:secondImage andSecondImage:nil];
-            return;
-        }
-        [cardImage setHidden:YES];
-        [cardDetailContainer setHidden:NO];
+        [self.cardImage setHidden:YES];
+        [self.cardDetailContainer setHidden:NO];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
 }
@@ -260,7 +245,7 @@
 - (void) loadSavedCards{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        self.savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self checkSavedCard];
@@ -280,7 +265,7 @@
         
         NSArray *newCards = [[CardsDatabase database] randomCards];
         for (MTGCard *newCard in newCards){
-            [randomCards addObject:newCard];
+            [self.randomCards addObject:newCard];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{

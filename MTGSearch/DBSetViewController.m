@@ -170,7 +170,7 @@
 - (void)loadCardsOfSet{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
+        self.cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self filterCards];
@@ -181,11 +181,13 @@
 - (void)filterCards{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        filteredCards = [self realFilterCards:cards];
+        self.filteredCards = [self realFilterCards:self.cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            [cardsTable reloadData];
-            [cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            [self.cardsTable reloadData];
+            if (self.filteredCards.count > 0){
+                [self.cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            }
         });
     });
 }
@@ -199,11 +201,11 @@
             [userDefaults setBool:YES forKey:kSortAlphabet];
         }
         [userDefaults synchronize];
-        filteredCards = [self realFilterCards:cards];
+        self.filteredCards = [self realFilterCards:self.cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            [cardsTable reloadData];
-            [cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            [self.cardsTable reloadData];
+            [self.cardsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         });
     });
 }

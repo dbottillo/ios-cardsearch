@@ -11,6 +11,7 @@
 #import "DBSettingsViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+@import Firebase;
 
 @implementation DBAppDelegate
 
@@ -19,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Override point for customization after application launch.
     
+    [FIRApp configure];
     [Fabric with:@[[Crashlytics class]]];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

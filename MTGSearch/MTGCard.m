@@ -10,7 +10,7 @@
 @implementation MTGCard
 
 @synthesize type, types, subTypes, colors, rarity, power, toughness, manaCost, text, setName, name, setCode, uuid;
-@synthesize rulings;
+@synthesize rulings, layout, scryfallId, colorsIdentity;
 
 - (id)initNanoObjectFromDictionaryRepresentation:(NSDictionary *)theDictionary forKey:(NSString *)aKey store:(NSFNanoStore *)theStore{
     if (self = [super initNanoObjectFromDictionaryRepresentation:theDictionary forKey:aKey store:theStore]) {
@@ -42,7 +42,10 @@
     multiverseId = [[dictionary objectForKey:kNanoKeyMultiverseId] intValue];
     number = [[dictionary objectForKey:kNanoKeyNumber] intValue];
     rulings = [dictionary objectForKey:kNanoKeyRulings];
+    layout = [dictionary objectForKey:kNanoKeyLayout];
+    colorsIdentity = [dictionary objectForKey:kNanoKeyColorsIdentity];
     uuid = [dictionary objectForKey:kNanoKeyUUID];
+    scryfallId = [dictionary objectForKey:kNanoKeyScryfallId];
 }
 
 - (NSDictionary *)nanoObjectDictionaryRepresentation{
@@ -68,7 +71,10 @@
     [ret setValue:[NSNumber numberWithInt:multiverseId] forKey:kNanoKeyMultiverseId];
     [ret setValue:[NSNumber numberWithInt:number] forKey:kNanoKeyNumber];
     [ret setValue:rulings forKey:kNanoKeyRulings];
+    [ret setValue:layout forKey:kNanoKeyLayout];
+    [ret setValue:colorsIdentity forKey:kNanoKeyColorsIdentity];
     [ret setValue:uuid forKey:kNanoKeyUUID];
+    [ret setValue:scryfallId forKey:kNanoKeyScryfallId];
     return ret;
 }
 
@@ -82,6 +88,7 @@
         isAnEldrazi = NO;
         self.colors = [[NSMutableArray alloc] init];
         self.rulings = [[NSMutableArray alloc] init];
+        self.colorsIdentity = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -90,7 +97,7 @@
     setId = newId;
 }
 
-- (int)getId{
+- (int)getSetId{
     return setId;
 }
 
@@ -173,8 +180,30 @@
     self.colors = [[NSArray alloc] initWithArray:temp];
 }
 
+- (void)convertColorsIdentity:(NSArray *)newColors{
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    for (NSString *color in newColors){
+        if ([color isEqualToString:@"W"]){
+            [temp addObject:[NSNumber numberWithInteger:kColorWhite]];
+        }
+        if ([color isEqualToString:@"U"]){
+            [temp addObject:[NSNumber numberWithInteger:kColorBlue]];
+        }
+        if ([color isEqualToString:@"B"]){
+            [temp addObject:[NSNumber numberWithInteger:kColorBlack]];
+        }
+        if ([color isEqualToString:@"R"]){
+            [temp addObject:[NSNumber numberWithInteger:kColorRed]];
+        }
+        if ([color isEqualToString:@"G"]){
+            [temp addObject:[NSNumber numberWithInteger:kColorGreen]];
+        }
+    }
+    self.colorsIdentity = [[NSArray alloc] initWithArray:temp];
+}
+
 - (NSComparisonResult)compare:(MTGCard *)otherCard {
-    if (isALand && otherCard.isALand) return NSOrderedSame;
+    /*if (isALand && otherCard.isALand) return NSOrderedSame;
     if (!isALand && otherCard.isALand) return NSOrderedAscending;
     if (isALand) return NSOrderedDescending;
     
@@ -196,6 +225,11 @@
     }
     if (color == otherColor) return NSOrderedSame;
     if (color < otherColor) return NSOrderedAscending;
+    return NSOrderedDescending;*/
+    if ([self getSetId] > [otherCard getSetId]) return NSOrderedDescending;
+    if ([self getSetId] < [otherCard getSetId]) return NSOrderedAscending;
+    if ([self getNumber] == [otherCard getNumber]) return NSOrderedSame;
+    if ([self getNumber] < [otherCard getNumber]) return NSOrderedAscending;
     return NSOrderedDescending;
 }
 
@@ -220,4 +254,51 @@
     return [NSString stringWithFormat:@"[MTGCard] %@ - %d ", self.name, multiverseId];
 }
 
+- (BOOL)isWhite{
+    return [colorsIdentity containsObject:[NSNumber numberWithInt:kColorWhite]];
+}
+
+- (BOOL)isRed{
+    return [colorsIdentity containsObject:[NSNumber numberWithInt:kColorRed]];
+}
+
+- (BOOL)isGreen{
+    return [colorsIdentity containsObject:[NSNumber numberWithInt:kColorGreen]];
+}
+
+- (BOOL)isBlue{
+    return [colorsIdentity containsObject:[NSNumber numberWithInt:kColorBlue]];
+}
+
+- (BOOL)isBlack{
+    return [colorsIdentity containsObject:[NSNumber numberWithInt:kColorBlack]];
+}
+
+- (BOOL)isCommon{
+    return [rarity caseInsensitiveCompare:kRarityCommon] == NSOrderedSame;
+}
+
+- (BOOL)isUncommon{
+    return [rarity caseInsensitiveCompare:kRarityUncommon] == NSOrderedSame;
+}
+
+- (BOOL)isRare{
+    return [rarity caseInsensitiveCompare:kRarityRare] == NSOrderedSame;
+}
+
+- (BOOL)isMythic{
+    return [rarity caseInsensitiveCompare:kRarityMythic] == NSOrderedSame ||
+            [rarity caseInsensitiveCompare:kRarityMythicRare] == NSOrderedSame;
+}
+
+- (BOOL)isNormal{
+    return [layout caseInsensitiveCompare:@"normal"] == NSOrderedSame;
+}
+
+- (NSString *)imageUrl{
+    if (scryfallId != nil && [scryfallId length] > 0 && [self isNormal]){
+        return [NSString stringWithFormat:@"https://api.scryfall.com/cards/%@?format=image", scryfallId];
+    }
+    return [NSString stringWithFormat:@"http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=%d&type=card", [self getMultiverseId]];
+}
 @end

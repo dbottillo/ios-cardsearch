@@ -7,6 +7,7 @@ target 'MTGSearch' do
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Firebase/Core'
 end
 
 target 'MTGSearch Dev' do
@@ -14,4 +15,5 @@ target 'MTGSearch Dev' do
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Firebase/Core'
 end

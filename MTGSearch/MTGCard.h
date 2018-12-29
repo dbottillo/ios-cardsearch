@@ -17,7 +17,8 @@
 #define kRarityCommon       @"Common"
 #define kRarityUncommon     @"Uncommon"
 #define kRarityRare         @"Rare"
-#define kRarityMythic       @"Mythic Rare"
+#define kRarityMythic       @"Mythic"
+#define kRarityMythicRare   @"Mythic Rare"
 
 #define     kNanoKeySetId           @"setId"
 #define     kNanoKeyCMC             @"cmc"
@@ -40,7 +41,10 @@
 #define     kNanoKeySetCode         @"setCode"
 #define     kNanoKeyNumber          @"number"
 #define     kNanoKeyRulings         @"rulings"
+#define     kNanoKeyLayout          @"layout"
+#define     kNanoKeyColorsIdentity  @"colorsIdentity"
 #define     kNanoKeyUUID            @"uuid"
+#define     kNanoKeyScryfallId      @"scryfallId"
 
 @interface MTGCard : NSFNanoObject{
     int setId;
@@ -66,13 +70,17 @@
 @property (strong, nonatomic) NSString *setName;
 @property (strong, nonatomic) NSString *setCode;
 @property (strong, nonatomic) NSMutableArray *rulings;
+@property (nonatomic, strong) NSString *layout;
+@property (strong, nonatomic) NSArray *colorsIdentity;
 @property (strong, nonatomic) NSString *uuid;
+@property (strong, nonatomic) NSString *scryfallId;
 
 - (id)initWithName:(NSString *)_name;
 
 - (void)setId:(int)newId;
-- (int)getId;
+- (int)getSetId;
 - (void)convertColors:(NSArray *)newColors;
+- (void)convertColorsIdentity:(NSArray *)newColors;
 - (void)setManaCostConverted:(int)manaCostConverted;
 - (int) getCmc;
 - (void)setNumber:(int)numer;
@@ -88,5 +96,14 @@
 - (void)setAsEldrazi;
 - (BOOL)isAnEldrazi;
 - (BOOL)isAPlane;
-
+- (BOOL)isWhite;
+- (BOOL)isRed;
+- (BOOL)isGreen;
+- (BOOL)isBlue;
+- (BOOL)isBlack;
+- (BOOL)isCommon;
+- (BOOL)isUncommon;
+- (BOOL)isRare;
+- (BOOL)isMythic;
+- (NSString *)imageUrl;
 @end

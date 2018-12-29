@@ -52,6 +52,8 @@
 		6D7C30C319CE48BD00876B31 /* UIViewController+FilterCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */; };
 		6D835D4E19E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
 		6D835D5019E58BED00F188DA /* DBCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D835D4D19E58BED00F188DA /* DBCardViewController.m */; };
+		6D8ACD5D21D771450023E1CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D8ACD5C21D771440023E1CA /* GoogleService-Info.plist */; };
+		6D8ACD6521D774D50023E1CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D8ACD5C21D771440023E1CA /* GoogleService-Info.plist */; };
 		6D9FA8F21BB41ECE00B8BA39 /* NanoStore2 in Resources */ = {isa = PBXBuildFile; fileRef = 6D9FA8F01BB41ECE00B8BA39 /* NanoStore2 */; };
 		6D9FA8F41BB4200400B8BA39 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9FA8F31BB4200400B8BA39 /* libnanostore2.a */; };
 		6DAB8DAC1A232F8B00AAB494 /* libnanostore2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAB8DA91A232F8B00AAB494 /* libnanostore2.a */; };
@@ -152,6 +154,7 @@
 		6D7C30C219CE48BD00876B31 /* UIViewController+FilterCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FilterCards.m"; sourceTree = "<group>"; };
 		6D835D4C19E58BED00F188DA /* DBCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCardViewController.h; sourceTree = "<group>"; };
 		6D835D4D19E58BED00F188DA /* DBCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCardViewController.m; sourceTree = "<group>"; };
+		6D8ACD5C21D771440023E1CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MTGSearch/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D9FA8F01BB41ECE00B8BA39 /* NanoStore2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NanoStore2; sourceTree = "<group>"; };
 		6D9FA8F31BB4200400B8BA39 /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnanostore2.a; path = MTGSearch/NanoStore2/Release/Library/libnanostore2.a; sourceTree = "<group>"; };
 		6DAB8DA91A232F8B00AAB494 /* libnanostore2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanostore2.a; sourceTree = "<group>"; };
@@ -393,6 +396,7 @@
 		6DB12C6D19BDAB0A00B2BCC8 = {
 			isa = PBXGroup;
 			children = (
+				6D8ACD5C21D771440023E1CA /* GoogleService-Info.plist */,
 				6D70035D19BDC64100AAC079 /* Resources */,
 				6DB12C7F19BDAB0A00B2BCC8 /* MTGSearch */,
 				6DB12CA119BDAB0B00B2BCC8 /* MTGSearchTests */,
@@ -519,6 +523,7 @@
 				6D12DE6E19E2E59C001C11D6 /* Resources */,
 				173B4D6F1B3A1FB5AD5BD4E5 /* [CP] Embed Pods Frameworks */,
 				6D48602C1FE557620011112A /* ShellScript */,
+				6D8ACD5B21D7703B0023E1CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -539,6 +544,7 @@
 				6DB12C7419BDAB0A00B2BCC8 /* Resources */,
 				86FB5D3FB3F15DE55185548A /* [CP] Embed Pods Frameworks */,
 				6D48602D1FE557770011112A /* ShellScript */,
+				6D8ACD5E21D771B80023E1CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -614,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8ACD5D21D771450023E1CA /* GoogleService-Info.plist in Resources */,
 				6D12DE6F19E2E59C001C11D6 /* Images.xcassets in Resources */,
 				6D9FA8F21BB41ECE00B8BA39 /* NanoStore2 in Resources */,
 				6D12DE7119E2E59C001C11D6 /* InfoPlist.strings in Resources */,
@@ -627,6 +634,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8ACD6521D774D50023E1CA /* GoogleService-Info.plist in Resources */,
 				6DB12C9519BDAB0B00B2BCC8 /* Images.xcassets in Resources */,
 				6DB12C8419BDAB0A00B2BCC8 /* InfoPlist.strings in Resources */,
 				6D57A4B219E03BE00099C96B /* Localizable.strings in Resources */,
@@ -654,12 +662,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MTGSearch Dev/Pods-MTGSearch Dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -709,11 +721,13 @@
 			);
 			inputPaths = (
 			);
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6\n";
 		};
 		6D48602D1FE557770011112A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -726,7 +740,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8 638e573ab31186bdce16441e1578987793101c245270a4615bc7fd2ed79604e6\n";
+		};
+		6D8ACD5B21D7703B0023E1CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SRCROOT}/GoogleServiceInfoPlists/GoogleService-Info-$CONFIGURATION.plist\" \"${SRCROOT}/MTGSearch/GoogleService-Info.plist\"\n";
+		};
+		6D8ACD5E21D771B80023E1CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SRCROOT}/GoogleServiceInfoPlists/GoogleService-Info-$CONFIGURATION.plist\" \"${SRCROOT}/MTGSearch/GoogleService-Info.plist\"\n";
 		};
 		86FB5D3FB3F15DE55185548A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -736,12 +784,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MTGSearch/Pods-MTGSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

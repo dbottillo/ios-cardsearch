@@ -24,16 +24,15 @@
     }
     UIColor *colorIndicator = [DBAppDelegate grey];
     if (!card.isMultiColor && !card.isAnArtifact && !card.isALand && !card.isAnEldrazi){
-        int cardColor = [[card.colors objectAtIndex:0] intValue];
-        if (cardColor == kColorWhite) {
+        if ([card isWhite]) {
             colorIndicator = [DBAppDelegate greyWhite];
-        } else if (cardColor == kColorBlue) {
+        } else if ([card isBlue]) {
             colorIndicator = [DBAppDelegate greyBlue];
-        } else if (cardColor == kColorBlack) {
+        } else if ([card isBlack]) {
             colorIndicator = [DBAppDelegate greyBlack];
-        } else if (cardColor == kColorRed) {
+        } else if ([card isRed]) {
             colorIndicator = [DBAppDelegate greyRed];
-        } else if (cardColor == kColorGreen) {
+        } else if ([card isGreen]) {
             colorIndicator = [DBAppDelegate greyGreen];
         }
     } else if (card.isMultiColor){
@@ -45,13 +44,13 @@
     
     UIColor *colorRarity = [DBAppDelegate common];
     NSString *textRariry = @"C";
-    if ([card.rarity isEqualToString:kRarityUncommon]){
+    if ([card isUncommon]){
         colorRarity = [DBAppDelegate unCommon];
         textRariry = @"U";
-    } else if ([card.rarity isEqualToString:kRarityRare]){
+    } else if ([card isRare]){
         colorRarity = [DBAppDelegate rare];
         textRariry = @"R";
-    } else if ([card.rarity isEqualToString:kRarityMythic]){
+    } else if ([card isMythic]){
         colorRarity = [DBAppDelegate Mythic];
         textRariry = @"M";
     }

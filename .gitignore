@@ -15,5 +15,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+MTGSearch/GoogleService-Info.plist
 # Pods - for those of you who use CocoaPods
 Pods

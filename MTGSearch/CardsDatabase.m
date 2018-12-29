@@ -215,17 +215,32 @@ static CardsDatabase *_database;
         }];
     }
     
+    char *layout = (char *) sqlite3_column_text(statement, 19);
+    [card setLayout:[[NSString alloc] initWithUTF8String:layout]];
+    
     char *setCode = (char *) sqlite3_column_text(statement, 20);
     [card setSetCode:[[NSString alloc] initWithUTF8String:setCode]];
-    
     
     int number = sqlite3_column_int(statement, 21);
     [card setNumber:number];
     
+    char *colorsIdentity = (char *) sqlite3_column_text(statement, 30);
+    if (colorsIdentity != nil){
+        NSString *string = [[NSString alloc] initWithUTF8String:colorsIdentity];
+        NSData *jsonData = [string dataUsingEncoding:NSUTF8StringEncoding];
+        NSArray *colors = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                      options:NSJSONReadingMutableContainers
+                                                        error:nil];
+        [card convertColorsIdentity:colors];
+    }
+    
     char *uuid = (char *) sqlite3_column_text(statement, 31);
     [card setUuid:[[NSString alloc] initWithUTF8String:uuid]];
 
-    if (!card.isMultiColor && !card.isALand && !card.isAnArtifact && card.colors.count == 0){
+    char *scryfallId = (char *) sqlite3_column_text(statement, 32);
+    [card setScryfallId:[[NSString alloc] initWithUTF8String:scryfallId]];
+
+    if ([card.type rangeOfString:@"Eldrazi"].location != NSNotFound) {
         [card setAsEldrazi];
     }
     
