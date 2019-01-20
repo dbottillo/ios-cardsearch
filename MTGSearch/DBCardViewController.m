@@ -245,7 +245,7 @@
 - (void) loadSavedCards{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        self.savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        self.savedCards = [NSArray arrayWithArray:[self.localDataProvider fetchSavedCards]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self checkSavedCard];
@@ -269,12 +269,12 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (needToLoadCard){
+            if (self->needToLoadCard){
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 [self popCard];
-                needToLoadCard = NO;
+                self->needToLoadCard = NO;
             }
-            isLoading = NO;
+            self->isLoading = NO;
         });
     });
 }

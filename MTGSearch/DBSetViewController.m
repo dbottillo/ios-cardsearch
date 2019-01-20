@@ -170,7 +170,7 @@
 - (void)loadCardsOfSet{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        self.cards = [[[CardsDatabase database] cardsOfSet:[set getId]] sortedArrayUsingSelector:@selector(compare:)];
+        self.cards = [[[CardsDatabase database] cardsOfSet:[self.set getId]] sortedArrayUsingSelector:@selector(compare:)];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self filterCards];

@@ -42,17 +42,17 @@
 - (void) loadSavedCards{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        self.savedCards = [NSArray arrayWithArray:[self.localDataProvider fetchSavedCards]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (savedCards.count == 0){
-                [savedTable setHidden:YES];
-                [emptyLabel setHidden:NO];
+            if (self.savedCards.count == 0){
+                [self.savedTable setHidden:YES];
+                [self.emptyLabel setHidden:NO];
             } else {
-                [savedTable setHidden:NO];
-                [emptyLabel setHidden:YES];
+                [self.savedTable setHidden:NO];
+                [self.emptyLabel setHidden:YES];
             }
-            [savedTable reloadData];
+            [self.savedTable reloadData];
         });
     });
 }

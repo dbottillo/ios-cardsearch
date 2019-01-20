@@ -63,7 +63,7 @@
 - (void) loadSavedCards{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        savedCards = [NSArray arrayWithArray:[localDataProvider fetchSavedCards]];
+        self.savedCards = [NSArray arrayWithArray:[self.localDataProvider fetchSavedCards]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self checkSavedCard];

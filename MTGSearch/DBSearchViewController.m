@@ -134,7 +134,7 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        cards = [[[CardsDatabase database] cardsOfSearch:searchBar.text] sortedArrayUsingSelector:@selector(compare:)];
+        self.cards = [[[CardsDatabase database] cardsOfSearch:searchBar.text] sortedArrayUsingSelector:@selector(compare:)];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self filterCards];
@@ -147,13 +147,13 @@
 - (void)filterCards{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
-        filteredCards = [self realFilterCards:cards];
+        self.filteredCards = [self realFilterCards:self.cards];
         dispatch_async(dispatch_get_main_queue(), ^{ // 2
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            [searchTable reloadData];
-            self.navigationItem.title = [NSString stringWithFormat:@"%@ (%lu)",NSLocalizedString(@"Search", @"search"), (unsigned long)filteredCards.count];
-            if (filteredCards.count > 0){
-                [searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            [self.searchTable reloadData];
+            self.navigationItem.title = [NSString stringWithFormat:@"%@ (%lu)",NSLocalizedString(@"Search", @"search"), (unsigned long) self.filteredCards.count];
+            if (self.filteredCards.count > 0){
+                [self.searchTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
             }
         });
     });
