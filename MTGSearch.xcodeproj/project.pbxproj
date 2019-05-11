@@ -599,6 +599,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				it,
@@ -1125,7 +1126,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielebottillo.mtgsearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dc57decf-98c3-4a6a-b4b6-951ba5c04aad";
-				PROVISIONING_PROFILE_SPECIFIER = "MTGSearch Release";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution Profile";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1162,7 +1163,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielebottillo.mtgsearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "dc57decf-98c3-4a6a-b4b6-951ba5c04aad";
-				PROVISIONING_PROFILE_SPECIFIER = "MTGSearch Release";
+				PROVISIONING_PROFILE_SPECIFIER = "Distribution Profile";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				WRAPPER_EXTENSION = app;
